@@ -28,7 +28,7 @@
             line-height: 1.7;
             font-size: 16px;
         }
-
+        
         /* NAV */
         nav {
             position: fixed; top: 0; width: 100%;
@@ -102,6 +102,7 @@
             transition: border-color .25s, transform .25s;
         }
         .proj-card:hover { border-color: #2d4a6e; transform: translateY(-2px); }
+        
         .proj-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
         .proj-icon { font-size: 1.5rem; flex-shrink: 0; }
         .proj-header h3 { font-size: 1.05rem; font-weight: 700; flex: 1; }
@@ -111,7 +112,7 @@
             transition: all .2s; white-space: nowrap;
         }
         .proj-header a:hover { background: rgba(96,165,250,.1); }
-        .proj-card p { color: var(--sub); font-size: .9rem; line-height: 1.75; }
+        .proj-card p { color: var(--text); }
         .proj-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
         .ptag {
             font-size: .72rem; padding: .18rem .6rem;
@@ -314,12 +315,18 @@
             <div class="proj-tags">
                 <span class="ptag o">JWST NIRCam</span>
                 <span class="ptag o">AGN</span>
-                <span class="ptag o">SED Fitting</span>
+                <span class="ptag o">Star-Formation</span>
                 <span class="ptag o">Lensing Clusters</span>
+                <span class="ptag o">High-Redshift</span>
                 <span class="ptag o">Time-Domain</span>
+                <span class="ptag o">Galaxy Quenching</span>
+                <span class="ptag o">Multiwavelength Surveys</span>
+                <span class="ptag o">Transients</span>
                 <span class="ptag o">Globular Clusters</span>
                 <span class="ptag o">Galaxy Evolution</span>
                 <span class="ptag o">Cosmic Noon</span>
+                <span class="ptag o">Dusty Star-Forming Galaxies</span>
+
             </div>
         </div>
 
@@ -333,9 +340,11 @@
                 <span class="ptag v">Extragalactic Background Light</span>
                 <span class="ptag v">Sky Surface Brightness</span>
                 <span class="ptag v">Zodiacal Light</span>
-                <span class="ptag v">Diffuse EBL</span>
+                <span class="ptag v">Diffuse Light</span>
                 <span class="ptag v">Galaxy Counts</span>
                 <span class="ptag v">Calibration</span>
+                <span class="ptag v">JWST Pipeline</span>
+                <span class="ptag v">Astrophysical Backgrounds</span>
             </div>
         </div>
 
@@ -353,6 +362,7 @@
                 <span class="ptag r">Supermassive Black Holes</span>
                 <span class="ptag r">Cosmic Reionization</span>
                 <span class="ptag r">Time Domain</span>
+                <span class="ptag r">Clumpy Star Formation</span>
                 <span class="ptag r">Galaxy Clusters</span>
             </div>
         </div>
