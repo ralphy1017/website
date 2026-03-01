@@ -1,817 +1,478 @@
 <!DOCTYPE html>
-<!-- saved from url=(1589)https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/8ff07cd8380b4e7d5423c02c4ab4398c/40854ad4-9445-47ac-ba72-af65b0d36041/canvas-app/index.html?AWSAccessKeyId=ASIA2F3EMEYE4WE22B66&Signature=2KkpVOG0qaxbH6D%2BcQiin3Ikw1k%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQCn6KaxpGxEYCAHaId5Uq%2F0ThdA5HUccjA4V9sgXdnBTgIhAMr0r%2FxRJWOvh3u4TUgKBpyUMLEyzmFrY%2FmTJqr%2BmVi%2BKvMECGIQARoMNjk5NzUzMzA5NzA1IgzW518kivMqfS6cHlkq0ASoiYDwfzZ2rOmv1FYeONXgZKN6c0mcCp15Fd%2BEEAU7cJP3cQLrvLI5pLo51fLMfOFx2SvLK4Fq%2BOGzSe5SzuN3IolEBGxrEpt5uHwO9PYcS9%2FhHN%2BfZglcQIK6AuUPXSpjX4K3%2BTx3xQ4mJFpxPKTC26BLkjPovATVBxR%2FweUg7HbIYXhww187i0WLZZ4LCCHkypY3ew5bGSyeUlg8dRGcurmX8GqNmcPK6lyU1KYq2caMOXZzQWdXqBXzbZ8YT6CRlsDovjUEMDPKOgbhgGVZgBsCbAje220Sz02mtgSigHlGr44%2FxkqWb2ylfo0sgColUwpE2qCfPvd7W8WHCWfSyEwaShebPq49fg%2B6Kj53TdoHBdnbSeN9m4OS9qtDaMm8bVrnZZpmeR58sLkbT762A1hwsd5l7qa9aX5msZyWSIoTxhDP6tPhvpSLQ6SESUu%2Fo9UtM7RO4hd%2Baz%2Bo4c5eN7HbZutfVmQdutF5CZRbOA5ZE9RD4lyBxu8%2FRxdudC1rFw%2BhtqryOqqUljKffSA%2BUp1rtZ065ANmwxbfbZr8YdhN8ZaUe2Y%2BWcF4TTDEF7Tc9TMufUd6Y6L15Ats5PO60RIhcvRXdR7PNS8s3tnDVHvSsDayLqNHDs0RqekomA808aKPbIJcIEWAB3WqgdAleVy3OnV66TGlxO7dFLHqmoU1AaJEeLgm8DLNGsozjMgEZrbVx19MzvFLqnJVliIdR4CVLJsLdXJP5O7EfUvM%2B4pu7U95nUYQD%2BCX1sri9yGyCv%2Bvxd5F8soUXcZdWkemMPuXjs0GOpcB96HylHn%2Bcn%2FV0V49rdr4HjGPrWQV7c%2FkY3n89ksTwJUycllFccwyTtE3%2F79GXAp9U9VYta3MqpOmTgOZklzZU47gqQ45KvwH6AwPIk0%2BpUlDORCDK482zx2ltn0gH0VIFyFg8jG3m0lVEdR67bJqJj%2FNfCPr2W4j3m5hLLBTo5S3YwDkNTcfcc6IMwHaadVloulo%2Fjk3sw%3D%3D&Expires=1772330926&utm_source=perplexity -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael Ortiz III - Astrophysicist</title>
+    <title>Rafael Ortiz III — Astrophysicist</title>
     <style>
         :root {
-            --bg-primary: #0a0e1a;
-            --bg-card: #1a2234;
-            --text-primary: #e8edf4;
-            --text-secondary: #a8b2c8;
-            --text-muted: #6b7590;
-            --accent-agn: #5b8ff9;
-            --accent-xray: #d946ef;
-            --accent-jwst: #f97316;
-            --border: #2d3548;
+            --bg:       #0a0e1a;
+            --bg-card:  #131929;
+            --bg-card2: #1a2234;
+            --text:     #e8edf4;
+            --sub:      #a8b2c8;
+            --muted:    #6b7590;
+            --blue:     #5b8ff9;
+            --pink:     #d946ef;
+            --orange:   #f97316;
+            --green:    #22c55e;
+            --border:   #2d3548;
+            --border2:  #3a4660;
         }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
+        /* NAV */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 14, 26, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
-            padding: 1rem 0;
+            position:fixed; top:0; width:100%;
+            background:rgba(10,14,26,0.94); backdrop-filter:blur(12px);
+            border-bottom:1px solid var(--border); z-index:200; padding:.9rem 0;
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .nav-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center; }
+        .nav-brand { font-size:1.1rem; font-weight:700; letter-spacing:.02em; }
+        .nav-links { display:flex; gap:1.75rem; list-style:none; }
+        .nav-links button {
+            background:none; border:none; color:var(--sub); font-size:.9rem;
+            font-weight:500; cursor:pointer; transition:color .25s; padding:.3rem 0;
+            border-bottom:2px solid transparent; transition:all .25s;
         }
+        .nav-links button:hover, .nav-links button.active { color:var(--blue); border-bottom-color:var(--blue); }
 
-        .nav-brand {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
+        /* LAYOUT */
+        .wrap { max-width:1200px; margin:0 auto; padding:5.5rem 2rem 5rem; }
+        .page { display:none; animation:fadeIn .3s ease; }
+        .page.active { display:block; }
+        @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+        /* HERO */
+        .hero { padding:3.5rem 0 3rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+        .profile-row { display:flex; align-items:center; gap:3rem; flex-wrap:wrap; margin-bottom:2rem; }
+        .avatar {
+            width:170px; height:170px; border-radius:14px; flex-shrink:0;
+            background:var(--bg-card2); border:2px solid var(--blue);
+            box-shadow:0 0 32px rgba(91,143,249,.18);
+            display:flex; align-items:center; justify-content:center;
+            font-size:4rem; user-select:none;
         }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-menu button {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.3s;
-            padding: 0.5rem 0;
-        }
-
-        .nav-menu button:hover,
-        .nav-menu button.active {
-            color: var(--accent-agn);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* Home Page */
-        .hero {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 2px solid var(--accent-agn);
-            box-shadow: 0 8px 24px rgba(91, 143, 249, 0.2);
-        }
-
+        .avatar img { width:100%; height:100%; border-radius:12px; object-fit:cover; }
         .profile-info h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--accent-agn), var(--accent-xray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size:2.8rem; font-weight:800; line-height:1.15; margin-bottom:.5rem;
+            background:linear-gradient(135deg,var(--blue),var(--pink));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
         }
-
-        .profile-info .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
+        .subtitle { font-size:1.15rem; color:var(--sub); margin-bottom:.75rem; }
+        .desc { font-size:.98rem; color:var(--muted); max-width:680px; line-height:1.75; }
+        .chips { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.75rem; }
+        .chip {
+            color:var(--sub); text-decoration:none; font-size:.85rem;
+            padding:.4rem 1rem; border:1px solid var(--border2); border-radius:7px;
+            transition:all .25s; display:inline-flex; align-items:center; gap:.4rem;
         }
+        .chip:hover { border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
 
-        .profile-info .description {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            max-width: 700px;
+        /* SECTION HEADER */
+        .sec-head { margin-bottom:2.5rem; }
+        .sec-head h2 { font-size:1.9rem; margin-bottom:.4rem; }
+        .sec-head p { color:var(--muted); font-size:.92rem; }
+
+        /* CARDS GRID */
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.4rem; }
+        .card {
+            background:var(--bg-card); border:1px solid var(--border);
+            border-radius:14px; padding:1.5rem; transition:all .3s;
         }
+        .card:hover { border-color:var(--blue); transform:translateY(-4px); box-shadow:0 8px 32px rgba(91,143,249,.1); }
+        .card h3 { color:var(--blue); font-size:1.1rem; margin-bottom:.75rem; }
+        .card p { color:var(--sub); font-size:.9rem; line-height:1.7; margin-bottom:1rem; }
+        .tags { display:flex; gap:.4rem; flex-wrap:wrap; }
+        .tag { font-size:.72rem; padding:.2rem .65rem; background:rgba(91,143,249,.1); color:var(--blue); border-radius:4px; border:1px solid rgba(91,143,249,.2); }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+        /* STATS BAR */
+        .stats-bar {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+            gap:1rem; margin-bottom:2.25rem;
         }
-
-        .social-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+        .stat-card {
+            background:var(--bg-card); border:1px solid var(--border);
+            border-radius:12px; padding:1.25rem 1.5rem; text-align:center;
         }
-
-        .social-links a:hover {
-            border-color: var(--accent-agn);
-            color: var(--accent-agn);
-            transform: translateY(-2px);
+        .stat-val {
+            font-size:2.4rem; font-weight:800; line-height:1;
+            background:linear-gradient(135deg,var(--blue),var(--pink));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
         }
+        .stat-lbl { color:var(--muted); font-size:.78rem; margin-top:.4rem; }
+        .stat-src { color:var(--muted); font-size:.68rem; margin-top:.2rem; opacity:.6; }
 
-        /* Research Page */
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .research-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .research-card:hover {
-            border-color: var(--accent-agn);
-            transform: translateY(-4px);
-        }
-
-        .research-card h3 {
-            color: var(--accent-agn);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .research-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(91, 143, 249, 0.1);
-            color: var(--accent-agn);
-            border-radius: 4px;
-            border: 1px solid rgba(91, 143, 249, 0.2);
-        }
-
-        /* Publications Page */
-        .metrics-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .metric-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-agn), var(--accent-xray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .pub-filters {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
+        /* PUB CONTROLS */
+        .pub-bar { display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:1.75rem; }
+        .filter-group { display:flex; gap:.5rem; flex-wrap:wrap; }
         .filter-btn {
-            padding: 0.5rem 1.25rem;
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            padding:.35rem .9rem; border:1px solid var(--border); border-radius:6px;
+            background:none; color:var(--sub); cursor:pointer; font-size:.84rem; transition:all .25s;
         }
+        .filter-btn:hover, .filter-btn.on { border-color:var(--blue); color:var(--blue); background:rgba(91,143,249,.08); }
+        .pub-status { font-size:.78rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
+        .spin { width:13px; height:13px; border:2px solid var(--border2); border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; flex-shrink:0; }
+        @keyframes spin { to{transform:rotate(360deg)} }
 
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--accent-agn);
-            color: var(--bg-primary);
-            border-color: var(--accent-agn);
-        }
-
-        .pub-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
+        /* PUB ITEMS */
+        .pub-list { display:flex; flex-direction:column; gap:.9rem; }
         .pub-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: border-color 0.3s;
+            background:var(--bg-card); border:1px solid var(--border);
+            border-radius:12px; padding:1.4rem 1.5rem; transition:all .28s;
+            border-left:3px solid transparent;
         }
-
-        .pub-item:hover {
-            border-color: var(--accent-xray);
+        .pub-item:hover { border-color:var(--border2); transform:translateX(4px); box-shadow:0 4px 20px rgba(0,0,0,.25); }
+        .pub-item.fa { border-left-color:var(--blue); }
+        .pub-title { font-size:.98rem; font-weight:600; color:var(--text); line-height:1.55; margin-bottom:.55rem; }
+        .pub-authors { font-size:.82rem; color:var(--muted); margin-bottom:.5rem; line-height:1.5; }
+        .pub-authors .me { color:var(--blue); font-weight:700; }
+        .pub-meta { display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin-bottom:.65rem; }
+        .pub-journal { color:var(--sub); font-size:.82rem; font-style:italic; }
+        .pub-year { color:var(--muted); font-size:.78rem; }
+        .badge {
+            font-size:.68rem; padding:.15rem .55rem; border-radius:4px;
+            font-weight:700; letter-spacing:.03em;
         }
-
-        .pub-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
+        .b-fa   { background:rgba(91,143,249,.14); color:var(--blue);   border:1px solid rgba(91,143,249,.25); }
+        .b-ref  { background:rgba(249,115,22,.12);  color:var(--orange); border:1px solid rgba(249,115,22,.22); }
+        .b-cite { background:rgba(34,197,94,.1);    color:var(--green);  border:1px solid rgba(34,197,94,.2); font-size:.7rem; }
+        .pub-links { display:flex; gap:.45rem; flex-wrap:wrap; margin-top:.6rem; }
+        .plink {
+            font-size:.78rem; padding:.28rem .7rem; border:1px solid var(--border);
+            border-radius:5px; color:var(--sub); text-decoration:none; transition:all .22s;
         }
-
-        .pub-authors {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+        .plink:hover          { border-color:var(--blue);   color:var(--blue); }
+        .plink.arxiv:hover    { border-color:#b91c1c;       color:#fca5a5; }
+        .plink.doi:hover      { border-color:#047857;       color:#6ee7b7; }
+        .plink.ads:hover      { border-color:#1d4ed8;       color:#93c5fd; }
+        .pub-abstract {
+            font-size:.8rem; color:var(--muted); line-height:1.65;
+            margin-top:.65rem; padding-top:.65rem; border-top:1px solid var(--border);
+            display:none;
         }
-
-        .highlight-author {
-            color: var(--accent-agn);
-            font-weight: 600;
+        .pub-item.expanded .pub-abstract { display:block; }
+        .pub-item.expanded { border-color:var(--border2); }
+        .abstract-toggle {
+            font-size:.75rem; color:var(--muted); cursor:pointer; margin-top:.5rem;
+            display:inline-block; transition:color .2s;
         }
+        .abstract-toggle:hover { color:var(--blue); }
 
-        .pub-meta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.75rem;
-        }
+        /* CV */
+        .cv-section { margin-bottom:2.5rem; }
+        .cv-section h3 { color:var(--blue); font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; margin-bottom:1.25rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
+        .cv-row { display:flex; gap:2rem; margin-bottom:1.25rem; }
+        .cv-yr { color:var(--blue); font-size:.82rem; font-weight:700; min-width:90px; padding-top:.2rem; flex-shrink:0; }
+        .cv-body h4 { color:var(--text); font-size:.97rem; margin-bottom:.2rem; }
+        .cv-body p  { color:var(--muted); font-size:.88rem; line-height:1.55; }
+        .skill-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:.9rem; }
+        .skill-box { background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
+        .skill-box h4 { color:var(--blue); font-size:.85rem; font-weight:700; margin-bottom:.7rem; }
+        .skill-tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+        .skill-tag { font-size:.73rem; padding:.2rem .55rem; background:rgba(255,255,255,.04); color:var(--sub); border-radius:4px; border:1px solid var(--border); }
 
-        .pub-badge {
-            padding: 0.2rem 0.6rem;
-            background: rgba(217, 70, 239, 0.1);
-            color: var(--accent-xray);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(217, 70, 239, 0.2);
-        }
+        /* CONTACT */
+        .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; margin-top:2rem; }
+        .contact-card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+        .contact-card h3 { color:var(--blue); margin-bottom:.9rem; font-size:1rem; }
+        .contact-card p { color:var(--sub); font-size:.92rem; margin-bottom:.4rem; line-height:1.6; }
+        .contact-card a { color:var(--blue); text-decoration:none; }
+        .contact-card a:hover { text-decoration:underline; }
 
-        .pub-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+        /* UTILITY */
+        .updated-note { font-size:.72rem; color:var(--muted); margin-top:1rem; opacity:.65; }
+        .empty-state { text-align:center; padding:3rem; color:var(--muted); font-size:.9rem; }
 
-        .pub-link {
-            color: var(--accent-agn);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s;
-        }
-
-        .pub-link:hover {
-            color: var(--accent-xray);
-        }
-
-        .pub-citations {
-            padding: 0.25rem 0.75rem;
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--accent-jwst);
-            border-radius: 4px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(249, 115, 22, 0.2);
-            margin-left: 1rem;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-info h1 {
-                font-size: 2rem;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
+        @media(max-width:700px) {
+            .profile-row { flex-direction:column; gap:1.5rem; }
+            .profile-info h1 { font-size:2rem; }
+            .cv-row { flex-direction:column; gap:.25rem; }
+            .nav-links { gap:1rem; }
         }
     </style>
 </head>
-<x-extension-template style="opacity: 1;"><template shadowrootmode="closed"><style data-emotion="x-global" data-s="">all:initial;</style><style data-emotion="x-global" data-s="">h1,h2,h3,h4,h5,h6{font-family:inherit;font-size:inherit;font-weight:inherit;}</style><style data-emotion="x-global" data-s="">a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit;}</style><style data-emotion="x-global" data-s="">blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0;}</style><style data-emotion="x-global" data-s="">h1,h2,h3,h4,h5,h6,p{white-space:pre-wrap;}</style><style data-emotion="x-global" data-s="">button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0;}</style><style data-emotion="x-global" data-s="">button,select{text-transform:none;}</style><style data-emotion="x-global" data-s="">button,[type='button'],[type='reset'],[type='submit']{background-color:transparent;background-image:none;border:none;}</style><style data-emotion="x-global" data-s="">button,[role='button']{cursor:pointer;}</style><style data-emotion="x-global" data-s="">:disabled{cursor:default;}</style><style data-emotion="x-global" data-s="">ol,ul,menu{list-style:none;margin:0;padding:0;}</style><style data-emotion="x-global" data-s="">*{font-family:'Avenir',serif;font-synthesis:none!important;}</style><style data-emotion="x" data-s="">.x-1wuwx3n{display:none;background-color:#FFFFFF;border-radius:20px;box-shadow:0 0 8px rgba(0, 0, 0, 0.4);margin:16px;position:fixed;right:0;top:0;z-index:2147483647;padding:0;height:auto;width:400px;color:#191919;font-weight:400;letter-spacing:normal;-webkit-flex:1;-ms-flex:1;flex:1;overflow-y:auto;overflow-x:hidden;max-height:90vh;}</style><style data-emotion="x" data-s="">.x-1wuwx3n:focus-visible{outline:none;}</style><style data-emotion="x" data-s="">.x-1wuwx3n::-webkit-scrollbar{width:8px;}</style><style data-emotion="x" data-s="">.x-1wuwx3n::-webkit-scrollbar-track{background:transparent;}</style><style data-emotion="x" data-s="">.x-1wuwx3n::-webkit-scrollbar-thumb{background-color:#ACACAC;border-radius:20px;}</style><style data-emotion="x" data-s="">.x-6ui8nh{position:-webkit-sticky;position:sticky;top:0;right:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:20px 20px 12.5px;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;background-color:#FFFFFF;-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;z-index:20;}</style><style data-emotion="x" data-s="">.x-1d1xfdq{height:32px;}</style><style data-emotion="x" data-s="">.x-12yghq1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:8px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><style data-emotion="x" data-s="">.x-19te22e{height:18px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:rgb(101, 101, 101);}</style><style data-emotion="x" data-s="">.x-19te22e>img{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><style data-emotion="x" data-s="">.x-19te22e:hover,.x-19te22e:focus,.x-19te22e:active{color:rgb(101, 101, 101);}</style><style data-emotion="x" data-s="">.x-1ipifat{width:18px;height:18px;position:relative;cursor:pointer;color:rgb(101, 101, 101);}</style><style data-emotion="x" data-s="">.x-1ipifat>svg{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><style data-emotion="x" data-s="">.x-1ipifat:hover,.x-1ipifat:focus,.x-1ipifat:active{color:rgb(101, 101, 101);}</style><style data-emotion="x" data-s="">.x-f0r4qe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-bottom:20px;}</style><style data-emotion="x" data-s="">.x-1sk31pk{height:120px;width:64px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><style data-emotion="x" data-s="">.x-11el403{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><style data-emotion="x" data-s="">.x-9d1xtn{-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;width:68px;}</style><style data-emotion="x" data-s="">@-webkit-keyframes spin{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}</style><style data-emotion="x" data-s="">@keyframes spin{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}</style><style data-emotion="x" data-s="">.x-1i5hcoh{font-size:24px;font-weight:700;color:#191919;}</style><style data-emotion="x" data-s="">.x-23o788{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><style data-emotion="x" data-s="">.x-1fk5cv3{width:90%;}</style><style data-emotion="x" data-s="">.x-1dgiaom{height:32px;min-width:195px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border:1px solid #F5F5F5;border-radius:40px;outline:none;margin-bottom:12px;padding:0 8px;background:#FFFFFF;}</style><style data-emotion="x" data-s="">.x-1xjble4{height:16.13px;margin-right:6px;color:#D4D4D4;}</style><style data-emotion="x" data-s="">.x-dcpxyk{-webkit-flex:1;-ms-flex:1;flex:1;color:#2A2A2A;font-size:16px;font-weight:400;width:100%;border:none;outline:none;padding-right:15px;background:#FFFFFF;}</style><style data-emotion="x" data-s="">.x-dcpxyk::-webkit-input-placeholder{color:#D4D4D4;font-size:'16px';}</style><style data-emotion="x" data-s="">.x-dcpxyk::-moz-placeholder{color:#D4D4D4;font-size:'16px';}</style><style data-emotion="x" data-s="">.x-dcpxyk:-ms-input-placeholder{color:#D4D4D4;font-size:'16px';}</style><style data-emotion="x" data-s="">.x-dcpxyk::placeholder{color:#D4D4D4;font-size:'16px';}</style><div class="x-0"><div tabindex="-1" aria-label="Acorns Earn extension" class="x-1wuwx3n"><div class="x-6ui8nh"><img src="chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/img/partner/brand-logo.png" alt="Acorns Earn" data-testid="header-logo" class="x-1d1xfdq"><div class="x-12yghq1"><nav aria-label="Extension menu"><button aria-label="Toggle Open Menu" aria-haspopup="true" aria-expanded="false" data-testid="header-menu-icon-button" class="x-19te22e"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" fill="none" aria-hidden="true" data-testid="header-menu-icon"><g fill="currentColor"><rect width="4" height="4" x="14" y="6" rx="2"></rect><rect width="4" height="4" x="6" y="6" rx="2"></rect><rect width="4" height="4" x="22" y="6" rx="2"></rect></g></svg></button></nav><button aria-label="Close extension" title="Close extension" data-testid="header-close-icon" class="x-1ipifat"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" x="1.414" y="13.727" rx="1" transform="rotate(-45 1.414 13.727)"></rect><rect width="18" height="2" x="2.414" y="1" rx="1" transform="rotate(45 2.414 1)"></rect></g></svg></button></div></div><div data-testid="NotEligible" class="x-23o788"><div class="x-1fk5cv3"><div class="x-1dgiaom"><button aria-label="Focus search" name="Focus search" class="x-1xjble4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="none" aria-hidden="true"><path fill="currentColor" d="M0 7.459c0 3.597 2.832 6.524 6.313 6.524a6.12 6.12 0 0 0 3.671-1.226l3.892 4.03c.182.188.42.278.673.278.538 0 .91-.417.91-.964a.96.96 0 0 0-.261-.67l-3.87-4.023a6.6 6.6 0 0 0 1.298-3.95c0-3.596-2.832-6.523-6.313-6.523S0 3.862 0 7.459m1.353 0c0-2.829 2.223-5.126 4.96-5.126s4.96 2.297 4.96 5.126-2.223 5.126-4.96 5.126-4.96-2.297-4.96-5.126"></path></svg></button><input aria-label="Search" aria-controls="merchant-search-results" role="searchbox" aria-describedby="search-result-announcement" placeholder="Search" data-testid="search-bar-input" type="text" class="x-dcpxyk" value=""></div></div></div></div></div></template><style>
-  @font-face {
-    font-family: 'Avenir';
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/AvenirNext-Regular.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Avenir';
-    font-weight: 600;
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/AvenirNext-Demi.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Avenir';
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/AvenirNext-Regular.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Avenir';
-    font-weight: 600;
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/AvenirNext-Demi.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Everyday Sans';
-    font-weight: normal;
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/everydaySans/EverydaySans-Regular-Web.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Everyday Sans';
-    font-weight: bold;
-    src: url(chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/source/fonts/everydaySans/EverydaySans-Bold-Web.woff) format('woff');
-  }
-</style></x-extension-template><body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-brand">Rafael Ortiz III</div>
-            <ul class="nav-menu">
-                <li><button onclick="showPage(&#39;home&#39;)" id="nav-home" class="active">Home</button></li>
-                <li><button onclick="showPage(&#39;research&#39;)" id="nav-research" class="">Research</button></li>
-                <li><button onclick="showPage(&#39;publications&#39;)" id="nav-publications" class="">Publications</button></li>
-            </ul>
-        </div>
-    </nav>
+<body>
 
-    <div class="container">
-        <!-- Home Page -->
-        <div id="page-home" class="page active">
-            <div class="hero">
-                <div class="profile-section">
-                    <img src="me.jpg" alt="Rafael Ortiz III" class="profile-photo">
-                    <div class="profile-info">
-                        <h1>Rafael Ortiz III</h1>
-                        <p class="subtitle">Ph.D. Candidate in Astrophysics</p>
-                        <p class="description">
-                            Studying Active Galactic Nuclei and extragalactic science using multiwavelength observations with JWST, XMM-Newton, and Chandra. 
-                            Focused on AGN-galaxy coevolution, X-ray selected AGN, and SED modeling at Arizona State University.
-                        </p>
+<nav>
+    <div class="nav-inner">
+        <div class="nav-brand">Rafael Ortiz III</div>
+        <ul class="nav-links">
+            <li><button id="nav-home"         onclick="show('home')">Home</button></li>
+            <li><button id="nav-research"     onclick="show('research')">Research</button></li>
+            <li><button id="nav-publications" onclick="show('publications')">Publications</button></li>
+            <li><button id="nav-cv"           onclick="show('cv')">CV</button></li>
+            <li><button id="nav-contact"      onclick="show('contact')">Contact</button></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <!-- ── HOME ─────────────────────────────────────────────────────────── -->
+    <div id="page-home" class="page active">
+        <div class="hero">
+            <div class="profile-row">
+                <div class="avatar" id="avatar-box">🔭</div>
+                <div class="profile-info">
+                    <h1>Rafael Ortiz III</h1>
+                    <div class="subtitle">PhD Researcher · Arizona State University</div>
+                    <div class="desc">
+                        I study the co-evolution of supermassive black holes and galaxies using deep
+                        X-ray surveys, JWST imaging, and multiwavelength SED fitting. My work focuses
+                        on characterizing X-ray selected AGN, their host-galaxy properties, and AGN
+                        candidates during the epoch of reionization.
                     </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank">LinkedIn</a>
-                    <a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID</a>
-                    <a href="https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&amp;filter_author_facet_hier_fq_author=author_facet_hier%3A%221%2FOrtiz%2C%20R%2FOrtiz%2C%20Rafael%22&amp;filter_database_fq_database=AND&amp;filter_database_fq_database=database%3A%22astronomy%22&amp;fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&amp;fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&amp;fq_author=(author_facet_hier%3A%221%2FOrtiz%2C%20R%2FOrtiz%2C%20Rafael%22)&amp;fq_database=(database%3A%22astronomy%22)&amp;p_=0&amp;q=%20author%3A%22Ortiz%2C%20Rafael%22&amp;sort=date%20desc%2C%20bibcode%20desc" target="_blank">NASA ADS</a>
-                    <a href="mailto:rortizii@asu.edu">Email</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Research Page -->
-        <div id="page-research" class="page">
-            <h2>Research Focus</h2>
-            <p class="section-subtitle">
-                My work spans multiwavelength AGN science, utilizing cutting-edge space telescopes to understand black hole growth and galaxy evolution.
-            </p>
-            
-            <div class="research-grid">
-                <div class="research-card">
-                    <h3>Project PEARLS - AGN Science</h3>
-                    <p>
-                        Leading multiwavelength AGN research using JWST/NIRCam in the North Ecliptic Pole Time Domain Field. 
-                        Discovery and characterization of point-source features in galaxy cores at z &lt; 3, X-ray selected AGN analysis with XMM-Newton, 
-                        and SED fitting with X-CIGALE to constrain photometric redshifts, stellar masses, and AGN properties. 
-                        Investigating AGN-galaxy coevolution, obscured accretion, and the role of feedback in galaxy evolution.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">JWST NIRCam</span>
-                        <span class="tag">X-ray AGN</span>
-                        <span class="tag">SED Fitting</span>
-                        <span class="tag">XMM-Newton</span>
-                        <span class="tag">Coevolution</span>
-                        <span class="tag">Obscuration</span>
-                    </div>
-                </div>
-
-                <div class="research-card">
-                    <h3>Project SKYSURF-IR - Background Analysis</h3>
-                    <p>
-                        Leading data pipeline development and sky surface brightness measurements across 60,000+ JWST near-infrared images. 
-                        Measuring panchromatic sky-SB and modeling astrophysical foregrounds/backgrounds to constrain diffuse light sources. 
-                        Coordinating with NASA's JWST Backgrounds Team to characterize near-IR backgrounds and optimize data reduction techniques 
-                        for large-scale JWST archival analysis.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Near-IR</span>
-                        <span class="tag">Data Pipeline</span>
-                        <span class="tag">Sky-SB</span>
-                        <span class="tag">Background Modeling</span>
-                        <span class="tag">JWST Archive</span>
+                    <div class="chips">
+                        <a class="chip" href="https://orcid.org/0000-0002-6150-833X" target="_blank">🆔 ORCID</a>
+                        <a class="chip" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">🔭 NASA ADS</a>
+                        <a class="chip" href="https://arxiv.org/search/?searchtype=author&query=Ortiz+III%2C+R" target="_blank">📄 arXiv</a>
+                        <a class="chip" href="mailto:rortiz49@asu.edu">✉️ Email</a>
+                        <a class="chip" href="https://sese.asu.edu" target="_blank">🏫 ASU SESE</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Publications Page -->
-        <div id="page-publications" class="page">
-            <h2>Publications</h2>
-            <p class="section-subtitle">
-                Updated from NASA ADS • ORCID: 0000-0002-6150-833X
-            </p>
-
-            <div class="metrics-container">
-                <div class="metric-card">
-                    <div class="metric-value" id="h-index">4</div>
-                    <div class="metric-label">h-index</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" id="citations">35</div>
-                    <div class="metric-label">Total Citations</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" id="papers">12</div>
-                    <div class="metric-label">Total Papers</div>
-                </div>
-            </div>
-
-            <div class="pub-filters">
-                <button class="filter-btn active" onclick="filterPubs(&#39;all&#39;)">All Publications</button>
-                <button class="filter-btn" onclick="filterPubs(&#39;first&#39;)">First Author</button>
-                <button class="filter-btn" onclick="filterPubs(&#39;refereed&#39;)">Refereed</button>
-                <button class="filter-btn" onclick="filterPubs(&#39;preprint&#39;)">Preprints</button>
-            </div>
-
-            <div class="pub-list" id="pub-list">
-                    <div class="pub-item">
-                        <div class="pub-title">PEARLS: Discovery of Point-Source Features Within Galaxies in the North Ecliptic Pole Time Domain Field</div>
-                        <div class="pub-authors"><span class="highlight-author">Rafael Ortiz III</span>, Rogier A. Windhorst, Seth H. Cohen, S. P. Willner, Rolf A. Jansen, Timothy Carleton, Patrick S. Kamieneski, Michael J. Rutkowski, Brent Smith, Jake Summers, et al.</div>
-                        <div class="pub-meta">
-                            <span><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad7b32" target="_blank" style="color: var(--text-muted); text-decoration: none;">ApJ 974, 258</a> (2024)</span>
-                            <span class="pub-badge">First Author</span>
-                            <span class="pub-badge">Refereed</span>
-                            <span class="pub-citations">📊 3 citations</span>
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2404.10709" target="_blank" class="pub-link">arXiv</a>
-                            <a href="https://doi.org/10.3847/1538-4357/ad7b32" target="_blank" class="pub-link">DOI</a>
-                            <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...974..258O" target="_blank" class="pub-link">ADS</a>
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">Galaxy Mergers in the Epoch of Reionization I: A JWST Study of Pair Fractions at z=4.5-11.5</div>
-                        <div class="pub-authors">Qiao Duan, Christopher J. Conselice, Qiong Li, Duncan Austin, Thomas Harvey, Nathan J. Adams, Kenneth J. Duncan, James Trussler, Leonardo Ferreira, Lewi Westcott, Honor Harris, Rogier A. Windhorst, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span><a href="https://academic.oup.com/mnras/article/540/1/774/8063224" target="_blank" style="color: var(--text-muted); text-decoration: none;">MNRAS 540, 774</a> (2025)</span>
-                            
-                            <span class="pub-badge">Refereed</span>
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2407.09472" target="_blank" class="pub-link">arXiv</a>
-                            <a href="https://doi.org/10.1093/mnras/stae2642" target="_blank" class="pub-link">DOI</a>
-                            <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.540..774D" target="_blank" class="pub-link">ADS</a>
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">EPOCHS IX: Evidence for evolved stellar populations in 7<z<12 galaxies<="" div="">
-                        <div class="pub-authors">James A. A. Trussler, Christopher J. Conselice, Nathan Adams, Duncan Austin, Leonardo Ferreira, Tom Harvey, Rogier A. Windhorst, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span><a href="https://academic.oup.com/mnras/article/527/4/11627/7455536" target="_blank" style="color: var(--text-muted); text-decoration: none;">MNRAS 527, 11627</a> (2024)</span>
-                            
-                            <span class="pub-badge">Refereed</span>
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2308.09665" target="_blank" class="pub-link">arXiv</a>
-                            <a href="https://doi.org/10.1093/mnras/stad3877" target="_blank" class="pub-link">DOI</a>
-                            <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.527.11627T" target="_blank" class="pub-link">ADS</a>
-                        </div>
-                    </z<12></div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">JWST's PEARLS: 119 multiply imaged galaxies behind MACS0416</div>
-                        <div class="pub-authors">Jose M. Diego, Nathan J. Adams, Steven Willner, Tom Harvey, Tom Broadhurst, Seth H. Cohen, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span><a href="https://www.aanda.org/articles/aa/full_html/2024/10/aa50474-24/aa50474-24.html" target="_blank" style="color: var(--text-muted); text-decoration: none;">A&amp;A 690, A114</a> (2024)</span>
-                            
-                            <span class="pub-badge">Refereed</span>
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2312.11603" target="_blank" class="pub-link">arXiv</a>
-                            <a href="https://doi.org/10.1051/0004-6361/202450474" target="_blank" class="pub-link">DOI</a>
-                            <a href="https://ui.adsabs.harvard.edu/abs/2024A&amp;A...690A.114D" target="_blank" class="pub-link">ADS</a>
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">Magellanic System Stars Identified in SMACS J0723.3-7327 JWST Images</div>
-                        <div class="pub-authors">Jake Summers, Rogier A. Windhorst, Seth H. Cohen, Rolf A. Jansen, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span><a href="https://iopscience.iop.org/article/10.3847/1538-4357/acf4f4" target="_blank" style="color: var(--text-muted); text-decoration: none;">ApJ 958, 108</a> (2023)</span>
-                            
-                            <span class="pub-badge">Refereed</span>
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2306.13037" target="_blank" class="pub-link">arXiv</a>
-                            <a href="https://doi.org/10.3847/1538-4357/acf4f4" target="_blank" class="pub-link">DOI</a>
-                            <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...958..108S" target="_blank" class="pub-link">ADS</a>
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">Dissecting Reionisation with the Cosmic Star Formation and AGN Luminosity History</div>
-                        <div class="pub-authors">Jordan C. J. D'Silva, Simon P. Driver, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span>Submitted (2025)</span>
-                            
-                            
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2507.16112" target="_blank" class="pub-link">arXiv</a>
-                            
-                            
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">Self-Consistent JWST Census of Star Formation and AGN activity at z=5.5-13.5</div>
-                        <div class="pub-authors">Jordan C. J. D'Silva, Simon P. Driver, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span>Submitted (2025)</span>
-                            
-                            
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2503.03431" target="_blank" class="pub-link">arXiv</a>
-                            
-                            
-                        </div>
-                    </div>
-                
-                    <div class="pub-item">
-                        <div class="pub-title">EPOCHS XI: The Structure and Morphology of Galaxies to z~12.5</div>
-                        <div class="pub-authors">Lewi Westcott, Christopher J. Conselice, <span class="highlight-author">Rafael Ortiz III</span>, et al.</div>
-                        <div class="pub-meta">
-                            <span>Submitted (2024)</span>
-                            
-                            
-                            
-                        </div>
-                        <div class="pub-links">
-                            <a href="https://arxiv.org/abs/2412.14970" target="_blank" class="pub-link">arXiv</a>
-                            
-                            
-                        </div>
-                    </div>
-                </div></div>
+        <div class="sec-head"><h2>Research Focus</h2><p>Multiwavelength AGN science from cosmic dawn to present day</p></div>
+        <div class="grid">
+            <div class="card"><h3>⚡ X-ray Selected AGN</h3><p>Deep Chandra/XMM-Newton surveys to characterize AGN populations, obscuration (N<sub>H</sub> distributions), and ultrafast outflows across multiple deep fields.</p><div class="tags"><span class="tag">Chandra</span><span class="tag">XMM-Newton</span><span class="tag">NH Distributions</span><span class="tag">UFOs</span></div></div>
+            <div class="card"><h3>🌌 Multiwavelength SED Fitting</h3><p>Decomposing AGN and stellar contributions across UV–IR using CIGALE to constrain SFRs, stellar masses, and AGN luminosities for large host-galaxy samples.</p><div class="tags"><span class="tag">CIGALE</span><span class="tag">SED Fitting</span><span class="tag">Host Galaxies</span><span class="tag">Photometry</span></div></div>
+            <div class="card"><h3>🔬 JWST PEARLS Survey</h3><p>Deep NIRCam multi-band imaging across the NEP-TDF, MACS-0416, and El Gordo to study faint galaxies, AGN candidates, and radio-counterpart identification at z&nbsp;>&nbsp;4.</p><div class="tags"><span class="tag">JWST PEARLS</span><span class="tag">NIRCam</span><span class="tag">NEP-TDF</span><span class="tag">Radio Counterparts</span></div></div>
+            <div class="card"><h3>🌠 AGN at Cosmic Dawn</h3><p>Identifying and characterizing AGN candidates at 6.5&nbsp;<&nbsp;z&nbsp;<&nbsp;12 using JWST photometry, quantifying their contribution to the UV luminosity function during reionization.</p><div class="tags"><span class="tag">Reionization</span><span class="tag">High-z AGN</span><span class="tag">UV LF</span><span class="tag">z&gt;6</span></div></div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 Rafael Ortiz III</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Ph.D. Candidate | School of Earth and Space Exploration | Arizona State University</p>
-    </footer>
+    <!-- ── RESEARCH ──────────────────────────────────────────────────────── -->
+    <div id="page-research" class="page">
+        <div class="sec-head"><h2>Research</h2><p>Active projects and ongoing investigations</p></div>
+        <div class="grid">
+            <div class="card"><h3>⚡ X-ray AGN Catalog Analysis</h3><p>Building multiwavelength catalogs of X-ray selected AGN using Chandra and XMM-Newton archival data. Characterizing Compton-thin vs. Compton-thick populations and deriving N<sub>H</sub> column density distributions.</p><div class="tags"><span class="tag">Chandra</span><span class="tag">XMM-Newton</span><span class="tag">NH</span><span class="tag">Compton-thick</span></div></div>
+            <div class="card"><h3>🌌 SED Modeling of AGN Hosts</h3><p>Applying CIGALE to UV–IR photometry of X-ray AGN samples to disentangle stellar and AGN emission, deriving stellar masses and star formation rates for statistical population studies.</p><div class="tags"><span class="tag">CIGALE</span><span class="tag">Stellar Mass</span><span class="tag">SFR</span><span class="tag">AGN Fraction</span></div></div>
+            <div class="card"><h3>🔭 JWST PEARLS GTO Program</h3><p>Contributing to data reduction, catalog construction, and science analysis across PEARLS fields. Identifying AGN counterparts to microjansky radio sources in the NEP Time-Domain Field.</p><div class="tags"><span class="tag">JWST</span><span class="tag">PEARLS</span><span class="tag">NEP-TDF</span><span class="tag">Radio Sources</span></div></div>
+            <div class="card"><h3>🌠 Reionization-Era AGN</h3><p>Systematic search for AGN at z&nbsp;=&nbsp;6.5–12 via photometric SED fitting in PEARLS and CEERS fields. Constraining AGN number densities and their role in cosmic reionization.</p><div class="tags"><span class="tag">z&gt;6</span><span class="tag">Reionization</span><span class="tag">CEERS</span><span class="tag">PEARLS</span></div></div>
+            <div class="card"><h3>🔗 Galaxy Mergers & AGN Triggering</h3><p>Investigating merger-triggered AGN activity and star formation at z&nbsp;=&nbsp;4.5–8.5 using JWST close-pair statistics across CEERS, JADES, PEARLS, and five other survey fields.</p><div class="tags"><span class="tag">Galaxy Mergers</span><span class="tag">AGN Triggering</span><span class="tag">Close Pairs</span><span class="tag">JADES</span></div></div>
+            <div class="card"><h3>📡 Catalog Cross-Matching</h3><p>Cross-matching X-ray, optical, near-IR, and radio catalogs using likelihood-ratio and Bayesian positional methods. Building robust multiwavelength source tables for downstream statistical analysis.</p><div class="tags"><span class="tag">Catalog Matching</span><span class="tag">Bayesian</span><span class="tag">Astropy</span><span class="tag">Python</span></div></div>
+        </div>
+    </div>
 
-    <script>
-        // Navigation
-        function showPage(pageName) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.querySelectorAll('.nav-menu button').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById('page-' + pageName).classList.add('active');
-            document.getElementById('nav-' + pageName).classList.add('active');
-        }
+    <!-- ── PUBLICATIONS ──────────────────────────────────────────────────── -->
+    <div id="page-publications" class="page">
+        <div class="sec-head">
+            <h2>Publications</h2>
+            <p>Dynamically loaded from <code>publications.json</code> — generated nightly by <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" style="color:var(--blue)">NASA ADS</a> via GitHub Actions &nbsp;·&nbsp; ORCID: <a href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:var(--blue)">0000-0002-6150-833X</a></p>
+        </div>
 
-        // Publications data
-        const pubs = [
-            {
-                title: "PEARLS: Discovery of Point-Source Features Within Galaxies in the North Ecliptic Pole Time Domain Field",
-                authors: ["Rafael Ortiz III", "Rogier A. Windhorst", "Seth H. Cohen", "S. P. Willner", "Rolf A. Jansen", "Timothy Carleton", "Patrick S. Kamieneski", "Michael J. Rutkowski", "Brent Smith", "Jake Summers", "et al."],
-                journal: "ApJ 974, 258",
-                journalUrl: "https://iopscience.iop.org/article/10.3847/1538-4357/ad7b32",
-                year: 2024,
-                arxiv: "2404.10709",
-                doi: "10.3847/1538-4357/ad7b32",
-                bibcode: "2024ApJ...974..258O",
-                type: "refereed",
-                firstAuthor: true,
-                citations: 3
-            },
-            {
-                title: "Galaxy Mergers in the Epoch of Reionization I: A JWST Study of Pair Fractions at z=4.5-11.5",
-                authors: ["Qiao Duan", "Christopher J. Conselice", "Qiong Li", "Duncan Austin", "Thomas Harvey", "Nathan J. Adams", "Kenneth J. Duncan", "James Trussler", "Leonardo Ferreira", "Lewi Westcott", "Honor Harris", "Rogier A. Windhorst", "Rafael Ortiz III", "et al."],
-                journal: "MNRAS 540, 774",
-                journalUrl: "https://academic.oup.com/mnras/article/540/1/774/8063224",
-                year: 2025,
-                arxiv: "2407.09472",
-                doi: "10.1093/mnras/stae2642",
-                bibcode: "2025MNRAS.540..774D",
-                type: "refereed",
-                firstAuthor: false,
-                citations: 5
-            },
-            {
-                title: "EPOCHS IX: Evidence for evolved stellar populations in 7<z<12 galaxies",
-                authors: ["James A. A. Trussler", "Christopher J. Conselice", "Nathan Adams", "Duncan Austin", "Leonardo Ferreira", "Tom Harvey", "Rogier A. Windhorst", "Rafael Ortiz III", "et al."],
-                journal: "MNRAS 527, 11627",
-                journalUrl: "https://academic.oup.com/mnras/article/527/4/11627/7455536",
-                year: 2024,
-                arxiv: "2308.09665",
-                doi: "10.1093/mnras/stad3877",
-                bibcode: "2024MNRAS.527.11627T",
-                type: "refereed",
-                firstAuthor: false,
-                citations: 12
-            },
-            {
-                title: "JWST's PEARLS: 119 multiply imaged galaxies behind MACS0416",
-                authors: ["Jose M. Diego", "Nathan J. Adams", "Steven Willner", "Tom Harvey", "Tom Broadhurst", "Seth H. Cohen", "Rafael Ortiz III", "et al."],
-                journal: "A&A 690, A114",
-                journalUrl: "https://www.aanda.org/articles/aa/full_html/2024/10/aa50474-24/aa50474-24.html",
-                year: 2024,
-                arxiv: "2312.11603",
-                doi: "10.1051/0004-6361/202450474",
-                bibcode: "2024A&A...690A.114D",
-                type: "refereed",
-                firstAuthor: false,
-                citations: 8
-            },
-            {
-                title: "Magellanic System Stars Identified in SMACS J0723.3-7327 JWST Images",
-                authors: ["Jake Summers", "Rogier A. Windhorst", "Seth H. Cohen", "Rolf A. Jansen", "Rafael Ortiz III", "et al."],
-                journal: "ApJ 958, 108",
-                journalUrl: "https://iopscience.iop.org/article/10.3847/1538-4357/acf4f4",
-                year: 2023,
-                arxiv: "2306.13037",
-                doi: "10.3847/1538-4357/acf4f4",
-                bibcode: "2023ApJ...958..108S",
-                type: "refereed",
-                firstAuthor: false,
-                citations: 6
-            },
-            {
-                title: "Dissecting Reionisation with the Cosmic Star Formation and AGN Luminosity History",
-                authors: ["Jordan C. J. D'Silva", "Simon P. Driver", "Rafael Ortiz III", "et al."],
-                journal: "Submitted",
-                year: 2025,
-                arxiv: "2507.16112",
-                type: "preprint",
-                firstAuthor: false,
-                citations: 0
-            },
-            {
-                title: "Self-Consistent JWST Census of Star Formation and AGN activity at z=5.5-13.5",
-                authors: ["Jordan C. J. D'Silva", "Simon P. Driver", "Rafael Ortiz III", "et al."],
-                journal: "Submitted",
-                year: 2025,
-                arxiv: "2503.03431",
-                type: "preprint",
-                firstAuthor: false,
-                citations: 0
-            },
-            {
-                title: "EPOCHS XI: The Structure and Morphology of Galaxies to z~12.5",
-                authors: ["Lewi Westcott", "Christopher J. Conselice", "Rafael Ortiz III", "et al."],
-                journal: "Submitted",
-                year: 2024,
-                arxiv: "2412.14970",
-                type: "preprint",
-                firstAuthor: false,
-                citations: 1
-            }
-        ];
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-card"><div class="stat-val" id="s-total">—</div><div class="stat-lbl">Total Papers</div></div>
+            <div class="stat-card"><div class="stat-val" id="s-ref">—</div><div class="stat-lbl">Refereed</div></div>
+            <div class="stat-card"><div class="stat-val" id="s-fa">—</div><div class="stat-lbl">First Author</div></div>
+            <div class="stat-card"><div class="stat-val" id="s-cites">—</div><div class="stat-lbl">Total Citations</div></div>
+            <div class="stat-card"><div class="stat-val" id="s-facites">—</div><div class="stat-lbl">1st-Author Citations</div></div>
+            <div class="stat-card"><div class="stat-val" id="s-h">—</div><div class="stat-lbl">h-index</div></div>
+        </div>
+        <div class="updated-note" id="updated-note"></div>
 
-        let currentFilter = 'all';
+        <div class="pub-bar" style="margin-top:1.5rem;">
+            <div class="filter-group">
+                <button class="filter-btn on"  onclick="filter('all',this)">All</button>
+                <button class="filter-btn"     onclick="filter('fa',this)">First Author</button>
+                <button class="filter-btn"     onclick="filter('ref',this)">Refereed</button>
+            </div>
+            <div class="pub-status" id="pub-status">
+                <span class="spin"></span><span>Loading publications…</span>
+            </div>
+        </div>
 
-        function renderPubs() {
-            let filtered = pubs;
-            if (currentFilter === 'first') filtered = pubs.filter(p => p.firstAuthor);
-            if (currentFilter === 'refereed') filtered = pubs.filter(p => p.type === 'refereed');
-            if (currentFilter === 'preprint') filtered = pubs.filter(p => p.type === 'preprint');
+        <div class="pub-list" id="pub-list"></div>
+    </div>
 
-            const html = filtered.map(pub => {
-                const authors = pub.authors.map(a => 
-                    a.includes('Rafael Ortiz III') ? `<span class="highlight-author">${a}</span>` : a
-                ).join(', ');
+    <!-- ── CV ────────────────────────────────────────────────────────────── -->
+    <div id="page-cv" class="page">
+        <div class="sec-head"><h2>Curriculum Vitae</h2><p>Academic background, experience &amp; skills</p></div>
 
-                const journalLink = pub.journalUrl ? 
-                    `<a href="${pub.journalUrl}" target="_blank" style="color: var(--text-muted); text-decoration: none;">${pub.journal}</a>` : 
-                    pub.journal;
+        <div class="cv-section">
+            <h3>Education</h3>
+            <div class="cv-row">
+                <div class="cv-yr">2021 – Present</div>
+                <div class="cv-body">
+                    <h4>Ph.D., Astrophysics</h4>
+                    <p>Arizona State University, School of Earth and Space Exploration · Tempe, AZ</p>
+                    <p>Research: X-ray AGN, multiwavelength SED fitting, JWST galaxy surveys</p>
+                </div>
+            </div>
+        </div>
 
-                const citationBadge = pub.firstAuthor && pub.citations > 0 ? 
-                    `<span class="pub-citations">📊 ${pub.citations} citations</span>` : '';
+        <div class="cv-section">
+            <h3>Research Experience</h3>
+            <div class="cv-row">
+                <div class="cv-yr">2021 – Present</div>
+                <div class="cv-body">
+                    <h4>Graduate Research Assistant — ASU SESE</h4>
+                    <p>X-ray AGN catalog analysis · SED fitting with CIGALE · JWST PEARLS GTO survey data reduction &amp; science</p>
+                </div>
+            </div>
+        </div>
 
-                return `
-                    <div class="pub-item">
-                        <div class="pub-title">${pub.title}</div>
-                        <div class="pub-authors">${authors}</div>
-                        <div class="pub-meta">
-                            <span>${journalLink} (${pub.year})</span>
-                            ${pub.firstAuthor ? '<span class="pub-badge">First Author</span>' : ''}
-                            ${pub.type === 'refereed' ? '<span class="pub-badge">Refereed</span>' : ''}
-                            ${citationBadge}
-                        </div>
-                        <div class="pub-links">
-                            ${pub.arxiv ? `<a href="https://arxiv.org/abs/${pub.arxiv}" target="_blank" class="pub-link">arXiv</a>` : ''}
-                            ${pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" class="pub-link">DOI</a>` : ''}
-                            ${pub.bibcode ? `<a href="https://ui.adsabs.harvard.edu/abs/${pub.bibcode}" target="_blank" class="pub-link">ADS</a>` : ''}
-                        </div>
-                    </div>
-                `;
-            }).join('');
+        <div class="cv-section">
+            <h3>Surveys &amp; Collaborations</h3>
+            <div class="cv-row"><div class="cv-yr">GTO</div><div class="cv-body"><h4>JWST PEARLS</h4><p>Prime Extragalactic Areas for Reionization and Lensing Science (PI: R. Windhorst, ASU)</p></div></div>
+            <div class="cv-row"><div class="cv-yr">Collab</div><div class="cv-body"><h4>EPOCHS</h4><p>Extragalactic survey studying morphologies, UV slopes, and stellar populations at z &gt; 6</p></div></div>
+        </div>
 
-            document.getElementById('pub-list').innerHTML = html;
-        }
+        <div class="cv-section">
+            <h3>Technical Skills</h3>
+            <div class="skill-grid">
+                <div class="skill-box"><h4>Programming</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">LaTeX</span><span class="skill-tag">SQL</span></div></div>
+                <div class="skill-box"><h4>Python Libraries</h4><div class="skill-tags"><span class="skill-tag">Astropy</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">SciPy</span><span class="skill-tag">Multiprocessing</span></div></div>
+                <div class="skill-box"><h4>Astronomy Tools</h4><div class="skill-tags"><span class="skill-tag">CIGALE</span><span class="skill-tag">DS9</span><span class="skill-tag">CIAO</span><span class="skill-tag">SExtractor</span><span class="skill-tag">JWST Pipeline</span></div></div>
+                <div class="skill-box"><h4>Platforms</h4><div class="skill-tags"><span class="skill-tag">HPC/Slurm</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Overleaf</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">NASA ADS API</span></div></div>
+            </div>
+        </div>
 
-        function filterPubs(type) {
-            currentFilter = type;
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderPubs();
-        }
+        <div style="margin-top:2rem">
+            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" class="chip" style="display:inline-flex;">📄 Full Publication List on NASA ADS</a>
+        </div>
+    </div>
 
-        renderPubs();
-    </script>
+    <!-- ── CONTACT ───────────────────────────────────────────────────────── -->
+    <div id="page-contact" class="page">
+        <div class="sec-head"><h2>Contact</h2><p>Collaborations, questions, and outreach welcome</p></div>
+        <div class="contact-grid">
+            <div class="contact-card"><h3>📍 Address</h3><p>School of Earth and Space Exploration</p><p>Arizona State University</p><p>Tempe, AZ 85287</p></div>
+            <div class="contact-card"><h3>✉️ Email</h3><p><a href="mailto:rortiz49@asu.edu">rortiz49@asu.edu</a></p><p style="margin-top:.75rem;color:var(--muted);font-size:.85rem">Open to collaborations in X-ray AGN science, JWST data analysis, and multiwavelength survey projects.</p></div>
+            <div class="contact-card"><h3>🔗 Profiles</h3><p><a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID 0000-0002-6150-833X</a></p><p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">NASA ADS</a></p><p><a href="https://arxiv.org/search/?searchtype=author&query=Ortiz+III%2C+R" target="_blank">arXiv</a></p></div>
+        </div>
+    </div>
 
+</div><!-- .wrap -->
 
-</body></html>
+<script>
+// ── NAVIGATION ────────────────────────────────────────────────────────────
+function show(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.getElementById('nav-' + name).classList.add('active');
+    if (name === 'publications' && !window._pubLoaded) loadPubs();
+}
+show('home');
+
+// ── PUBLICATIONS ──────────────────────────────────────────────────────────
+let allPapers = [];
+let currentFilter = 'all';
+window._pubLoaded = false;
+
+function loadPubs() {
+    window._pubLoaded = true;
+    fetch('publications.json?_=' + Date.now())
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(data => {
+            allPapers = data.papers || [];
+            renderStats(data.stats, data.meta);
+            renderList();
+            setStatus('');
+        })
+        .catch(err => {
+            setStatus('⚠️ Could not load publications.json — run the fetch script first.', true);
+            document.getElementById('pub-list').innerHTML =
+                '<div class="empty-state">No publications.json found.<br>Run <code>python scripts/fetch_publications.py</code> and push.</div>';
+        });
+}
+
+function renderStats(s, meta) {
+    if (!s) return;
+    document.getElementById('s-total').textContent   = s.total_papers ?? '—';
+    document.getElementById('s-ref').textContent     = s.refereed_papers ?? '—';
+    document.getElementById('s-fa').textContent      = s.first_author_papers ?? '—';
+    document.getElementById('s-cites').textContent   = s.total_citations ?? '—';
+    document.getElementById('s-facites').textContent = s.first_author_citations ?? '—';
+    document.getElementById('s-h').textContent       = s.h_index ?? '—';
+    if (meta && meta.updated) {
+        const d = new Date(meta.updated);
+        document.getElementById('updated-note').textContent =
+            'Last updated: ' + d.toUTCString() + ' · Source: ' + (meta.source || 'NASA ADS');
+    }
+}
+
+function filter(f, btn) {
+    currentFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    renderList();
+}
+
+function renderList() {
+    let papers = allPapers;
+    if (currentFilter === 'fa')  papers = papers.filter(p => p.first_author);
+    if (currentFilter === 'ref') papers = papers.filter(p => p.refereed);
+
+    const el = document.getElementById('pub-list');
+    if (!papers.length) {
+        el.innerHTML = '<div class="empty-state">No papers match this filter.</div>';
+        return;
+    }
+    el.innerHTML = papers.map((p, i) => pubCard(p, i)).join('');
+}
+
+function pubCard(p, idx) {
+    const authors = fmtAuthors(p.authors);
+    const arxivBtn = p.arxiv
+        ? `<a class="plink arxiv" href="https://arxiv.org/abs/${p.arxiv}" target="_blank">arXiv</a>` : '';
+    const doiBtn = p.doi
+        ? `<a class="plink doi"   href="https://doi.org/${p.doi}"         target="_blank">DOI</a>` : '';
+    const adsBtn = p.bibcode
+        ? `<a class="plink ads"   href="https://ui.adsabs.harvard.edu/abs/${encodeURIComponent(p.bibcode)}" target="_blank">ADS</a>` : '';
+    const faBadge  = p.first_author ? '<span class="badge b-fa">First Author</span>' : '';
+    const refBadge = p.refereed     ? '<span class="badge b-ref">Refereed</span>'    : '';
+    const cBadge   = p.citations    ? `<span class="badge b-cite">📊 ${p.citations} citation${p.citations!==1?'s':''}</span>` : '';
+    const absBtnId = 'abt-' + idx;
+    const absId    = 'abs-' + idx;
+    const absBlock = p.abstract
+        ? `<span class="abstract-toggle" onclick="toggleAbs(${idx})" id="${absBtnId}">▸ Show abstract</span>
+           <div class="pub-abstract" id="${absId}">${p.abstract}${p.abstract.length >= 400 ? '…' : ''}</div>`
+        : '';
+
+    return `<div class="pub-item${p.first_author?' fa':''}" id="pi-${idx}">
+        <div class="pub-title">${p.title}</div>
+        <div class="pub-authors">${authors}</div>
+        <div class="pub-meta">
+            <span class="pub-journal">${p.journal}</span>
+            <span class="pub-year">(${p.year})</span>
+            ${faBadge}${refBadge}${cBadge}
+        </div>
+        <div class="pub-links">${arxivBtn}${doiBtn}${adsBtn}</div>
+        ${absBlock}
+    </div>`;
+}
+
+function toggleAbs(idx) {
+    const item = document.getElementById('pi-' + idx);
+    const btn  = document.getElementById('abt-' + idx);
+    item.classList.toggle('expanded');
+    btn.textContent = item.classList.contains('expanded') ? '▾ Hide abstract' : '▸ Show abstract';
+}
+
+function fmtAuthors(authors) {
+    if (!authors || !authors.length) return '';
+    const hl = a => {
+        const l = a.toLowerCase();
+        return (l.includes('ortiz') && (l.includes('r') || l.includes('iii')))
+            ? `<span class="me">${a}</span>` : a;
+    };
+    const MAX = 8;
+    const list = Array.isArray(authors) ? authors : [authors];
+    if (list.length <= MAX) return list.map(hl).join(', ');
+    return list.slice(0, MAX).map(hl).join(', ') + ', <em>et al.</em>';
+}
+
+function setStatus(msg, err=false) {
+    const el = document.getElementById('pub-status');
+    if (!msg) { el.innerHTML = ''; return; }
+    el.innerHTML = `<span style="color:${err?'#f87171':'var(--muted)'}">${msg}</span>`;
+}
+</script>
+</body>
+</html>
