@@ -6,191 +6,205 @@
     <title>Rafael Ortiz III — Astrophysicist</title>
     <style>
         :root {
-            --bg:       #0a0e1a;
-            --bg-card:  #131929;
-            --bg-card2: #1a2234;
-            --text:     #e8edf4;
-            --sub:      #a8b2c8;
-            --muted:    #6b7590;
-            --blue:     #5b8ff9;
-            --pink:     #d946ef;
-            --orange:   #f97316;
-            --green:    #22c55e;
-            --border:   #2d3548;
-            --border2:  #3a4660;
+            --bg:      #0a0e1a;
+            --card:    #111827;
+            --card2:   #1a2234;
+            --text:    #e8edf4;
+            --sub:     #94a3b8;
+            --muted:   #64748b;
+            --blue:    #60a5fa;
+            --violet:  #a78bfa;
+            --border:  #1e2d45;
         }
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
 
         /* NAV */
         nav {
-            position:fixed; top:0; width:100%;
-            background:rgba(10,14,26,0.94); backdrop-filter:blur(12px);
-            border-bottom:1px solid var(--border); z-index:200; padding:.9rem 0;
+            position: fixed; top: 0; width: 100%;
+            background: rgba(10,14,26,0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
         }
-        .nav-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center; }
-        .nav-brand { font-size:1.1rem; font-weight:700; letter-spacing:.02em; }
-        .nav-links { display:flex; gap:1.75rem; list-style:none; }
+        .nav-inner {
+            max-width: 900px; margin: 0 auto;
+            padding: .85rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-brand { font-weight: 700; font-size: 1rem; letter-spacing: .01em; color: var(--text); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links button {
-            background:none; border:none; color:var(--sub); font-size:.9rem;
-            font-weight:500; cursor:pointer; transition:color .25s; padding:.3rem 0;
-            border-bottom:2px solid transparent; transition:all .25s;
+            background: none; border: none; color: var(--sub);
+            font-size: .88rem; cursor: pointer; padding: .25rem 0;
+            border-bottom: 1.5px solid transparent;
+            transition: color .2s, border-color .2s;
         }
-        .nav-links button:hover, .nav-links button.active { color:var(--blue); border-bottom-color:var(--blue); }
+        .nav-links button:hover,
+        .nav-links button.on { color: var(--blue); border-bottom-color: var(--blue); }
 
-        /* LAYOUT */
-        .wrap { max-width:1200px; margin:0 auto; padding:5.5rem 2rem 5rem; }
-        .page { display:none; animation:fadeIn .3s ease; }
-        .page.active { display:block; }
-        @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+        /* PAGES */
+        .wrap { max-width: 900px; margin: 0 auto; padding: 5.5rem 2rem 5rem; }
+        .page { display: none; animation: up .3s ease; }
+        .page.on { display: block; }
+        @keyframes up { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:none } }
 
-        /* HERO */
-        .hero { padding:3.5rem 0 3rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
-        .profile-row { display:flex; align-items:center; gap:3rem; flex-wrap:wrap; margin-bottom:2rem; }
-        .avatar {
-            width:170px; height:170px; border-radius:14px; flex-shrink:0;
-            background:var(--bg-card2); border:2px solid var(--blue);
-            box-shadow:0 0 32px rgba(91,143,249,.18);
-            display:flex; align-items:center; justify-content:center;
-            font-size:4rem; user-select:none;
+        /* HOME */
+        .home-hero {
+            display: flex; gap: 2.5rem; align-items: flex-start;
+            padding: 3rem 0 3rem; border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
         }
-        .avatar img { width:100%; height:100%; border-radius:12px; object-fit:cover; }
-        .profile-info h1 {
-            font-size:2.8rem; font-weight:800; line-height:1.15; margin-bottom:.5rem;
-            background:linear-gradient(135deg,var(--blue),var(--pink));
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+        .profile-img {
+            width: 150px; height: 150px; border-radius: 12px;
+            object-fit: cover; flex-shrink: 0;
+            border: 2px solid var(--border);
+            box-shadow: 0 0 24px rgba(96,165,250,.15);
         }
-        .subtitle { font-size:1.15rem; color:var(--sub); margin-bottom:.75rem; }
-        .desc { font-size:.98rem; color:var(--muted); max-width:680px; line-height:1.75; }
-        .chips { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.75rem; }
-        .chip {
-            color:var(--sub); text-decoration:none; font-size:.85rem;
-            padding:.4rem 1rem; border:1px solid var(--border2); border-radius:7px;
-            transition:all .25s; display:inline-flex; align-items:center; gap:.4rem;
+        .profile-img-placeholder {
+            width: 150px; height: 150px; border-radius: 12px; flex-shrink: 0;
+            background: var(--card); border: 2px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem;
         }
-        .chip:hover { border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
+        .hero-text h1 {
+            font-size: 2.25rem; font-weight: 800; line-height: 1.1;
+            margin-bottom: .4rem;
+            background: linear-gradient(130deg, var(--blue), var(--violet));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-text .role { color: var(--sub); font-size: 1rem; margin-bottom: 1rem; }
+        .hero-text .bio { color: var(--sub); font-size: .94rem; max-width: 580px; line-height: 1.75; }
+        .links-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+        .lnk {
+            font-size: .82rem; color: var(--sub); text-decoration: none;
+            padding: .3rem .85rem; border: 1px solid var(--border);
+            border-radius: 6px; transition: all .2s;
+        }
+        .lnk:hover { color: var(--blue); border-color: var(--blue); }
 
-        /* SECTION HEADER */
-        .sec-head { margin-bottom:2.5rem; }
-        .sec-head h2 { font-size:1.9rem; margin-bottom:.4rem; }
-        .sec-head p { color:var(--muted); font-size:.92rem; }
+        /* SECTION */
+        .sec-title { font-size: 1.5rem; font-weight: 700; margin-bottom: .35rem; }
+        .sec-sub { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; }
 
-        /* CARDS GRID */
-        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.4rem; }
-        .card {
-            background:var(--bg-card); border:1px solid var(--border);
-            border-radius:14px; padding:1.5rem; transition:all .3s;
+        /* RESEARCH CARDS */
+        .proj-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.75rem; margin-bottom: 1.25rem;
+            transition: border-color .25s, transform .25s;
         }
-        .card:hover { border-color:var(--blue); transform:translateY(-4px); box-shadow:0 8px 32px rgba(91,143,249,.1); }
-        .card h3 { color:var(--blue); font-size:1.1rem; margin-bottom:.75rem; }
-        .card p { color:var(--sub); font-size:.9rem; line-height:1.7; margin-bottom:1rem; }
-        .tags { display:flex; gap:.4rem; flex-wrap:wrap; }
-        .tag { font-size:.72rem; padding:.2rem .65rem; background:rgba(91,143,249,.1); color:var(--blue); border-radius:4px; border:1px solid rgba(91,143,249,.2); }
+        .proj-card:hover { border-color: #2d4a6e; transform: translateY(-2px); }
+        .proj-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
+        .proj-icon { font-size: 1.5rem; }
+        .proj-header h3 { font-size: 1.05rem; font-weight: 700; }
+        .proj-header a {
+            font-size: .78rem; color: var(--blue); text-decoration: none;
+            margin-left: auto; flex-shrink: 0;
+            padding: .2rem .6rem; border: 1px solid rgba(96,165,250,.3); border-radius: 5px;
+            transition: all .2s;
+        }
+        .proj-header a:hover { background: rgba(96,165,250,.1); }
+        .proj-card p { color: var(--sub); font-size: .9rem; line-height: 1.75; }
+        .proj-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+        .ptag {
+            font-size: .72rem; padding: .18rem .6rem;
+            background: rgba(96,165,250,.08); color: var(--blue);
+            border: 1px solid rgba(96,165,250,.18); border-radius: 4px;
+        }
 
-        /* STATS BAR */
-        .stats-bar {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-            gap:1rem; margin-bottom:2.25rem;
+        /* PUBLICATIONS */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+            gap: .85rem; margin-bottom: 2rem;
         }
-        .stat-card {
-            background:var(--bg-card); border:1px solid var(--border);
-            border-radius:12px; padding:1.25rem 1.5rem; text-align:center;
+        .stat {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 1.1rem; text-align: center;
         }
-        .stat-val {
-            font-size:2.4rem; font-weight:800; line-height:1;
-            background:linear-gradient(135deg,var(--blue),var(--pink));
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+        .stat-n {
+            font-size: 2rem; font-weight: 800; line-height: 1;
+            background: linear-gradient(130deg, var(--blue), var(--violet));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .stat-lbl { color:var(--muted); font-size:.78rem; margin-top:.4rem; }
-        .stat-src { color:var(--muted); font-size:.68rem; margin-top:.2rem; opacity:.6; }
+        .stat-l { color: var(--muted); font-size: .73rem; margin-top: .3rem; }
 
-        /* PUB CONTROLS */
-        .pub-bar { display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:1.75rem; }
-        .filter-group { display:flex; gap:.5rem; flex-wrap:wrap; }
-        .filter-btn {
-            padding:.35rem .9rem; border:1px solid var(--border); border-radius:6px;
-            background:none; color:var(--sub); cursor:pointer; font-size:.84rem; transition:all .25s;
+        .pub-bar { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: center; justify-content: space-between; }
+        .fbtn {
+            padding: .3rem .8rem; border: 1px solid var(--border);
+            border-radius: 6px; background: none; color: var(--sub);
+            font-size: .82rem; cursor: pointer; transition: all .2s;
         }
-        .filter-btn:hover, .filter-btn.on { border-color:var(--blue); color:var(--blue); background:rgba(91,143,249,.08); }
-        .pub-status { font-size:.78rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
-        .spin { width:13px; height:13px; border:2px solid var(--border2); border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; flex-shrink:0; }
-        @keyframes spin { to{transform:rotate(360deg)} }
+        .fbtn:hover, .fbtn.on { border-color: var(--blue); color: var(--blue); background: rgba(96,165,250,.07); }
+        .pub-spin { font-size: .75rem; color: var(--muted); display: flex; align-items: center; gap: .4rem; }
+        .spin { width:12px; height:12px; border:2px solid var(--border); border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; }
+        @keyframes spin { to { transform:rotate(360deg) } }
 
-        /* PUB ITEMS */
-        .pub-list { display:flex; flex-direction:column; gap:.9rem; }
-        .pub-item {
-            background:var(--bg-card); border:1px solid var(--border);
-            border-radius:12px; padding:1.4rem 1.5rem; transition:all .28s;
-            border-left:3px solid transparent;
+        .pub-list { display: flex; flex-direction: column; gap: .8rem; }
+        .pub {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 1.25rem 1.4rem;
+            border-left: 3px solid transparent; transition: all .25s;
         }
-        .pub-item:hover { border-color:var(--border2); transform:translateX(4px); box-shadow:0 4px 20px rgba(0,0,0,.25); }
-        .pub-item.fa { border-left-color:var(--blue); }
-        .pub-title { font-size:.98rem; font-weight:600; color:var(--text); line-height:1.55; margin-bottom:.55rem; }
-        .pub-authors { font-size:.82rem; color:var(--muted); margin-bottom:.5rem; line-height:1.5; }
-        .pub-authors .me { color:var(--blue); font-weight:700; }
-        .pub-meta { display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin-bottom:.65rem; }
-        .pub-journal { color:var(--sub); font-size:.82rem; font-style:italic; }
-        .pub-year { color:var(--muted); font-size:.78rem; }
-        .badge {
-            font-size:.68rem; padding:.15rem .55rem; border-radius:4px;
-            font-weight:700; letter-spacing:.03em;
+        .pub:hover { border-color: #1e3a5f; }
+        .pub.fa { border-left-color: var(--blue); }
+        .pub-title { font-size: .93rem; font-weight: 600; line-height: 1.55; margin-bottom: .45rem; }
+        .pub-auth { font-size: .8rem; color: var(--muted); margin-bottom: .45rem; line-height: 1.5; }
+        .pub-auth .me { color: var(--blue); font-weight: 700; }
+        .pub-meta { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: .55rem; }
+        .pub-jnl { font-size: .8rem; color: var(--sub); font-style: italic; }
+        .pub-yr  { font-size: .75rem; color: var(--muted); }
+        .bdg { font-size: .67rem; padding: .12rem .5rem; border-radius: 4px; font-weight: 700; }
+        .b-fa  { background: rgba(96,165,250,.12); color: var(--blue);   border: 1px solid rgba(96,165,250,.2); }
+        .b-ref { background: rgba(167,139,250,.1);  color: var(--violet); border: 1px solid rgba(167,139,250,.2); }
+        .b-cit { background: rgba(52,211,153,.08);  color: #34d399;       border: 1px solid rgba(52,211,153,.18); font-size:.7rem; }
+        .pub-links { display: flex; gap: .4rem; flex-wrap: wrap; }
+        .pl {
+            font-size: .75rem; padding: .22rem .65rem;
+            border: 1px solid var(--border); border-radius: 4px;
+            color: var(--sub); text-decoration: none; transition: all .2s;
         }
-        .b-fa   { background:rgba(91,143,249,.14); color:var(--blue);   border:1px solid rgba(91,143,249,.25); }
-        .b-ref  { background:rgba(249,115,22,.12);  color:var(--orange); border:1px solid rgba(249,115,22,.22); }
-        .b-cite { background:rgba(34,197,94,.1);    color:var(--green);  border:1px solid rgba(34,197,94,.2); font-size:.7rem; }
-        .pub-links { display:flex; gap:.45rem; flex-wrap:wrap; margin-top:.6rem; }
-        .plink {
-            font-size:.78rem; padding:.28rem .7rem; border:1px solid var(--border);
-            border-radius:5px; color:var(--sub); text-decoration:none; transition:all .22s;
-        }
-        .plink:hover          { border-color:var(--blue);   color:var(--blue); }
-        .plink.arxiv:hover    { border-color:#b91c1c;       color:#fca5a5; }
-        .plink.doi:hover      { border-color:#047857;       color:#6ee7b7; }
-        .plink.ads:hover      { border-color:#1d4ed8;       color:#93c5fd; }
-        .pub-abstract {
-            font-size:.8rem; color:var(--muted); line-height:1.65;
-            margin-top:.65rem; padding-top:.65rem; border-top:1px solid var(--border);
-            display:none;
-        }
-        .pub-item.expanded .pub-abstract { display:block; }
-        .pub-item.expanded { border-color:var(--border2); }
-        .abstract-toggle {
-            font-size:.75rem; color:var(--muted); cursor:pointer; margin-top:.5rem;
-            display:inline-block; transition:color .2s;
-        }
-        .abstract-toggle:hover { color:var(--blue); }
+        .pl:hover     { border-color: var(--blue);  color: var(--blue); }
+        .pl.ax:hover  { border-color: #ef4444;       color: #fca5a5; }
+        .pl.doi:hover { border-color: #10b981;       color: #6ee7b7; }
+        .pl.ads:hover { border-color: #3b82f6;       color: #93c5fd; }
+        .abs-toggle { font-size: .73rem; color: var(--muted); cursor: pointer; margin-top: .45rem; display: inline-block; transition: color .2s; }
+        .abs-toggle:hover { color: var(--blue); }
+        .abs-text { font-size: .8rem; color: var(--muted); line-height: 1.7; margin-top: .6rem; padding-top: .6rem; border-top: 1px solid var(--border); display: none; }
+        .pub.exp .abs-text { display: block; }
 
         /* CV */
-        .cv-section { margin-bottom:2.5rem; }
-        .cv-section h3 { color:var(--blue); font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; margin-bottom:1.25rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
-        .cv-row { display:flex; gap:2rem; margin-bottom:1.25rem; }
-        .cv-yr { color:var(--blue); font-size:.82rem; font-weight:700; min-width:90px; padding-top:.2rem; flex-shrink:0; }
-        .cv-body h4 { color:var(--text); font-size:.97rem; margin-bottom:.2rem; }
-        .cv-body p  { color:var(--muted); font-size:.88rem; line-height:1.55; }
-        .skill-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:.9rem; }
-        .skill-box { background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
-        .skill-box h4 { color:var(--blue); font-size:.85rem; font-weight:700; margin-bottom:.7rem; }
-        .skill-tags { display:flex; flex-wrap:wrap; gap:.35rem; }
-        .skill-tag { font-size:.73rem; padding:.2rem .55rem; background:rgba(255,255,255,.04); color:var(--sub); border-radius:4px; border:1px solid var(--border); }
+        .cv-block { margin-bottom: 2.5rem; }
+        .cv-block h3 { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--blue); margin-bottom: 1.1rem; padding-bottom: .45rem; border-bottom: 1px solid var(--border); }
+        .cv-row { display: flex; gap: 2rem; margin-bottom: 1.1rem; }
+        .cv-yr { font-size: .8rem; font-weight: 700; color: var(--blue); min-width: 90px; flex-shrink: 0; padding-top: .15rem; }
+        .cv-body h4 { font-size: .95rem; margin-bottom: .15rem; }
+        .cv-body p  { font-size: .87rem; color: var(--sub); line-height: 1.6; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: .75rem; }
+        .skill-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }
+        .skill-box h4 { font-size: .8rem; font-weight: 700; color: var(--blue); margin-bottom: .6rem; }
+        .stag { font-size: .72rem; padding: .18rem .55rem; background: rgba(255,255,255,.04); color: var(--sub); border: 1px solid var(--border); border-radius: 4px; margin: .15rem; display: inline-block; }
 
         /* CONTACT */
-        .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; margin-top:2rem; }
-        .contact-card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
-        .contact-card h3 { color:var(--blue); margin-bottom:.9rem; font-size:1rem; }
-        .contact-card p { color:var(--sub); font-size:.92rem; margin-bottom:.4rem; line-height:1.6; }
-        .contact-card a { color:var(--blue); text-decoration:none; }
-        .contact-card a:hover { text-decoration:underline; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .ccard { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; }
+        .ccard h3 { font-size: .9rem; font-weight: 700; color: var(--blue); margin-bottom: .8rem; }
+        .ccard p { font-size: .88rem; color: var(--sub); margin-bottom: .35rem; line-height: 1.6; }
+        .ccard a { color: var(--blue); text-decoration: none; }
+        .ccard a:hover { text-decoration: underline; }
 
-        /* UTILITY */
-        .updated-note { font-size:.72rem; color:var(--muted); margin-top:1rem; opacity:.65; }
-        .empty-state { text-align:center; padding:3rem; color:var(--muted); font-size:.9rem; }
+        .updated { font-size: .7rem; color: var(--muted); margin-top: 1.25rem; opacity: .6; }
 
-        @media(max-width:700px) {
-            .profile-row { flex-direction:column; gap:1.5rem; }
-            .profile-info h1 { font-size:2rem; }
-            .cv-row { flex-direction:column; gap:.25rem; }
-            .nav-links { gap:1rem; }
+        @media(max-width:640px){
+            .home-hero { flex-direction: column; gap: 1.5rem; }
+            .hero-text h1 { font-size: 1.75rem; }
+            .cv-row { flex-direction: column; gap: .2rem; }
         }
     </style>
 </head>
@@ -198,280 +212,377 @@
 
 <nav>
     <div class="nav-inner">
-        <div class="nav-brand">Rafael Ortiz III</div>
+        <span class="nav-brand">Rafael Ortiz III</span>
         <ul class="nav-links">
-            <li><button id="nav-home"         onclick="show('home')">Home</button></li>
-            <li><button id="nav-research"     onclick="show('research')">Research</button></li>
-            <li><button id="nav-publications" onclick="show('publications')">Publications</button></li>
-            <li><button id="nav-cv"           onclick="show('cv')">CV</button></li>
-            <li><button id="nav-contact"      onclick="show('contact')">Contact</button></li>
+            <li><button id="nb-home"         onclick="go('home')">Home</button></li>
+            <li><button id="nb-research"     onclick="go('research')">Research</button></li>
+            <li><button id="nb-publications" onclick="go('publications')">Publications</button></li>
+            <li><button id="nb-cv"           onclick="go('cv')">CV</button></li>
+            <li><button id="nb-contact"      onclick="go('contact')">Contact</button></li>
         </ul>
     </div>
 </nav>
 
 <div class="wrap">
 
-    <!-- ── HOME ─────────────────────────────────────────────────────────── -->
-    <div id="page-home" class="page active">
-        <div class="hero">
-            <div class="profile-row">
-                <div class="avatar" id="avatar-box">🔭</div>
-                <div class="profile-info">
-                    <h1>Rafael Ortiz III</h1>
-                    <div class="subtitle">PhD Researcher · Arizona State University</div>
-                    <div class="desc">
-                        I study the co-evolution of supermassive black holes and galaxies using deep
-                        X-ray surveys, JWST imaging, and multiwavelength SED fitting. My work focuses
-                        on characterizing X-ray selected AGN, their host-galaxy properties, and AGN
-                        candidates during the epoch of reionization.
-                    </div>
-                    <div class="chips">
-                        <a class="chip" href="https://orcid.org/0000-0002-6150-833X" target="_blank">🆔 ORCID</a>
-                        <a class="chip" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">🔭 NASA ADS</a>
-                        <a class="chip" href="https://arxiv.org/search/?searchtype=author&query=Ortiz+III%2C+R" target="_blank">📄 arXiv</a>
-                        <a class="chip" href="mailto:rortiz49@asu.edu">✉️ Email</a>
-                        <a class="chip" href="https://sese.asu.edu" target="_blank">🏫 ASU SESE</a>
-                    </div>
+    <!-- HOME -->
+    <div id="page-home" class="page">
+        <div class="home-hero">
+            <img src="me.jpg" alt="Rafael Ortiz III" class="profile-img"
+                 onerror="this.outerHTML='<div class=\'profile-img-placeholder\'>👤</div>'">
+            <div class="hero-text">
+                <h1>Rafael Ortiz III</h1>
+                <div class="role">PhD Researcher · Arizona State University · School of Earth and Space Exploration</div>
+                <div class="bio">
+                    I study the co-evolution of supermassive black holes and galaxies using X-ray surveys,
+                    JWST imaging, and multiwavelength SED fitting. My work spans X-ray AGN characterization,
+                    high-redshift AGN candidates, and infrared sky-background measurements with JWST.
+                </div>
+                <div class="links-row">
+                    <a class="lnk" href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID</a>
+                    <a class="lnk" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">NASA ADS</a>
+                    <a class="lnk" href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank">LinkedIn</a>
+                    <a class="lnk" href="mailto:rortiz49@asu.edu">Email</a>
                 </div>
             </div>
         </div>
 
-        <div class="sec-head"><h2>Research Focus</h2><p>Multiwavelength AGN science from cosmic dawn to present day</p></div>
-        <div class="grid">
-            <div class="card"><h3>⚡ X-ray Selected AGN</h3><p>Deep Chandra/XMM-Newton surveys to characterize AGN populations, obscuration (N<sub>H</sub> distributions), and ultrafast outflows across multiple deep fields.</p><div class="tags"><span class="tag">Chandra</span><span class="tag">XMM-Newton</span><span class="tag">NH Distributions</span><span class="tag">UFOs</span></div></div>
-            <div class="card"><h3>🌌 Multiwavelength SED Fitting</h3><p>Decomposing AGN and stellar contributions across UV–IR using CIGALE to constrain SFRs, stellar masses, and AGN luminosities for large host-galaxy samples.</p><div class="tags"><span class="tag">CIGALE</span><span class="tag">SED Fitting</span><span class="tag">Host Galaxies</span><span class="tag">Photometry</span></div></div>
-            <div class="card"><h3>🔬 JWST PEARLS Survey</h3><p>Deep NIRCam multi-band imaging across the NEP-TDF, MACS-0416, and El Gordo to study faint galaxies, AGN candidates, and radio-counterpart identification at z&nbsp;>&nbsp;4.</p><div class="tags"><span class="tag">JWST PEARLS</span><span class="tag">NIRCam</span><span class="tag">NEP-TDF</span><span class="tag">Radio Counterparts</span></div></div>
-            <div class="card"><h3>🌠 AGN at Cosmic Dawn</h3><p>Identifying and characterizing AGN candidates at 6.5&nbsp;<&nbsp;z&nbsp;<&nbsp;12 using JWST photometry, quantifying their contribution to the UV luminosity function during reionization.</p><div class="tags"><span class="tag">Reionization</span><span class="tag">High-z AGN</span><span class="tag">UV LF</span><span class="tag">z&gt;6</span></div></div>
+        <div class="sec-title">Research Overview</div>
+        <p class="sec-sub">Two main projects in multiwavelength extragalactic astronomy</p>
+
+        <div class="proj-card" style="border-left:3px solid var(--blue);">
+            <div class="proj-header">
+                <span class="proj-icon">🔭</span>
+                <h3>JWST PEARLS — Prime Extragalactic Areas for Reionization and Lensing Science</h3>
+                <a href="https://sites.google.com/view/jwstpearls" target="_blank">Visit site ↗</a>
+            </div>
+            <p>
+                PEARLS is a JWST Guaranteed Time Observation (GTO) program (PI: R. Windhorst, ASU) imaging
+                multiple deep fields — including the North Ecliptic Pole Time-Domain Field, MACS-0416, and
+                El Gordo — in up to eight NIRCam bands. My contributions include identifying and characterizing
+                AGN candidates at 6.5 &lt; z &lt; 12, cross-matching X-ray and radio sources with JWST
+                counterparts, and SED fitting with CIGALE to constrain AGN and host-galaxy properties
+                across cosmic time.
+            </p>
+            <div class="proj-tags">
+                <span class="ptag">JWST NIRCam</span>
+                <span class="ptag">AGN at z&gt;6</span>
+                <span class="ptag">SED Fitting</span>
+                <span class="ptag">Radio Counterparts</span>
+                <span class="ptag">X-ray AGN</span>
+                <span class="ptag">Reionization</span>
+            </div>
+        </div>
+
+        <div class="proj-card" style="border-left:3px solid var(--violet);">
+            <div class="proj-header">
+                <span class="proj-icon">🌌</span>
+                <h3>Project DARK-SKY / SKYSURF-IR — JWST Cycle 3 Archival Legacy Calibration</h3>
+            </div>
+            <p>
+                Building on the HST SKYSURF legacy project, DARK-SKY (JWST Cycle 3 AR, PI: R. Windhorst) analyzes
+                62,706 NIRCam and NIRISS images across 100 independent JWST fields to measure the absolute
+                0.9–5.0 μm sky surface brightness and set competitive limits on diffuse Extragalactic Background
+                Light (EBL). My role involves sky-surface brightness measurements, Zodiacal Light and Diffuse
+                Galactic Light modeling, zero-point calibration, and data quality assessment as part of the
+                ASU team.
+            </p>
+            <div class="proj-tags">
+                <span class="ptag">JWST NIRCam/NIRISS</span>
+                <span class="ptag">Sky Surface Brightness</span>
+                <span class="ptag">Zodiacal Light</span>
+                <span class="ptag">Diffuse EBL</span>
+                <span class="ptag">Galaxy Counts</span>
+                <span class="ptag">Calibration</span>
+            </div>
         </div>
     </div>
 
-    <!-- ── RESEARCH ──────────────────────────────────────────────────────── -->
+    <!-- RESEARCH -->
     <div id="page-research" class="page">
-        <div class="sec-head"><h2>Research</h2><p>Active projects and ongoing investigations</p></div>
-        <div class="grid">
-            <div class="card"><h3>⚡ X-ray AGN Catalog Analysis</h3><p>Building multiwavelength catalogs of X-ray selected AGN using Chandra and XMM-Newton archival data. Characterizing Compton-thin vs. Compton-thick populations and deriving N<sub>H</sub> column density distributions.</p><div class="tags"><span class="tag">Chandra</span><span class="tag">XMM-Newton</span><span class="tag">NH</span><span class="tag">Compton-thick</span></div></div>
-            <div class="card"><h3>🌌 SED Modeling of AGN Hosts</h3><p>Applying CIGALE to UV–IR photometry of X-ray AGN samples to disentangle stellar and AGN emission, deriving stellar masses and star formation rates for statistical population studies.</p><div class="tags"><span class="tag">CIGALE</span><span class="tag">Stellar Mass</span><span class="tag">SFR</span><span class="tag">AGN Fraction</span></div></div>
-            <div class="card"><h3>🔭 JWST PEARLS GTO Program</h3><p>Contributing to data reduction, catalog construction, and science analysis across PEARLS fields. Identifying AGN counterparts to microjansky radio sources in the NEP Time-Domain Field.</p><div class="tags"><span class="tag">JWST</span><span class="tag">PEARLS</span><span class="tag">NEP-TDF</span><span class="tag">Radio Sources</span></div></div>
-            <div class="card"><h3>🌠 Reionization-Era AGN</h3><p>Systematic search for AGN at z&nbsp;=&nbsp;6.5–12 via photometric SED fitting in PEARLS and CEERS fields. Constraining AGN number densities and their role in cosmic reionization.</p><div class="tags"><span class="tag">z&gt;6</span><span class="tag">Reionization</span><span class="tag">CEERS</span><span class="tag">PEARLS</span></div></div>
-            <div class="card"><h3>🔗 Galaxy Mergers & AGN Triggering</h3><p>Investigating merger-triggered AGN activity and star formation at z&nbsp;=&nbsp;4.5–8.5 using JWST close-pair statistics across CEERS, JADES, PEARLS, and five other survey fields.</p><div class="tags"><span class="tag">Galaxy Mergers</span><span class="tag">AGN Triggering</span><span class="tag">Close Pairs</span><span class="tag">JADES</span></div></div>
-            <div class="card"><h3>📡 Catalog Cross-Matching</h3><p>Cross-matching X-ray, optical, near-IR, and radio catalogs using likelihood-ratio and Bayesian positional methods. Building robust multiwavelength source tables for downstream statistical analysis.</p><div class="tags"><span class="tag">Catalog Matching</span><span class="tag">Bayesian</span><span class="tag">Astropy</span><span class="tag">Python</span></div></div>
+        <div class="sec-title">Research</div>
+        <p class="sec-sub">Ongoing science across two major programs</p>
+
+        <div class="proj-card">
+            <div class="proj-header">
+                <span class="proj-icon">🔭</span>
+                <h3>JWST PEARLS</h3>
+                <a href="https://sites.google.com/view/jwstpearls" target="_blank">jwstpearls ↗</a>
+            </div>
+            <p>
+                The PEARLS GTO program delivers among the deepest JWST imaging across multiple extragalactic
+                fields. I focus on three science threads within PEARLS:
+            </p>
+            <br>
+            <p><strong style="color:var(--text)">AGN Candidates at Cosmic Dawn (z &gt; 6.5).</strong>
+            Using CIGALE SED fitting on PEARLS and CEERS photometry, I identify and characterize AGN candidates
+            during the epoch of reionization, constraining their number densities and contribution to the
+            UV luminosity function.</p>
+            <br>
+            <p><strong style="color:var(--text)">X-ray AGN &amp; Multiwavelength Cross-Matching.</strong>
+            I cross-match deep Chandra and XMM-Newton X-ray catalogs with JWST counterparts across PEARLS fields,
+            characterizing AGN obscuration (N<sub>H</sub> distributions), ultrafast outflows, and host-galaxy
+            properties via multiwavelength SED decomposition.</p>
+            <br>
+            <p><strong style="color:var(--text)">Radio Counterparts in the NEP-TDF.</strong>
+            Identifying JWST NIRCam counterparts to microjansky radio sources in the North Ecliptic Pole
+            Time-Domain Field to study faint radio-AGN populations and their optical/IR properties.</p>
+            <div class="proj-tags">
+                <span class="ptag">CIGALE</span><span class="ptag">Chandra</span><span class="ptag">XMM-Newton</span>
+                <span class="ptag">NIRCam</span><span class="ptag">NEP-TDF</span><span class="ptag">High-z AGN</span>
+            </div>
+        </div>
+
+        <div class="proj-card">
+            <div class="proj-header">
+                <span class="proj-icon">🌌</span>
+                <h3>Project DARK-SKY / SKYSURF-IR</h3>
+            </div>
+            <p>
+                DARK-SKY is a JWST Cycle 3 Archival Legacy Calibration program analyzing 62,706 NIRCam and NIRISS
+                FITS images across 100 independent fields to measure the 0.9–5.0 μm absolute sky surface
+                brightness and constrain diffuse Extragalactic Background Light (EBL). It is the JWST successor
+                to the HST SKYSURF project (Windhorst et al. 2022), which analyzed sky-SB in 249,000 ACS/WFC3
+                images to yield significant constraints on 0.3–1.6 μm diffuse light.
+            </p>
+            <br>
+            <p>My contributions include sky-surface brightness estimation using ProFound, Zodiacal Light and
+            Diffuse Galactic Light (DGL) modeling, panchromatic sky-SB maps, zero-point calibration
+            improvements, and preparation of data products for MAST public release.</p>
+            <div class="proj-tags">
+                <span class="ptag">JWST NIRCam</span><span class="ptag">NIRISS</span>
+                <span class="ptag">Zodiacal Light</span><span class="ptag">DGL</span>
+                <span class="ptag">EBL</span><span class="ptag">ProFound</span>
+                <span class="ptag">Sky-SB Calibration</span>
+            </div>
         </div>
     </div>
 
-    <!-- ── PUBLICATIONS ──────────────────────────────────────────────────── -->
+    <!-- PUBLICATIONS -->
     <div id="page-publications" class="page">
-        <div class="sec-head">
-            <h2>Publications</h2>
-            <p>Dynamically loaded from <code>publications.json</code> — generated nightly by <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" style="color:var(--blue)">NASA ADS</a> via GitHub Actions &nbsp;·&nbsp; ORCID: <a href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:var(--blue)">0000-0002-6150-833X</a></p>
+        <div class="sec-title">Publications</div>
+        <p class="sec-sub">
+            Loaded from <code>publications.json</code> via NASA ADS &nbsp;·&nbsp;
+            ORCID <a href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:var(--blue)">0000-0002-6150-833X</a>
+        </p>
+
+        <div class="stats-row">
+            <div class="stat"><div class="stat-n" id="s-n">—</div><div class="stat-l">Papers</div></div>
+            <div class="stat"><div class="stat-n" id="s-r">—</div><div class="stat-l">Refereed</div></div>
+            <div class="stat"><div class="stat-n" id="s-fa">—</div><div class="stat-l">First Author</div></div>
+            <div class="stat"><div class="stat-n" id="s-c">—</div><div class="stat-l">Citations</div></div>
+            <div class="stat"><div class="stat-n" id="s-fc">—</div><div class="stat-l">1st-Author Cites</div></div>
+            <div class="stat"><div class="stat-n" id="s-h">—</div><div class="stat-l">h-index</div></div>
         </div>
 
-        <div class="stats-bar" id="stats-bar">
-            <div class="stat-card"><div class="stat-val" id="s-total">—</div><div class="stat-lbl">Total Papers</div></div>
-            <div class="stat-card"><div class="stat-val" id="s-ref">—</div><div class="stat-lbl">Refereed</div></div>
-            <div class="stat-card"><div class="stat-val" id="s-fa">—</div><div class="stat-lbl">First Author</div></div>
-            <div class="stat-card"><div class="stat-val" id="s-cites">—</div><div class="stat-lbl">Total Citations</div></div>
-            <div class="stat-card"><div class="stat-val" id="s-facites">—</div><div class="stat-lbl">1st-Author Citations</div></div>
-            <div class="stat-card"><div class="stat-val" id="s-h">—</div><div class="stat-lbl">h-index</div></div>
-        </div>
-        <div class="updated-note" id="updated-note"></div>
-
-        <div class="pub-bar" style="margin-top:1.5rem;">
-            <div class="filter-group">
-                <button class="filter-btn on"  onclick="filter('all',this)">All</button>
-                <button class="filter-btn"     onclick="filter('fa',this)">First Author</button>
-                <button class="filter-btn"     onclick="filter('ref',this)">Refereed</button>
+        <div class="pub-bar">
+            <div style="display:flex;gap:.45rem">
+                <button class="fbtn on" onclick="filt('all',this)">All</button>
+                <button class="fbtn"    onclick="filt('fa',this)">First Author</button>
+                <button class="fbtn"    onclick="filt('ref',this)">Refereed</button>
             </div>
-            <div class="pub-status" id="pub-status">
-                <span class="spin"></span><span>Loading publications…</span>
-            </div>
+            <div class="pub-spin" id="pub-spin"><span class="spin"></span><span>Loading…</span></div>
         </div>
 
         <div class="pub-list" id="pub-list"></div>
+        <div class="updated" id="pub-updated"></div>
     </div>
 
-    <!-- ── CV ────────────────────────────────────────────────────────────── -->
+    <!-- CV -->
     <div id="page-cv" class="page">
-        <div class="sec-head"><h2>Curriculum Vitae</h2><p>Academic background, experience &amp; skills</p></div>
+        <div class="sec-title">CV</div>
+        <p class="sec-sub">Academic background and skills</p>
 
-        <div class="cv-section">
+        <div class="cv-block">
             <h3>Education</h3>
             <div class="cv-row">
                 <div class="cv-yr">2021 – Present</div>
                 <div class="cv-body">
-                    <h4>Ph.D., Astrophysics</h4>
-                    <p>Arizona State University, School of Earth and Space Exploration · Tempe, AZ</p>
-                    <p>Research: X-ray AGN, multiwavelength SED fitting, JWST galaxy surveys</p>
+                    <h4>Ph.D. Astrophysics</h4>
+                    <p>Arizona State University · School of Earth and Space Exploration · Tempe, AZ</p>
                 </div>
             </div>
         </div>
 
-        <div class="cv-section">
-            <h3>Research Experience</h3>
+        <div class="cv-block">
+            <h3>Research</h3>
             <div class="cv-row">
                 <div class="cv-yr">2021 – Present</div>
                 <div class="cv-body">
                     <h4>Graduate Research Assistant — ASU SESE</h4>
-                    <p>X-ray AGN catalog analysis · SED fitting with CIGALE · JWST PEARLS GTO survey data reduction &amp; science</p>
+                    <p>X-ray AGN multiwavelength analysis · CIGALE SED fitting · JWST PEARLS GTO · DARK-SKY sky-SB measurements</p>
                 </div>
             </div>
         </div>
 
-        <div class="cv-section">
+        <div class="cv-block">
             <h3>Surveys &amp; Collaborations</h3>
-            <div class="cv-row"><div class="cv-yr">GTO</div><div class="cv-body"><h4>JWST PEARLS</h4><p>Prime Extragalactic Areas for Reionization and Lensing Science (PI: R. Windhorst, ASU)</p></div></div>
-            <div class="cv-row"><div class="cv-yr">Collab</div><div class="cv-body"><h4>EPOCHS</h4><p>Extragalactic survey studying morphologies, UV slopes, and stellar populations at z &gt; 6</p></div></div>
+            <div class="cv-row">
+                <div class="cv-yr">GTO</div>
+                <div class="cv-body">
+                    <h4>JWST PEARLS</h4>
+                    <p>Prime Extragalactic Areas for Reionization and Lensing Science · PI: R. Windhorst (ASU)</p>
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-yr">AR Cycle 3</div>
+                <div class="cv-body">
+                    <h4>JWST DARK-SKY / SKYSURF-IR</h4>
+                    <p>Archival Legacy Calibration · PI: R. Windhorst (ASU) · Constraining diffuse EBL from 62,706 NIRCam/NIRISS images</p>
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-yr">Collab</div>
+                <div class="cv-body">
+                    <h4>EPOCHS</h4>
+                    <p>Extragalactic survey with JWST · galaxy morphologies, UV slopes, stellar populations at z &gt; 6</p>
+                </div>
+            </div>
         </div>
 
-        <div class="cv-section">
+        <div class="cv-block">
             <h3>Technical Skills</h3>
             <div class="skill-grid">
-                <div class="skill-box"><h4>Programming</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">LaTeX</span><span class="skill-tag">SQL</span></div></div>
-                <div class="skill-box"><h4>Python Libraries</h4><div class="skill-tags"><span class="skill-tag">Astropy</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">SciPy</span><span class="skill-tag">Multiprocessing</span></div></div>
-                <div class="skill-box"><h4>Astronomy Tools</h4><div class="skill-tags"><span class="skill-tag">CIGALE</span><span class="skill-tag">DS9</span><span class="skill-tag">CIAO</span><span class="skill-tag">SExtractor</span><span class="skill-tag">JWST Pipeline</span></div></div>
-                <div class="skill-box"><h4>Platforms</h4><div class="skill-tags"><span class="skill-tag">HPC/Slurm</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Overleaf</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">NASA ADS API</span></div></div>
+                <div class="skill-box"><h4>Programming</h4><span class="stag">Python</span><span class="stag">Bash</span><span class="stag">LaTeX</span></div>
+                <div class="skill-box"><h4>Libraries</h4><span class="stag">Astropy</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">SciPy</span></div>
+                <div class="skill-box"><h4>Astronomy Tools</h4><span class="stag">CIGALE</span><span class="stag">DS9</span><span class="stag">CIAO</span><span class="stag">JWST Pipeline</span></div>
+                <div class="skill-box"><h4>Platforms</h4><span class="stag">HPC/Slurm</span><span class="stag">Jupyter</span><span class="stag">NASA ADS API</span><span class="stag">GitHub Actions</span></div>
             </div>
         </div>
 
         <div style="margin-top:2rem">
-            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" class="chip" style="display:inline-flex;">📄 Full Publication List on NASA ADS</a>
+            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" class="lnk">📄 Full publication list on NASA ADS</a>
         </div>
     </div>
 
-    <!-- ── CONTACT ───────────────────────────────────────────────────────── -->
+    <!-- CONTACT -->
     <div id="page-contact" class="page">
-        <div class="sec-head"><h2>Contact</h2><p>Collaborations, questions, and outreach welcome</p></div>
+        <div class="sec-title">Contact</div>
+        <p class="sec-sub">Collaborations and inquiries welcome</p>
         <div class="contact-grid">
-            <div class="contact-card"><h3>📍 Address</h3><p>School of Earth and Space Exploration</p><p>Arizona State University</p><p>Tempe, AZ 85287</p></div>
-            <div class="contact-card"><h3>✉️ Email</h3><p><a href="mailto:rortiz49@asu.edu">rortiz49@asu.edu</a></p><p style="margin-top:.75rem;color:var(--muted);font-size:.85rem">Open to collaborations in X-ray AGN science, JWST data analysis, and multiwavelength survey projects.</p></div>
-            <div class="contact-card"><h3>🔗 Profiles</h3><p><a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID 0000-0002-6150-833X</a></p><p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">NASA ADS</a></p><p><a href="https://arxiv.org/search/?searchtype=author&query=Ortiz+III%2C+R" target="_blank">arXiv</a></p></div>
+            <div class="ccard">
+                <h3>Address</h3>
+                <p>School of Earth and Space Exploration</p>
+                <p>Arizona State University</p>
+                <p>Tempe, AZ 85287</p>
+            </div>
+            <div class="ccard">
+                <h3>Email</h3>
+                <p><a href="mailto:rortiz49@asu.edu">rortiz49@asu.edu</a></p>
+            </div>
+            <div class="ccard">
+                <h3>Profiles</h3>
+                <p><a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID 0000-0002-6150-833X</a></p>
+                <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">NASA ADS</a></p>
+                <p><a href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank">LinkedIn</a></p>
+            </div>
         </div>
     </div>
 
-</div><!-- .wrap -->
+</div>
 
 <script>
-// ── NAVIGATION ────────────────────────────────────────────────────────────
-function show(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    document.getElementById('nav-' + name).classList.add('active');
+function go(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('on'));
+    document.getElementById('page-' + name).classList.add('on');
+    document.getElementById('nb-' + name).classList.add('on');
     if (name === 'publications' && !window._pubLoaded) loadPubs();
 }
-show('home');
+go('home');
 
-// ── PUBLICATIONS ──────────────────────────────────────────────────────────
-let allPapers = [];
-let currentFilter = 'all';
+let papers = [], curFilter = 'all';
 window._pubLoaded = false;
 
 function loadPubs() {
     window._pubLoaded = true;
     fetch('publications.json?_=' + Date.now())
-        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(r => { if (!r.ok) throw r.status; return r.json(); })
         .then(data => {
-            allPapers = data.papers || [];
-            renderStats(data.stats, data.meta);
-            renderList();
-            setStatus('');
+            papers = data.papers || [];
+            setStats(data.stats, data.meta);
+            render();
+            setSpin('');
         })
-        .catch(err => {
-            setStatus('⚠️ Could not load publications.json — run the fetch script first.', true);
+        .catch(() => {
+            setSpin('⚠️ publications.json not found — run fetch script first.');
             document.getElementById('pub-list').innerHTML =
-                '<div class="empty-state">No publications.json found.<br>Run <code>python scripts/fetch_publications.py</code> and push.</div>';
+                '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">Run <code>python scripts/fetch_publications.py</code> locally then push.</div>';
         });
 }
 
-function renderStats(s, meta) {
+function setStats(s, m) {
     if (!s) return;
-    document.getElementById('s-total').textContent   = s.total_papers ?? '—';
-    document.getElementById('s-ref').textContent     = s.refereed_papers ?? '—';
-    document.getElementById('s-fa').textContent      = s.first_author_papers ?? '—';
-    document.getElementById('s-cites').textContent   = s.total_citations ?? '—';
-    document.getElementById('s-facites').textContent = s.first_author_citations ?? '—';
-    document.getElementById('s-h').textContent       = s.h_index ?? '—';
-    if (meta && meta.updated) {
-        const d = new Date(meta.updated);
-        document.getElementById('updated-note').textContent =
-            'Last updated: ' + d.toUTCString() + ' · Source: ' + (meta.source || 'NASA ADS');
+    document.getElementById('s-n').textContent  = s.total_papers          ?? '—';
+    document.getElementById('s-r').textContent  = s.refereed_papers        ?? '—';
+    document.getElementById('s-fa').textContent = s.first_author_papers    ?? '—';
+    document.getElementById('s-c').textContent  = s.total_citations        ?? '—';
+    document.getElementById('s-fc').textContent = s.first_author_citations ?? '—';
+    document.getElementById('s-h').textContent  = s.h_index               ?? '—';
+    if (m && m.updated) {
+        const d = new Date(m.updated);
+        document.getElementById('pub-updated').textContent =
+            'Last updated ' + d.toUTCString() + ' · ' + (m.source || 'NASA ADS');
     }
 }
 
-function filter(f, btn) {
-    currentFilter = f;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+function filt(f, btn) {
+    curFilter = f;
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
-    renderList();
+    render();
 }
 
-function renderList() {
-    let papers = allPapers;
-    if (currentFilter === 'fa')  papers = papers.filter(p => p.first_author);
-    if (currentFilter === 'ref') papers = papers.filter(p => p.refereed);
-
+function render() {
+    let list = papers;
+    if (curFilter === 'fa')  list = list.filter(p => p.first_author);
+    if (curFilter === 'ref') list = list.filter(p => p.refereed);
     const el = document.getElementById('pub-list');
-    if (!papers.length) {
-        el.innerHTML = '<div class="empty-state">No papers match this filter.</div>';
-        return;
-    }
-    el.innerHTML = papers.map((p, i) => pubCard(p, i)).join('');
+    el.innerHTML = list.length
+        ? list.map((p,i) => card(p,i)).join('')
+        : '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No papers match this filter.</div>';
 }
 
-function pubCard(p, idx) {
-    const authors = fmtAuthors(p.authors);
-    const arxivBtn = p.arxiv
-        ? `<a class="plink arxiv" href="https://arxiv.org/abs/${p.arxiv}" target="_blank">arXiv</a>` : '';
-    const doiBtn = p.doi
-        ? `<a class="plink doi"   href="https://doi.org/${p.doi}"         target="_blank">DOI</a>` : '';
-    const adsBtn = p.bibcode
-        ? `<a class="plink ads"   href="https://ui.adsabs.harvard.edu/abs/${encodeURIComponent(p.bibcode)}" target="_blank">ADS</a>` : '';
-    const faBadge  = p.first_author ? '<span class="badge b-fa">First Author</span>' : '';
-    const refBadge = p.refereed     ? '<span class="badge b-ref">Refereed</span>'    : '';
-    const cBadge   = p.citations    ? `<span class="badge b-cite">📊 ${p.citations} citation${p.citations!==1?'s':''}</span>` : '';
-    const absBtnId = 'abt-' + idx;
-    const absId    = 'abs-' + idx;
-    const absBlock = p.abstract
-        ? `<span class="abstract-toggle" onclick="toggleAbs(${idx})" id="${absBtnId}">▸ Show abstract</span>
-           <div class="pub-abstract" id="${absId}">${p.abstract}${p.abstract.length >= 400 ? '…' : ''}</div>`
-        : '';
-
-    return `<div class="pub-item${p.first_author?' fa':''}" id="pi-${idx}">
+function card(p, i) {
+    const auth = fmtAuth(p.authors);
+    const ax   = p.arxiv   ? `<a class="pl ax"  href="https://arxiv.org/abs/${p.arxiv}" target="_blank">arXiv</a>` : '';
+    const doi  = p.doi     ? `<a class="pl doi" href="https://doi.org/${p.doi}" target="_blank">DOI</a>` : '';
+    const ads  = p.bibcode ? `<a class="pl ads" href="https://ui.adsabs.harvard.edu/abs/${encodeURIComponent(p.bibcode)}" target="_blank">ADS</a>` : '';
+    const bfa  = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
+    const bref = p.refereed     ? '<span class="bdg b-ref">Refereed</span>'    : '';
+    const bcit = p.citations    ? `<span class="bdg b-cit">${p.citations} cite${p.citations!==1?'s':''}</span>` : '';
+    const abt  = p.abstract     ? `<span class="abs-toggle" onclick="togAbs(${i},this)">▸ Abstract</span><div class="abs-text">${p.abstract}${p.abstract.length>=400?'…':''}</div>` : '';
+    return `<div class="pub${p.first_author?' fa':''}" id="pb-${i}">
         <div class="pub-title">${p.title}</div>
-        <div class="pub-authors">${authors}</div>
-        <div class="pub-meta">
-            <span class="pub-journal">${p.journal}</span>
-            <span class="pub-year">(${p.year})</span>
-            ${faBadge}${refBadge}${cBadge}
-        </div>
-        <div class="pub-links">${arxivBtn}${doiBtn}${adsBtn}</div>
-        ${absBlock}
+        <div class="pub-auth">${auth}</div>
+        <div class="pub-meta"><span class="pub-jnl">${p.journal}</span><span class="pub-yr">(${p.year})</span>${bfa}${bref}${bcit}</div>
+        <div class="pub-links">${ax}${doi}${ads}</div>
+        ${abt}
     </div>`;
 }
 
-function toggleAbs(idx) {
-    const item = document.getElementById('pi-' + idx);
-    const btn  = document.getElementById('abt-' + idx);
-    item.classList.toggle('expanded');
-    btn.textContent = item.classList.contains('expanded') ? '▾ Hide abstract' : '▸ Show abstract';
+function togAbs(i, btn) {
+    const el = document.getElementById('pb-' + i);
+    el.classList.toggle('exp');
+    btn.textContent = el.classList.contains('exp') ? '▾ Abstract' : '▸ Abstract';
 }
 
-function fmtAuthors(authors) {
-    if (!authors || !authors.length) return '';
-    const hl = a => {
-        const l = a.toLowerCase();
+function fmtAuth(a) {
+    if (!a || !a.length) return '';
+    const hl = s => {
+        const l = s.toLowerCase();
         return (l.includes('ortiz') && (l.includes('r') || l.includes('iii')))
-            ? `<span class="me">${a}</span>` : a;
+            ? `<span class="me">${s}</span>` : s;
     };
-    const MAX = 8;
-    const list = Array.isArray(authors) ? authors : [authors];
-    if (list.length <= MAX) return list.map(hl).join(', ');
-    return list.slice(0, MAX).map(hl).join(', ') + ', <em>et al.</em>';
+    const list = Array.isArray(a) ? a : [a];
+    return list.length <= 7
+        ? list.map(hl).join(', ')
+        : list.slice(0, 7).map(hl).join(', ') + ', <em>et al.</em>';
 }
 
-function setStatus(msg, err=false) {
-    const el = document.getElementById('pub-status');
-    if (!msg) { el.innerHTML = ''; return; }
-    el.innerHTML = `<span style="color:${err?'#f87171':'var(--muted)'}">${msg}</span>`;
+function setSpin(msg) {
+    const el = document.getElementById('pub-spin');
+    el.innerHTML = msg ? `<span style="color:var(--muted);font-size:.75rem">${msg}</span>` : '';
 }
 </script>
 </body>
