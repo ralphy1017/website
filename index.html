@@ -14,11 +14,10 @@
             --blue:    #60a5fa;
             --violet:  #a78bfa;
             --green:   #34d399;
-            --orange:  #fb923c;   /* ADD THIS */
-            --red:     #f87171;   /* ADD THIS */
+            --orange:  #fb923c;
+            --red:     #f87171;
             --border:  #1e2d45;
         }
-
 
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
@@ -76,13 +75,11 @@
         .nav-links button:hover,
         .nav-links button.on { color: var(--blue); border-bottom-color: var(--blue); }
 
-
         /* LAYOUT */
         .wrap { max-width: 900px; margin: 0 auto; padding: 5.5rem 2rem 5rem; }
         .page { display: none; animation: up .3s ease; }
         .page.on { display: block; }
         @keyframes up { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:none } }
-
 
         /* HOME */
         .home-hero {
@@ -117,10 +114,8 @@
         }
         .lnk:hover { color: var(--blue); border-color: var(--blue); }
 
-
         .sec-title { font-size: 1.5rem; font-weight: 700; margin-bottom: .35rem; }
         .sec-sub   { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; }
-
 
         /* RESEARCH CARDS */
         .proj-card {
@@ -129,7 +124,6 @@
             transition: border-color .25s, transform .25s;
         }
         .proj-card:hover { border-color: #2d4a6e; transform: translateY(-2px); }
-        
         .proj-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
         .proj-icon { font-size: 1.5rem; flex-shrink: 0; }
         .proj-header h3 { font-size: 1.05rem; font-weight: 700; flex: 1; }
@@ -146,24 +140,10 @@
             background: rgba(96,165,250,.08); color: var(--blue);
             border: 1px solid rgba(96,165,250,.18); border-radius: 4px;
         }
-        .ptag.g {
-            background: rgba(52,211,153,.07); color: var(--green);
-            border-color: rgba(52,211,153,.2);
-        }
-        .ptag.o {
-        background: rgba(251,146,60,.08); color: var(--orange);
-        border-color: rgba(251,146,60,.2);
-        }
-        .ptag.v {
-            background: rgba(167,139,250,.08); color: var(--violet);
-            border-color: rgba(167,139,250,.2);
-        }
-        .ptag.r {
-            background: rgba(248,113,113,.08); color: var(--red);
-            border-color: rgba(248,113,113,.2);
-        }
-
-
+        .ptag.g { background: rgba(52,211,153,.07); color: var(--green); border-color: rgba(52,211,153,.2); }
+        .ptag.o { background: rgba(251,146,60,.08); color: var(--orange); border-color: rgba(251,146,60,.2); }
+        .ptag.v { background: rgba(167,139,250,.08); color: var(--violet); border-color: rgba(167,139,250,.2); }
+        .ptag.r { background: rgba(248,113,113,.08); color: var(--red); border-color: rgba(248,113,113,.2); }
 
         /* STATS */
         .stats-row {
@@ -180,7 +160,6 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .stat-l { color: var(--muted); font-size: .73rem; margin-top: .3rem; }
-
 
         /* PUB CONTROLS */
         .pub-bar {
@@ -201,10 +180,8 @@
         }
         @keyframes spin { to { transform: rotate(360deg) } }
 
-
         /* PUBLICATION CARDS */
         .pub-list { display: flex; flex-direction: column; gap: 1rem; }
-
 
         a.pub-card {
             display: block;
@@ -225,37 +202,23 @@
         }
         a.pub-card.fa { border-left-color: var(--blue); }
 
-
-        .pub-title {
-            font-size: .95rem; font-weight: 600;
-            color: var(--text); line-height: 1.55; margin-bottom: .5rem;
-        }
-        .pub-auth {
-            font-size: .8rem; color: var(--muted);
-            margin-bottom: .5rem; line-height: 1.5;
-        }
+        .pub-title { font-size: .95rem; font-weight: 600; color: var(--text); line-height: 1.55; margin-bottom: .5rem; }
+        .pub-auth  { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; line-height: 1.5; }
         .pub-auth .me { color: var(--blue); font-weight: 700; }
-        .pub-meta {
-            display: flex; flex-wrap: wrap; gap: .5rem;
-            align-items: center; margin-bottom: .6rem;
-        }
-        .pub-jnl { font-size: .8rem; color: var(--sub); font-style: italic; }
-        .pub-yr  { font-size: .75rem; color: var(--muted); }
-        .bdg { font-size: .67rem; padding: .12rem .5rem; border-radius: 4px; font-weight: 700; }
+        .pub-meta  { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: .6rem; }
+        .pub-jnl   { font-size: .8rem; color: var(--sub); font-style: italic; }
+        .pub-yr    { font-size: .75rem; color: var(--muted); }
+        .bdg       { font-size: .67rem; padding: .12rem .5rem; border-radius: 4px; font-weight: 700; }
         .b-fa  { background: rgba(96,165,250,.12);  color: var(--blue);   border: 1px solid rgba(96,165,250,.2); }
         .b-ref { background: rgba(167,139,250,.1);   color: var(--violet); border: 1px solid rgba(167,139,250,.2); }
         .b-cit { background: rgba(52,211,153,.08);   color: #34d399;       border: 1px solid rgba(52,211,153,.18); }
-        .pub-footer {
-            display: flex; gap: .5rem; flex-wrap: wrap;
-            align-items: center; margin-top: .5rem;
-        }
+        .pub-footer { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin-top: .5rem; }
         .pill {
             font-size: .73rem; padding: .2rem .65rem;
             border: 1px solid var(--border); border-radius: 5px;
             color: var(--muted); background: rgba(255,255,255,.03);
         }
         .ads-hint { margin-left: auto; font-size: .73rem; color: var(--muted); opacity: .6; }
-
 
         /* CV */
         .cv-block { margin-bottom: 2.5rem; }
@@ -279,18 +242,15 @@
             margin: .15rem; display: inline-block;
         }
 
-
         /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; margin-top: 1.5rem; }
         .ccard { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; }
         .ccard h3 { font-size: .9rem; font-weight: 700; color: var(--blue); margin-bottom: .8rem; }
-        .ccard p { font-size: .88rem; color: var(--sub); margin-bottom: .35rem; line-height: 1.6; }
-        .ccard a { color: var(--blue); text-decoration: none; }
+        .ccard p  { font-size: .88rem; color: var(--sub); margin-bottom: .35rem; line-height: 1.6; }
+        .ccard a  { color: var(--blue); text-decoration: none; }
         .ccard a:hover { text-decoration: underline; }
 
-
         .updated { font-size: .7rem; color: var(--muted); margin-top: 1.25rem; opacity: .6; }
-
 
         @media(max-width:640px) {
             .home-hero { flex-direction: column; gap: 1.5rem; }
@@ -318,9 +278,7 @@
     </div>
 </nav>
 
-
 <div class="wrap">
-
 
     <!-- HOME -->
     <div id="page-home" class="page">
@@ -336,38 +294,23 @@
                     infrared sky-background measurements, and extragalactic science with space-based telescopes in the Optical and Infrared.
                 </div>
                 <div class="links-row">
-                    <a class="lnk" href="https://orcid.org/0000-0002-6150-833X" target="_blank"
-                    style="color: white; border-color: white;">
-                        <img src="orcid.png" alt="ORCID" style="height: 18px; width: 18px; vertical-align: middle; margin-right: 5px;">
-                        ORCID
+                    <a class="lnk" href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:white;border-color:white;">
+                        <img src="orcid.png" alt="ORCID" style="height:18px;width:18px;vertical-align:middle;margin-right:5px;">ORCID
                     </a>
-                    <a class="lnk" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank"
-                    style="color: white; border-color: white;">
-                        NASA ADS
+                    <a class="lnk" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" style="color:white;border-color:white;">NASA ADS</a>
+                    <a class="lnk" href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank" style="color:white;border-color:white;">
+                        <img src="linkedin.png" alt="LinkedIn" style="height:18px;width:18px;vertical-align:middle;margin-right:5px;">LinkedIn
                     </a>
-                    <a class="lnk" href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank"
-                    style="color: white; border-color: white;">
-                        <img src="linkedin.png" alt="LinkedIn" style="height: 18px; width: 18px; vertical-align: middle; margin-right: 5px;">
-                        LinkedIn
-                    </a>
-                    <a class="lnk" href="mailto:rortizii@asu.edu"
-                    style="color: white; border-color: white;">
-                        Email
-                    </a>
-                    <a class="lnk" href="https://scholar.google.com/citations?user=BLaj-vcAAAAJ&hl=en" target="_blank"
-                    style="color: white; border-color: white;">
-                        <img src="google-scholar.png" alt="GoogleScholar" style="height: 18px; width: 18px; vertical-align: middle; margin-right: 5px;">
-                        Google Scholar
+                    <a class="lnk" href="mailto:rortizii@asu.edu" style="color:white;border-color:white;">Email</a>
+                    <a class="lnk" href="https://scholar.google.com/citations?user=BLaj-vcAAAAJ&hl=en" target="_blank" style="color:white;border-color:white;">
+                        <img src="google-scholar.png" alt="GoogleScholar" style="height:18px;width:18px;vertical-align:middle;margin-right:5px;">Google Scholar
                     </a>
                 </div>
             </div>
         </div>
 
-
-
         <div class="sec-title">Research Overview</div>
         <p class="sec-sub">Three active programs in multiwavelength and high-redshift extragalactic astronomy</p>
-
 
         <div class="proj-card" style="border-left:3px solid var(--orange);">
             <div class="proj-header">
@@ -376,24 +319,13 @@
                 <a href="https://sites.google.com/view/jwstpearls" target="_blank">Visit site ↗</a>
             </div>
             <div class="proj-tags">
-                <span class="ptag o">JWST NIRCam</span>
-                <span class="ptag o">AGN</span>
-                <span class="ptag o">Star-Formation</span>
-                <span class="ptag o">Lensing Clusters</span>
-                <span class="ptag o">High-Redshift</span>
-                <span class="ptag o">Time-Domain</span>
-                <span class="ptag o">Galaxy Quenching</span>
-                <span class="ptag o">Multiwavelength Surveys</span>
-                <span class="ptag o">Transients</span>
-                <span class="ptag o">Globular Clusters</span>
-                <span class="ptag o">Galaxy Evolution</span>
-                <span class="ptag o">Cosmic Noon</span>
+                <span class="ptag o">JWST NIRCam</span><span class="ptag o">AGN</span><span class="ptag o">Star-Formation</span>
+                <span class="ptag o">Lensing Clusters</span><span class="ptag o">High-Redshift</span><span class="ptag o">Time-Domain</span>
+                <span class="ptag o">Galaxy Quenching</span><span class="ptag o">Multiwavelength Surveys</span><span class="ptag o">Transients</span>
+                <span class="ptag o">Globular Clusters</span><span class="ptag o">Galaxy Evolution</span><span class="ptag o">Cosmic Noon</span>
                 <span class="ptag o">Dusty Star-Forming Galaxies</span>
-
-
             </div>
         </div>
-
 
         <div class="proj-card" style="border-left:3px solid var(--violet);">
             <div class="proj-header">
@@ -401,18 +333,12 @@
                 <h3>JWST AR Program ID 4695 (Project DARK-SKY / SKYSURF-IR)</h3>
             </div>
             <div class="proj-tags">
-                <span class="ptag v">JWST NIRCam/NIRISS</span>
-                <span class="ptag v">Extragalactic Background Light</span>
-                <span class="ptag v">Sky Surface Brightness</span>
-                <span class="ptag v">Zodiacal Light</span>
-                <span class="ptag v">Diffuse Light</span>
-                <span class="ptag v">Galaxy Counts</span>
-                <span class="ptag v">Calibration</span>
-                <span class="ptag v">JWST Pipeline</span>
-                <span class="ptag v">Astrophysical Backgrounds</span>
+                <span class="ptag v">JWST NIRCam/NIRISS</span><span class="ptag v">Extragalactic Background Light</span>
+                <span class="ptag v">Sky Surface Brightness</span><span class="ptag v">Zodiacal Light</span>
+                <span class="ptag v">Diffuse Light</span><span class="ptag v">Galaxy Counts</span>
+                <span class="ptag v">Calibration</span><span class="ptag v">JWST Pipeline</span><span class="ptag v">Astrophysical Backgrounds</span>
             </div>
         </div>
-
 
         <div class="proj-card" style="border-left:3px solid var(--red);">
             <div class="proj-header">
@@ -421,26 +347,18 @@
                 <a href="https://jwst-venus.github.io/" target="_blank">Visit site ↗</a>
             </div>
             <div class="proj-tags">
-                <span class="ptag r">Gravitational Lensing</span>
-                <span class="ptag r">Little Red Dots</span>
-                <span class="ptag r">High Redshift</span>
-                <span class="ptag r">UV Luminosity Function</span>
-                <span class="ptag r">Supermassive Black Holes</span>
-                <span class="ptag r">Cosmic Reionization</span>
-                <span class="ptag r">Time Domain</span>
-                <span class="ptag r">Clumpy Star Formation</span>
-                <span class="ptag r">Galaxy Clusters</span>
+                <span class="ptag r">Gravitational Lensing</span><span class="ptag r">Little Red Dots</span>
+                <span class="ptag r">High Redshift</span><span class="ptag r">UV Luminosity Function</span>
+                <span class="ptag r">Supermassive Black Holes</span><span class="ptag r">Cosmic Reionization</span>
+                <span class="ptag r">Time Domain</span><span class="ptag r">Clumpy Star Formation</span><span class="ptag r">Galaxy Clusters</span>
             </div>
         </div>
     </div>
-
-
 
     <!-- RESEARCH -->
     <div id="page-research" class="page">
         <div class="sec-title">Research</div>
         <p class="sec-sub">Three active programs in multiwavelength and high-redshift extragalactic astronomy</p>
-
 
         <div class="proj-card" style="border-left:3px solid var(--orange);">
             <div class="proj-header">
@@ -448,51 +366,36 @@
                 <h3>JWST PEARLS</h3>
                 <a href="https://sites.google.com/view/jwstpearls" target="_blank">jwstpearls ↗</a>
             </div>
-            <p>
-                PEARLS is a JWST Guaranteed Time Observation (GTO) program (PI: R. Windhorst, ASU) imaging
-                multiple deep fields — including the North Ecliptic Pole Time-Domain Field, MACS-0416, and
-                El Gordo — in up to eight NIRCam bands. My contributions include identifying and characterizing
-                Seyfert galaxies in the JWST NEP TDF with central point-like emission from the AGN, cross-matching
-                X-ray and radio sources with UV-Optical-IR counterparts from space- and ground-based data, and SED
-                fitting with CIGALE to constrain AGN and host-galaxy properties across cosmic time.
-                I am also a "Builder" due to my contributions to the data pipeline and processing.
-            </p>
+            <p>PEARLS is a JWST Guaranteed Time Observation (GTO) program (PI: R. Windhorst, ASU) imaging
+            multiple deep fields — including the North Ecliptic Pole Time-Domain Field, MACS-0416, and
+            El Gordo — in up to eight NIRCam bands. My contributions include identifying and characterizing
+            Seyfert galaxies in the JWST NEP TDF with central point-like emission from the AGN, cross-matching
+            X-ray and radio sources with UV-Optical-IR counterparts from space- and ground-based data, and SED
+            fitting with CIGALE to constrain AGN and host-galaxy properties across cosmic time.
+            I am also a "Builder" due to my contributions to the data pipeline and processing.</p>
             <div class="proj-tags">
-                <span class="ptag o">CIGALE</span>
-                <span class="ptag o">Chandra</span>
-                <span class="ptag o">XMM-Newton</span>
-                <span class="ptag o">NIRCam</span>
-                <span class="ptag o">NEP-TDF</span>
-                <span class="ptag o">High-z AGN</span>
+                <span class="ptag o">CIGALE</span><span class="ptag o">Chandra</span><span class="ptag o">XMM-Newton</span>
+                <span class="ptag o">NIRCam</span><span class="ptag o">NEP-TDF</span><span class="ptag o">High-z AGN</span>
             </div>
         </div>
-
 
         <div class="proj-card" style="border-left:3px solid var(--violet);">
             <div class="proj-header">
                 <span class="proj-icon">🌌</span>
                 <h3>Project DARK-SKY / SKYSURF-IR</h3>
             </div>
-            <p>
-                Building on the HST SKYSURF legacy project, DARK-SKY (JWST Cycle 3 AR, PI: R. Windhorst) analyzes
-                &gt;60,000 NIRCam and NIRISS images across 100 independent JWST fields to measure the absolute
-                0.9–5.0 μm sky surface brightness and set competitive limits on diffuse Extragalactic Background
-                Light (EBL). My role involves spearheading the processing of the entire JWST NIRCam/NIRISS database
-                up to October 2024, which includes calibrating individual exposure files and producing single-visit mosaics.
-                In addition, I produced panchromatic sky-surface brightness measurements, Zodiacal Light and Diffuse
-                Galactic Light modeling, and data quality assessment.
-            </p>
+            <p>Building on the HST SKYSURF legacy project, DARK-SKY (JWST Cycle 3 AR, PI: R. Windhorst) analyzes
+            &gt;60,000 NIRCam and NIRISS images across 100 independent JWST fields to measure the absolute
+            0.9–5.0 μm sky surface brightness and set competitive limits on diffuse Extragalactic Background
+            Light (EBL). My role involves spearheading the processing of the entire JWST NIRCam/NIRISS database
+            up to October 2024, which includes calibrating individual exposure files and producing single-visit mosaics.
+            In addition, I produced panchromatic sky-surface brightness measurements, Zodiacal Light and Diffuse
+            Galactic Light modeling, and data quality assessment.</p>
             <div class="proj-tags">
-                <span class="ptag v">JWST NIRCam</span>
-                <span class="ptag v">NIRISS</span>
-                <span class="ptag v">Zodiacal Light</span>
-                <span class="ptag v">DGL</span>
-                <span class="ptag v">EBL</span>
-                <span class="ptag v">ProFound</span>
-                <span class="ptag v">Sky-SB Calibration</span>
+                <span class="ptag v">JWST NIRCam</span><span class="ptag v">NIRISS</span><span class="ptag v">Zodiacal Light</span>
+                <span class="ptag v">DGL</span><span class="ptag v">EBL</span><span class="ptag v">ProFound</span><span class="ptag v">Sky-SB Calibration</span>
             </div>
         </div>
-
 
         <div class="proj-card" style="border-left:3px solid var(--red);">
             <div class="proj-header">
@@ -500,28 +403,19 @@
                 <h3>JWST VENUS — Very Early and Nascent Universe Survey</h3>
                 <a href="https://jwst-venus.github.io/" target="_blank">jwst-venus ↗</a>
             </div>
-            <p>
-                VENUS (PIs: S. Fujimoto, U. Toronto &amp; D. Coe, STScI) is a JWST survey with 150+ international
-                members targeting galaxy formation at z ≳ 14 through gravitational lensing. The program probes
-                ultra-faint galaxies down to M<sub>UV</sub> ≃ −12, conducts the first systematic census of
-                low-mass black holes (down to ~10<sup>5</sup> M<sub>⊙</sub>) in the early universe, and opens
-                a time-domain window on lensed stars and supernovae at z ≳ 5. Observations are ongoing with a
-                first data release anticipated in late 2026.
-            </p>
+            <p>VENUS (PIs: S. Fujimoto, U. Toronto &amp; D. Coe, STScI) is a JWST survey with 150+ international
+            members targeting galaxy formation at z ≳ 14 through gravitational lensing. The program probes
+            ultra-faint galaxies down to M<sub>UV</sub> ≃ −12, conducts the first systematic census of
+            low-mass black holes (down to ~10<sup>5</sup> M<sub>⊙</sub>) in the early universe, and opens
+            a time-domain window on lensed stars and supernovae at z ≳ 5. Observations are ongoing with a
+            first data release anticipated in late 2026.</p>
             <div class="proj-tags">
-                <span class="ptag r">Gravitational Lensing</span>
-                <span class="ptag r">z ≳ 14</span>
-                <span class="ptag r">UV Luminosity Function</span>
-                <span class="ptag r">Low-Mass Black Holes</span>
-                <span class="ptag r">Cosmic Reionization</span>
-                <span class="ptag r">Lensed Stars</span>
-                <span class="ptag r">Time Domain</span>
+                <span class="ptag r">Gravitational Lensing</span><span class="ptag r">z ≳ 14</span>
+                <span class="ptag r">UV Luminosity Function</span><span class="ptag r">Low-Mass Black Holes</span>
+                <span class="ptag r">Cosmic Reionization</span><span class="ptag r">Lensed Stars</span><span class="ptag r">Time Domain</span>
             </div>
         </div>
     </div>
-
-
-
 
     <!-- PUBLICATIONS -->
     <div id="page-publications" class="page">
@@ -531,7 +425,6 @@
             ORCID <a href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:var(--blue)">0000-0002-6150-833X</a>
             &nbsp;·&nbsp; Click any card to open on ADS
         </p>
-
 
         <div class="stats-row">
             <div class="stat"><div class="stat-n" id="s-n">—</div><div class="stat-l">Publications</div></div>
@@ -544,10 +437,7 @@
             <div class="stat"><div class="stat-n" id="s-i10">—</div><div class="stat-l">i10-index</div></div>
             <div class="stat"><div class="stat-n" id="s-hfa">—</div><div class="stat-l">h-index (1st Author)</div></div>
             <div class="stat"><div class="stat-n" id="s-coauth">—</div><div class="stat-l"># Co-authors</div></div>
-            <!-- <div class="stat"><div class="stat-n" id="s-axfa">—</div><div class="stat-l">arXiv 1st Author</div></div> -->
         </div>
-
-
 
         <div class="pub-bar">
             <div style="display:flex;gap:.45rem">
@@ -561,17 +451,14 @@
             </div>
         </div>
 
-
         <div class="pub-list" id="pub-list"></div>
         <div class="updated" id="pub-updated"></div>
     </div>
-
 
     <!-- CV -->
     <div id="page-cv" class="page">
         <div class="sec-title">CV</div>
         <p class="sec-sub">Academic background and skills</p>
-
 
         <div class="cv-block">
             <h3>Education</h3>
@@ -584,7 +471,6 @@
             </div>
         </div>
 
-
         <div class="cv-block">
             <h3>Research</h3>
             <div class="cv-row">
@@ -595,7 +481,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="cv-block">
             <h3>Surveys &amp; Collaborations</h3>
@@ -622,7 +507,6 @@
             </div>
         </div>
 
-
         <div class="cv-block">
             <h3>Technical Skills</h3>
             <div class="skill-grid">
@@ -632,12 +516,10 @@
             </div>
         </div>
 
-
         <div style="margin-top:2rem">
             <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" class="lnk">📄 Full publication list on NASA ADS</a>
         </div>
     </div>
-
 
     <!-- CONTACT -->
     <div id="page-contact" class="page">
@@ -663,12 +545,9 @@
         </div>
     </div>
 
-
 </div>
 
-
 <script>
-
 function go(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
     document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('on'));
@@ -727,16 +606,15 @@ function loadPubs() {
 
 function setStats(s, m) {
     if (!s) return;
-    document.getElementById('s-n').textContent      = s.total_papers          ?? '—';
-    document.getElementById('s-r').textContent      = s.refereed_papers       ?? '—';
-    document.getElementById('s-fa').textContent     = s.first_author_papers   ?? '—';
-    document.getElementById('s-c').textContent      = s.total_citations       ?? '—';
+    document.getElementById('s-n').textContent      = s.total_papers           ?? '—';
+    document.getElementById('s-r').textContent      = s.refereed_papers        ?? '—';
+    document.getElementById('s-fa').textContent     = s.first_author_papers    ?? '—';
+    document.getElementById('s-c').textContent      = s.total_citations        ?? '—';
     document.getElementById('s-fc').textContent     = s.first_author_citations ?? '—';
-    document.getElementById('s-h').textContent      = s.h_index               ?? '—';
-    document.getElementById('s-i10').textContent    = s.i10_index             ?? '—';
-    document.getElementById('s-hfa').textContent    = s.h_index_first_author  ?? '—';
-    document.getElementById('s-coauth').textContent = s.total_coauthors       ?? '—';
-
+    document.getElementById('s-h').textContent      = s.h_index                ?? '—';
+    document.getElementById('s-i10').textContent    = s.i10_index              ?? '—';
+    document.getElementById('s-hfa').textContent    = s.h_index_first_author   ?? '—';
+    document.getElementById('s-coauth').textContent = s.total_coauthors        ?? '—';
     if (m && m.updated) {
         const d = new Date(m.updated);
         document.getElementById('pub-updated').textContent =
@@ -812,7 +690,7 @@ function card(p) {
 }
 
 function arxivCard(p) {
-    const auth = fmtAuth(p.authors);
+    const auth  = fmtAuth(p.authors);
     const bfa   = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
     const bjref = p.journal_ref
         ? '<span class="bdg b-ref">Published</span>'
@@ -847,12 +725,11 @@ function fmtAuth(a) {
 
 function setSpin(msg) {
     const el = document.getElementById('pub-spin');
-    el.innerHTML = msg ? msg : '';
+    el.innerHTML = msg || '';
 }
-
+</script>
 
 <script>
-// Parallax scroll
 (function() {
     var lastY = 0, ticking = false;
     function update(y) {
