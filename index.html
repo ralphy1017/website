@@ -694,6 +694,9 @@ window._pubLoaded = false;
 function loadPubs() {
     window._pubLoaded = true;
 
+    // Show spinner
+    setSpin('<span class="spin"></span><span>Loading…</span>');
+
     // Load both JSON files in parallel
     Promise.allSettled([
         fetch('publications.json?_=' + Date.now()).then(r => { if (!r.ok) throw r.status; return r.json(); }),
@@ -706,6 +709,7 @@ function loadPubs() {
             setStats(pubResult.value.stats, pubResult.value.meta);
         } else {
             setSpin('⚠️ publications.json not found — run fetch_publications.py first.');
+            return; // nothing to render
         }
 
         // Handle arxiv_preprints.json
@@ -715,10 +719,12 @@ function loadPubs() {
         }
         // arXiv is optional — silently skip if missing
 
+        // Render only after ALL data is settled
         render();
-        if (pubResult.status === 'fulfilled') setSpin('');
+        setSpin('');
     });
 }
+
 
 function setStats(s, m) {
     if (!s) return;
