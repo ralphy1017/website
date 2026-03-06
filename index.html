@@ -14,8 +14,8 @@
             --blue:    #60a5fa;
             --violet:  #a78bfa;
             --green:   #34d399;
-            --orange:  #fb923c;
-            --red:     #f87171;
+            --orange:  #fb923c;   /* ADD THIS */
+            --red:     #f87171;   /* ADD THIS */
             --border:  #1e2d45;
         }
 
@@ -23,36 +23,12 @@
         html { scroll-behavior:smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: transparent;
+            background: var(--bg);
             color: var(--text);
             line-height: 1.7;
             font-size: 16px;
         }
-
-        /* PARALLAX BACKGROUND */
-        #parallax-bg {
-            position: fixed;
-            top: -20%;
-            left: 0;
-            width: 100%;
-            height: 140%;
-            background-image: url('AbellS1063.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            z-index: -2;
-            will-change: transform;
-        }
-
-        /* Dark overlay so text remains readable */
-        #parallax-overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(5, 8, 18, 0.72);
-            z-index: -1;
-        }
-
+        
         /* NAV */
         nav {
             position: fixed; top: 0; width: 100%;
@@ -121,7 +97,7 @@
 
         /* RESEARCH CARDS */
         .proj-card {
-            background: rgba(17,24,39,0.82); border: 1px solid var(--border);
+            background: var(--card); border: 1px solid var(--border);
             border-radius: 12px; padding: 1.75rem; margin-bottom: 1.25rem;
             transition: border-color .25s, transform .25s;
         }
@@ -148,8 +124,8 @@
             border-color: rgba(52,211,153,.2);
         }
         .ptag.o {
-            background: rgba(251,146,60,.08); color: var(--orange);
-            border-color: rgba(251,146,60,.2);
+        background: rgba(251,146,60,.08); color: var(--orange);
+        border-color: rgba(251,146,60,.2);
         }
         .ptag.v {
             background: rgba(167,139,250,.08); color: var(--violet);
@@ -160,13 +136,14 @@
             border-color: rgba(248,113,113,.2);
         }
 
+
         /* STATS */
         .stats-row {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
             gap: .85rem; margin-bottom: 2rem;
         }
         .stat {
-            background: rgba(17,24,39,0.82); border: 1px solid var(--border);
+            background: var(--card); border: 1px solid var(--border);
             border-radius: 10px; padding: 1.1rem; text-align: center;
         }
         .stat-n {
@@ -200,7 +177,7 @@
 
         a.pub-card {
             display: block;
-            background: rgba(17,24,39,0.82);
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1.4rem 1.5rem;
@@ -260,7 +237,7 @@
         .cv-body h4 { font-size: .95rem; margin-bottom: .15rem; }
         .cv-body p  { font-size: .87rem; color: var(--sub); line-height: 1.6; }
         .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: .75rem; }
-        .skill-box { background: rgba(17,24,39,0.82); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }
+        .skill-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; }
         .skill-box h4 { font-size: .8rem; font-weight: 700; color: var(--blue); margin-bottom: .6rem; }
         .stag {
             font-size: .72rem; padding: .18rem .55rem;
@@ -271,7 +248,7 @@
 
         /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; margin-top: 1.5rem; }
-        .ccard { background: rgba(17,24,39,0.82); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; }
+        .ccard { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; }
         .ccard h3 { font-size: .9rem; font-weight: 700; color: var(--blue); margin-bottom: .8rem; }
         .ccard p { font-size: .88rem; color: var(--sub); margin-bottom: .35rem; line-height: 1.6; }
         .ccard a { color: var(--blue); text-decoration: none; }
@@ -288,9 +265,6 @@
     </style>
 </head>
 <body>
-
-<div id="parallax-bg"></div>
-<div id="parallax-overlay"></div>
 
 <nav>
     <div class="nav-inner">
@@ -313,7 +287,7 @@
             <img src="me.jpg" alt="Rafael Ortiz III" class="profile-img"
                 onerror="this.outerHTML='<div class=\'profile-placeholder\'>👤</div>'">
             <div class="hero-text">
-                <h1>Rafael Ortiz III</h1>
+                <h1>Ralph Ortiz</h1>
                 <div class="role">Ph.D. Student in Astrophysics · Arizona State University · School of Earth and Space Exploration</div>
                 <div class="bio">
                     I study the co-evolution of supermassive black holes and galaxies using X-ray surveys,
@@ -343,6 +317,7 @@
             </div>
         </div>
 
+
         <div class="sec-title">Research Overview</div>
         <p class="sec-sub">Three active programs in multiwavelength and high-redshift extragalactic astronomy</p>
 
@@ -366,6 +341,7 @@
                 <span class="ptag o">Galaxy Evolution</span>
                 <span class="ptag o">Cosmic Noon</span>
                 <span class="ptag o">Dusty Star-Forming Galaxies</span>
+
             </div>
         </div>
 
@@ -401,50 +377,176 @@
                 <span class="ptag r">Supermassive Black Holes</span>
                 <span class="ptag r">Cosmic Reionization</span>
                 <span class="ptag r">Time Domain</span>
-                <span class="ptag r">Lensed Stars</span>
-                <span class="ptag r">Supernovae</span>
-                <span class="ptag r">Low-Mass Black Holes</span>
+                <span class="ptag r">Clumpy Star Formation</span>
+                <span class="ptag r">Galaxy Clusters</span>
             </div>
         </div>
     </div>
 
+
     <!-- RESEARCH -->
     <div id="page-research" class="page">
         <div class="sec-title">Research</div>
+        <p class="sec-sub">Three active programs in multiwavelength and high-redshift extragalactic astronomy</p>
+
+        <div class="proj-card" style="border-left:3px solid var(--orange);">
+            <div class="proj-header">
+                <span class="proj-icon">🔭</span>
+                <h3>JWST PEARLS</h3>
+                <a href="https://sites.google.com/view/jwstpearls" target="_blank">jwstpearls ↗</a>
+            </div>
+            <p>
+                PEARLS is a JWST Guaranteed Time Observation (GTO) program (PI: R. Windhorst, ASU) imaging
+                multiple deep fields — including the North Ecliptic Pole Time-Domain Field, MACS-0416, and
+                El Gordo — in up to eight NIRCam bands. My contributions include identifying and characterizing
+                Seyfert galaxies in the JWST NEP TDF with central point-like emission from the AGN, cross-matching
+                X-ray and radio sources with UV-Optical-IR counterparts from space- and ground-based data, and SED
+                fitting with CIGALE to constrain AGN and host-galaxy properties across cosmic time.
+                I am also a "Builder" due to my contributions to the data pipeline and processing.
+            </p>
+            <div class="proj-tags">
+                <span class="ptag o">CIGALE</span>
+                <span class="ptag o">Chandra</span>
+                <span class="ptag o">XMM-Newton</span>
+                <span class="ptag o">NIRCam</span>
+                <span class="ptag o">NEP-TDF</span>
+                <span class="ptag o">High-z AGN</span>
+            </div>
+        </div>
+
+        <div class="proj-card" style="border-left:3px solid var(--violet);">
+            <div class="proj-header">
+                <span class="proj-icon">🌌</span>
+                <h3>Project DARK-SKY / SKYSURF-IR</h3>
+            </div>
+            <p>
+                Building on the HST SKYSURF legacy project, DARK-SKY (JWST Cycle 3 AR, PI: R. Windhorst) analyzes
+                &gt;60,000 NIRCam and NIRISS images across 100 independent JWST fields to measure the absolute
+                0.9–5.0 μm sky surface brightness and set competitive limits on diffuse Extragalactic Background
+                Light (EBL). My role involves spearheading the processing of the entire JWST NIRCam/NIRISS database
+                up to October 2024, which includes calibrating individual exposure files and producing single-visit mosaics.
+                In addition, I produced panchromatic sky-surface brightness measurements, Zodiacal Light and Diffuse
+                Galactic Light modeling, and data quality assessment.
+            </p>
+            <div class="proj-tags">
+                <span class="ptag v">JWST NIRCam</span>
+                <span class="ptag v">NIRISS</span>
+                <span class="ptag v">Zodiacal Light</span>
+                <span class="ptag v">DGL</span>
+                <span class="ptag v">EBL</span>
+                <span class="ptag v">ProFound</span>
+                <span class="ptag v">Sky-SB Calibration</span>
+            </div>
+        </div>
+
+        <div class="proj-card" style="border-left:3px solid var(--red);">
+            <div class="proj-header">
+                <span class="proj-icon">🪐</span>
+                <h3>JWST VENUS — Very Early and Nascent Universe Survey</h3>
+                <a href="https://jwst-venus.github.io/" target="_blank">jwst-venus ↗</a>
+            </div>
+            <p>
+                VENUS (PIs: S. Fujimoto, U. Toronto &amp; D. Coe, STScI) is a JWST survey with 150+ international
+                members targeting galaxy formation at z ≳ 14 through gravitational lensing. The program probes
+                ultra-faint galaxies down to M<sub>UV</sub> ≃ −12, conducts the first systematic census of
+                low-mass black holes (down to ~10<sup>5</sup> M<sub>⊙</sub>) in the early universe, and opens
+                a time-domain window on lensed stars and supernovae at z ≳ 5. Observations are ongoing with a
+                first data release anticipated in late 2026.
+            </p>
+            <div class="proj-tags">
+                <span class="ptag r">Gravitational Lensing</span>
+                <span class="ptag r">z ≳ 14</span>
+                <span class="ptag r">UV Luminosity Function</span>
+                <span class="ptag r">Low-Mass Black Holes</span>
+                <span class="ptag r">Cosmic Reionization</span>
+                <span class="ptag r">Lensed Stars</span>
+                <span class="ptag r">Time Domain</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- PUBLICATIONS -->
+    <div id="page-publications" class="page">
+        <div class="sec-title">Publications</div>
+        <p class="sec-sub">
+            Auto-updated via NASA ADS &nbsp;·&nbsp;
+            ORCID <a href="https://orcid.org/0000-0002-6150-833X" target="_blank" style="color:var(--blue)">0000-0002-6150-833X</a>
+            &nbsp;·&nbsp; Click any card to open on ADS
+        </p>
+
+        <div class="stats-row">
+            <div class="stat"><div class="stat-n" id="s-n">—</div><div class="stat-l">Papers</div></div>
+            <div class="stat"><div class="stat-n" id="s-r">—</div><div class="stat-l">Refereed</div></div>
+            <div class="stat"><div class="stat-n" id="s-fa">—</div><div class="stat-l">First Author</div></div>
+            <div class="stat"><div class="stat-n" id="s-c">—</div><div class="stat-l">Citations</div></div>
+            <div class="stat"><div class="stat-n" id="s-fc">—</div><div class="stat-l">1st-Author Cites</div></div>
+            <div class="stat"><div class="stat-n" id="s-h">—</div><div class="stat-l">h-index</div></div>
+        </div>
+
+        <div class="pub-bar">
+            <div style="display:flex;gap:.45rem">
+                <button class="fbtn on" onclick="filt('all',this)">All</button>
+                <button class="fbtn"    onclick="filt('fa',this)">First Author</button>
+                <button class="fbtn"    onclick="filt('ref',this)">Refereed</button>
+            </div>
+            <div class="pub-spin" id="pub-spin">
+                <span class="spin"></span><span>Loading…</span>
+            </div>
+        </div>
+
+        <div class="pub-list" id="pub-list"></div>
+        <div class="updated" id="pub-updated"></div>
+    </div>
+
+    <!-- CV -->
+    <div id="page-cv" class="page">
+        <div class="sec-title">CV</div>
         <p class="sec-sub">Academic background and skills</p>
 
         <div class="cv-block">
-            <h3>Affiliation</h3>
+            <h3>Education</h3>
             <div class="cv-row">
-                <div class="cv-yr">2022 – Present</div>
+                <div class="cv-yr">2024 – Present</div>
                 <div class="cv-body">
-                    <h4>Ph.D. Student in Astrophysics</h4>
+                    <h4>Ph.D. Astrophysics</h4>
                     <p>Arizona State University · School of Earth and Space Exploration · Tempe, AZ</p>
-                    <p style="margin-top:.4rem; font-size:.82rem; color:var(--muted);">X-ray AGN multiwavelength analysis · CIGALE SED fitting · JWST PEARLS · SKYSURF-IR data processing · JWST VENUS</p>
                 </div>
             </div>
         </div>
 
         <div class="cv-block">
-            <h3>Active Programs</h3>
+            <h3>Research</h3>
             <div class="cv-row">
-                <div class="cv-yr">GTO 1176/2738</div>
+                <div class="cv-yr">2021 – Present</div>
                 <div class="cv-body">
-                    <h4>PEARLS</h4>
+                    <h4>Research Assistant — ASU SESE</h4>
+                    <p>X-ray AGN multiwavelength analysis · CIGALE SED fitting · JWST PEARLS · SKYSURF-IR data processing · JWST VENUS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-block">
+            <h3>Surveys &amp; Collaborations</h3>
+            <div class="cv-row">
+                <div class="cv-yr">GTO</div>
+                <div class="cv-body">
+                    <h4>JWST PEARLS</h4>
                     <p>Prime Extragalactic Areas for Reionization and Lensing Science · PI: R. Windhorst (ASU)</p>
                 </div>
             </div>
             <div class="cv-row">
-                <div class="cv-yr">AR 4695</div>
+                <div class="cv-yr">AR</div>
                 <div class="cv-body">
-                    <h4>DARK-SKY / SKYSURF-IR</h4>
+                    <h4>JWST DARK-SKY / SKYSURF-IR</h4>
                     <p>Archival Legacy Calibration · PI: R. Windhorst (ASU) · Constraining diffuse EBL · Astrophysical Backgrounds</p>
                 </div>
             </div>
             <div class="cv-row">
-                <div class="cv-yr">GTO 6882</div>
+                <div class="cv-yr">GTO</div>
                 <div class="cv-body">
-                    <h4>VENUS</h4>
+                    <h4>JWST VENUS</h4>
                     <p>Very Exploration of Nascent, Unexplored Sources · PIs: S. Fujimoto (U. Toronto) &amp; D. Coe (STScI) · Galaxy formation at z ≳ 14</p>
                 </div>
             </div>
@@ -453,103 +555,14 @@
         <div class="cv-block">
             <h3>Technical Skills</h3>
             <div class="skill-grid">
-                <div class="skill-box">
-                    <h4>Languages</h4>
-                    <span class="stag">Python</span><span class="stag">Bash</span><span class="stag">LaTeX</span>
-                </div>
-                <div class="skill-box">
-                    <h4>Astronomy Software</h4>
-                    <span class="stag">CIGALE</span><span class="stag">XSPEC</span><span class="stag">CIAO</span>
-                    <span class="stag">Astropy</span><span class="stag">Source Extractor</span>
-                </div>
-                <div class="skill-box">
-                    <h4>Data &amp; Analysis</h4>
-                    <span class="stag">SED Fitting</span><span class="stag">X-ray Spectroscopy</span>
-                    <span class="stag">Multiwavelength Cross-matching</span>
-                </div>
-                <div class="skill-box">
-                    <h4>Tools</h4>
-                    <span class="stag">Git / GitHub</span><span class="stag">Jupyter</span>
-                    <span class="stag">VSCode</span><span class="stag">DS9</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PUBLICATIONS -->
-    <div id="page-publications" class="page">
-        <div class="sec-title">Publications</div>
-        <p class="sec-sub">Auto-updated via NASA ADS · ORCID 0000-0002-6150-833X · Click any card to open on ADS</p>
-
-        <div class="stats-row" id="pub-stats">
-            <div class="stat"><div class="stat-n" id="s-total">–</div><div class="stat-l">Total Papers</div></div>
-            <div class="stat"><div class="stat-n" id="s-fa">–</div><div class="stat-l">First Author</div></div>
-            <div class="stat"><div class="stat-n" id="s-cit">–</div><div class="stat-l">Total Citations</div></div>
-            <div class="stat"><div class="stat-n" id="s-h">–</div><div class="stat-l">h-index</div></div>
-        </div>
-
-        <div class="pub-bar">
-            <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-                <button class="fbtn on" id="f-all"  onclick="filter('all')">All</button>
-                <button class="fbtn"    id="f-fa"   onclick="filter('fa')">First Author</button>
-                <button class="fbtn"    id="f-ref"  onclick="filter('ref')">Refereed</button>
-            </div>
-            <div class="pub-spin" id="pub-loading">
-                <div class="spin"></div> Loading from ADS…
+                <div class="skill-box"><h4>Programming</h4><span class="stag">Python</span><span class="stag">Command Line</span><span class="stag">LaTeX</span></div>
+                <div class="skill-box"><h4>Libraries</h4><span class="stag">Astropy</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">SciPy</span></div>
+                <div class="skill-box"><h4>Astronomy Tools</h4><span class="stag">CIGALE</span><span class="stag">DS9</span><span class="stag">Galfit</span><span class="stag">JWST Pipeline</span></div>
             </div>
         </div>
 
-        <div class="pub-list" id="pub-list"></div>
-        <p class="updated" id="pub-updated"></p>
-    </div>
-
-    <!-- CV -->
-    <div id="page-cv" class="page">
-        <div class="sec-title">Curriculum Vitae</div>
-        <p class="sec-sub">Arizona State University · School of Earth and Space Exploration · Tempe, AZ</p>
-
-        <div class="cv-block">
-            <h3>Education</h3>
-            <div class="cv-row">
-                <div class="cv-yr">2022 – Present</div>
-                <div class="cv-body">
-                    <h4>Ph.D. in Astrophysics</h4>
-                    <p>Arizona State University, Tempe, AZ</p>
-                </div>
-            </div>
-            <div class="cv-row">
-                <div class="cv-yr">2018 – 2022</div>
-                <div class="cv-body">
-                    <h4>B.S. in Astrophysics</h4>
-                    <p>Arizona State University, Tempe, AZ</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cv-block">
-            <h3>Research Experience</h3>
-            <div class="cv-row">
-                <div class="cv-yr">2022 – Present</div>
-                <div class="cv-body">
-                    <h4>Graduate Research Associate</h4>
-                    <p>School of Earth and Space Exploration, ASU · Advisor: Prof. Rogier Windhorst</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cv-block">
-            <h3>Skills</h3>
-            <div class="skill-grid">
-                <div class="skill-box">
-                    <h4>Programming</h4>
-                    <span class="stag">Python</span><span class="stag">Bash</span><span class="stag">LaTeX</span>
-                </div>
-                <div class="skill-box">
-                    <h4>Astronomy</h4>
-                    <span class="stag">CIGALE</span><span class="stag">XSPEC</span><span class="stag">CIAO</span>
-                    <span class="stag">Astropy</span><span class="stag">JWST Pipeline</span>
-                </div>
-            </div>
+        <div style="margin-top:2rem">
+            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank" class="lnk">📄 Full publication list on NASA ADS</a>
         </div>
     </div>
 
@@ -559,180 +572,130 @@
         <p class="sec-sub">Collaborations and inquiries welcome</p>
         <div class="contact-grid">
             <div class="ccard">
-                <h3>📧 Email</h3>
-                <p><a href="mailto:rortizii@asu.edu">rortizii@asu.edu</a></p>
-            </div>
-            <div class="ccard">
-                <h3>🏛️ Institution</h3>
+                <h3>Address</h3>
                 <p>School of Earth and Space Exploration</p>
                 <p>Arizona State University</p>
                 <p>Tempe, AZ 85287</p>
             </div>
             <div class="ccard">
-                <h3>🔗 Profiles</h3>
-                <p><a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID</a></p>
-                <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X" target="_blank">NASA ADS</a></p>
+                <h3>Email</h3>
+                <p><a href="mailto:rortizii@asu.edu">rortizii@asu.edu</a></p>
+            </div>
+            <div class="ccard">
+                <h3>Profiles</h3>
+                <p><a href="https://orcid.org/0000-0002-6150-833X" target="_blank">ORCID 0000-0002-6150-833X</a></p>
+                <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc" target="_blank">NASA ADS</a></p>
                 <p><a href="https://www.linkedin.com/in/rafaelortiziii/" target="_blank">LinkedIn</a></p>
             </div>
         </div>
     </div>
 
-</div><!-- /wrap -->
+</div>
 
 <script>
-// ── Navigation ──────────────────────────────────────────────
-function go(id) {
+function go(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
     document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('on'));
-    document.getElementById('page-' + id).classList.add('on');
-    document.getElementById('nb-' + id).classList.add('on');
-    window.scrollTo(0, 0);
-    if (id === 'publications' && !window._pubLoaded) loadPubs();
+    document.getElementById('page-' + name).classList.add('on');
+    document.getElementById('nb-' + name).classList.add('on');
+    if (name === 'publications' && !window._pubLoaded) loadPubs();
 }
 go('home');
 
-// ── Publications via NASA ADS ────────────────────────────────
-const ORCID   = '0000-0002-6150-833X';
-const MY_NAME = 'Ortiz, R';
+let papers = [], curFilter = 'all';
+window._pubLoaded = false;
 
-async function loadPubs() {
+function loadPubs() {
     window._pubLoaded = true;
-    const spin = document.getElementById('pub-loading');
-    try {
-        const rows = 40;
-        const url  = `https://api.adsabs.harvard.edu/v1/search/query?` +
-            `q=orcid%3A${ORCID}&sort=date+desc&rows=${rows}` +
-            `&fl=title,author,year,bibcode,identifier,citation_count,property,pub,pubdate`;
-        const res  = await fetch(url, {
-            headers: { Authorization: 'Bearer ' + _tok() }
+    fetch('publications.json?_=' + Date.now())
+        .then(r => { if (!r.ok) throw r.status; return r.json(); })
+        .then(data => {
+            papers = data.papers || [];
+            setStats(data.stats, data.meta);
+            render();
+            setSpin('');
+        })
+        .catch(() => {
+            setSpin('⚠️ publications.json not found — run fetch script first.');
+            document.getElementById('pub-list').innerHTML =
+                '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">Run <code>python scripts/fetch_publications.py</code> locally then push.</div>';
         });
-        const data = await res.json();
-        const docs = data.response?.docs || [];
-        renderPubs(docs);
-        renderStats(docs);
-        spin.style.display = 'none';
+}
+
+function setStats(s, m) {
+    if (!s) return;
+    document.getElementById('s-n').textContent  = s.total_papers          ?? '—';
+    document.getElementById('s-r').textContent  = s.refereed_papers        ?? '—';
+    document.getElementById('s-fa').textContent = s.first_author_papers    ?? '—';
+    document.getElementById('s-c').textContent  = s.total_citations        ?? '—';
+    document.getElementById('s-fc').textContent = s.first_author_citations ?? '—';
+    document.getElementById('s-h').textContent  = s.h_index               ?? '—';
+    if (m && m.updated) {
+        const d = new Date(m.updated);
         document.getElementById('pub-updated').textContent =
-            'Last updated: ' + new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-    } catch(e) {
-        spin.innerHTML = '⚠ Could not load publications. <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A' + ORCID + '" target="_blank" style="color:var(--blue)">Open in ADS ↗</a>';
+            'Last updated ' + d.toUTCString() + ' · ' + (m.source || 'NASA ADS');
     }
 }
 
-function _tok() {
-    const p = ['T', 'e', 'g', 'w', 'j', 'I', 'Z', 'a', 'a', 'U', 'k', 'l',
-               'z', 'u', 'J', 'E', 'f', 's', 'o', 'W', 'V', 'e', 'k', 'Y',
-               'T', 'T', 'O', '3', 'H', 'k', 'H', 'V', 'm', 'T', 'B', 'Z',
-               'I', 'P', 'I', 'u', 'O', 'U', 'i', 'j', 'u', 'Y', 'n', 'N',
-               'O', 'b'];
-    return p.join('');
+function filt(f, btn) {
+    curFilter = f;
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    render();
 }
 
-function isFA(doc) {
-    return (doc.author || [])[0]?.startsWith('Ortiz') &&
-           (doc.author[0].includes('R') || doc.author[0].split(',').length >= 1);
-}
-function isRef(doc) { return (doc.property || []).includes('REFEREED'); }
-
-window._allDocs = [];
-window._filter  = 'all';
-
-function renderPubs(docs) {
-    window._allDocs = docs;
-    applyFilter();
-}
-
-function applyFilter() {
-    const docs = window._allDocs;
-    const f    = window._filter;
-    const list = document.getElementById('pub-list');
-    const show = docs.filter(d =>
-        f === 'all' ? true : f === 'fa' ? isFA(d) : isRef(d)
-    );
-    list.innerHTML = show.map(d => pubCard(d)).join('');
-}
-
-function filter(f) {
-    window._filter = f;
-    ['all','fa','ref'].forEach(id => {
-        document.getElementById('f-' + id).classList.toggle('on', id === f);
-    });
-    applyFilter();
-}
-
-function pubCard(d) {
-    const title   = (d.title || ['Untitled'])[0];
-    const authors = (d.author || []);
-    const authStr = authors.slice(0, 8).map(a =>
-        a.startsWith('Ortiz') ? `<span class="me">${a}</span>` : a
-    ).join(', ') + (authors.length > 8 ? ` +${authors.length - 8} more` : '');
-    const year    = d.year || '';
-    const journal = d.pub  || '';
-    const cit     = d.citation_count || 0;
-    const fa      = isFA(d);
-    const ref     = isRef(d);
-    const ads     = `https://ui.adsabs.harvard.edu/abs/${d.bibcode}`;
-    const arxiv   = (d.identifier || []).find(i => i.startsWith('arXiv:'));
-    return `<a class="pub-card${fa?' fa':''}" href="${ads}" target="_blank" rel="noopener">
-        <div class="pub-title">${title}</div>
-        <div class="pub-auth">${authStr}</div>
-        <div class="pub-meta">
-            <span class="pub-jnl">${journal}</span>
-            <span class="pub-yr">${year}</span>
-            ${fa  ? '<span class="bdg b-fa">First Author</span>'  : ''}
-            ${ref ? '<span class="bdg b-ref">Refereed</span>'     : ''}
-            ${cit > 0 ? `<span class="bdg b-cit">${cit} citations</span>` : ''}
-        </div>
-        <div class="pub-footer">
-            <span class="pill">ADS</span>
-            ${arxiv ? `<span class="pill">${arxiv}</span>` : ''}
-            <span class="ads-hint">Open in ADS ↗</span>
-        </div>
-    </a>`;
-}
-
-function renderStats(docs) {
-    const total = docs.length;
-    const fa    = docs.filter(isFA).length;
-    const cit   = docs.reduce((s, d) => s + (d.citation_count || 0), 0);
-    const sorted = [...docs].sort((a, b) =>
-        (b.citation_count||0) - (a.citation_count||0));
-    let h = 0;
-    for (let i = 0; i < sorted.length; i++) {
-        if ((sorted[i].citation_count || 0) >= i + 1) h = i + 1; else break;
+function render() {
+    let list = papers;
+    if (curFilter === 'fa')  list = list.filter(p => p.first_author);
+    if (curFilter === 'ref') list = list.filter(p => p.refereed);
+    const el = document.getElementById('pub-list');
+    if (!list.length) {
+        el.innerHTML = '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No papers match this filter.</div>';
+        return;
     }
-    document.getElementById('s-total').textContent = total;
-    document.getElementById('s-fa').textContent    = fa;
-    document.getElementById('s-cit').textContent   = cit;
-    document.getElementById('s-h').textContent     = h;
+    el.innerHTML = list.map(p => card(p)).join('');
+}
+
+function card(p) {
+    const adsUrl = p.bibcode
+        ? 'https://ui.adsabs.harvard.edu/abs/' + encodeURIComponent(p.bibcode)
+        : 'https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6150-833X&sort=date+desc';
+    const auth = fmtAuth(p.authors);
+    const bfa  = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
+    const bref = p.refereed     ? '<span class="bdg b-ref">Refereed</span>'    : '';
+    const bcit = p.citations    ? '<span class="bdg b-cit">' + p.citations + ' cite' + (p.citations !== 1 ? 's' : '') + '</span>' : '';
+    const pills = [];
+    if (p.arxiv) pills.push('arXiv:' + p.arxiv);
+    if (p.doi)   pills.push('DOI');
+    const pillsHtml = pills.map(t => '<span class="pill">' + t + '</span>').join('');
+    return '<a class="pub-card' + (p.first_author ? ' fa' : '') + '" href="' + adsUrl + '" target="_blank">' +
+        '<div class="pub-title">' + p.title + '</div>' +
+        '<div class="pub-auth">' + auth + '</div>' +
+        '<div class="pub-meta">' +
+            '<span class="pub-jnl">' + p.journal + '</span>' +
+            '<span class="pub-yr">(' + p.year + ')</span>' +
+            bfa + bref + bcit +
+        '</div>' +
+        '<div class="pub-footer">' + pillsHtml + '<span class="ads-hint">Open in ADS ↗</span></div>' +
+    '</a>';
+}
+
+function fmtAuth(a) {
+    if (!a || !a.length) return '';
+    const hl = s => {
+        const l = s.toLowerCase();
+        return (l.includes('ortiz') && (l.includes('r') || l.includes('iii')))
+            ? '<span class="me">' + s + '</span>' : s;
+    };
+    const list = Array.isArray(a) ? a : [a];
+    return (list.length <= 7 ? list : list.slice(0, 7))
+        .map(hl).join(', ') + (list.length > 7 ? ', <em>et al.</em>' : '');
+}
+
+function setSpin(msg) {
+    const el = document.getElementById('pub-spin');
+    el.innerHTML = msg ? '<span style="color:var(--muted);font-size:.75rem">' + msg + '</span>' : '';
 }
 </script>
-
-<script>
-// Parallax scroll effect for background
-(function() {
-    var lastY = 0;
-    var ticking = false;
-
-    function updateParallax(scrollY) {
-        var offset = scrollY * 0.30;
-        var bg = document.getElementById('parallax-bg');
-        if (bg) {
-            bg.style.transform = 'translateY(' + offset + 'px)';
-        }
-    }
-
-    window.addEventListener('scroll', function() {
-        lastY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                updateParallax(lastY);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-})();
-</script>
-
 </body>
 </html>
