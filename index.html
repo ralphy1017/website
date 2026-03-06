@@ -668,22 +668,21 @@
 
 
 <script>
+
 function go(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
     document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('on'));
     document.getElementById('page-' + name).classList.add('on');
     document.getElementById('nb-' + name).classList.add('on');
-    if (name === 'publications' && !window._pubLoaded) loadPubs();
 
     if (name === 'publications') {
         if (!window._pubLoaded) {
             loadPubs();
         } else {
-            render(); // re-render on return visits
+            render();
         }
     }
 
-    // Static background on Publications, parallax on all other tabs
     const bg = document.getElementById('parallax-bg');
     if (name === 'publications') {
         bg.style.transform  = 'none';
@@ -701,47 +700,39 @@ window._pubLoaded = false;
 
 function loadPubs() {
     window._pubLoaded = true;
-
-    // Show spinner
     setSpin('<span class="spin"></span><span>Loading…</span>');
 
-    // Load both JSON files in parallel
     Promise.allSettled([
         fetch('publications.json?_=' + Date.now()).then(r => { if (!r.ok) throw r.status; return r.json(); }),
         fetch('arxiv_preprints.json?_=' + Date.now()).then(r => { if (!r.ok) throw r.status; return r.json(); })
     ]).then(([pubResult, arxivResult]) => {
 
-        // Handle publications.json
         if (pubResult.status === 'fulfilled') {
             papers = pubResult.value.papers || [];
             setStats(pubResult.value.stats, pubResult.value.meta);
         } else {
             setSpin('⚠️ publications.json not found — run fetch_publications.py first.');
-            return; // nothing to render
+            return;
         }
 
-        // Handle arxiv_preprints.json
         if (arxivResult.status === 'fulfilled') {
             arxivPapers = arxivResult.value.papers || [];
             setArxivStats(arxivResult.value.stats);
         }
-        // arXiv is optional — silently skip if missing
 
-        // Render only after ALL data is settled
         render();
         setSpin('');
     });
 }
 
-
 function setStats(s, m) {
     if (!s) return;
-    document.getElementById('s-n').textContent  = s.total_papers          ?? '—';
-    document.getElementById('s-r').textContent  = s.refereed_papers        ?? '—';
-    document.getElementById('s-fa').textContent = s.first_author_papers    ?? '—';
-    document.getElementById('s-c').textContent  = s.total_citations        ?? '—';
-    document.getElementById('s-fc').textContent = s.first_author_citations ?? '—';
-    document.getElementById('s-h').textContent  = s.h_index               ?? '—';
+    document.getElementById('s-n').textContent      = s.total_papers          ?? '—';
+    document.getElementById('s-r').textContent      = s.refereed_papers       ?? '—';
+    document.getElementById('s-fa').textContent     = s.first_author_papers   ?? '—';
+    document.getElementById('s-c').textContent      = s.total_citations       ?? '—';
+    document.getElementById('s-fc').textContent     = s.first_author_citations ?? '—';
+    document.getElementById('s-h').textContent      = s.h_index               ?? '—';
     document.getElementById('s-i10').textContent    = s.i10_index             ?? '—';
     document.getElementById('s-hfa').textContent    = s.h_index_first_author  ?? '—';
     document.getElementById('s-coauth').textContent = s.total_coauthors       ?? '—';
@@ -753,7 +744,10 @@ function setStats(s, m) {
     }
 }
 
-
+function setArxivStats(s) {
+    if (!s) return;
+    document.getElementById('s-ax').textContent = s.total_preprints ?? '—';
+}
 
 function filt(f, btn) {
     curFilter = f;
@@ -765,7 +759,6 @@ function filt(f, btn) {
 function render() {
     const el = document.getElementById('pub-list');
 
-    // arXiv tab renders its own card type
     if (curFilter === 'arxiv') {
         if (!arxivPapers.length) {
             el.innerHTML = '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No arXiv preprints loaded — run <code>python scripts/fetch_arxiv.py</code> then push.</div>';
@@ -778,6 +771,15 @@ function render() {
     let list = papers;
     if (curFilter === 'fa')  list = list.filter(p => p.first_author);
     if (curFilter === 'ref') list = list.filter(p => p.refereed);
+
+    if (curFilter === 'all' && arxivPapers.length) {
+        const adsArxivIds = new Set(papers.map(p => p.arxiv).filter(Boolean));
+        const onlyPreprints = arxivPapers.filter(p => !adsArxivIds.has(p.arxiv_id));
+        el.innerHTML = list.map(p => card(p)).join('') +
+                       onlyPreprints.map(p => arxivCard(p)).join('');
+        return;
+    }
+
     if (!list.length) {
         el.innerHTML = '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No papers match this filter.</div>';
         return;
@@ -811,8 +813,10 @@ function card(p) {
 
 function arxivCard(p) {
     const auth = fmtAuth(p.authors);
-    const bfa  = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
-    const bjref = p.journal_ref ? '<span class="bdg b-ref">Published</span>' : '<span class="bdg" style="background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.2)">Preprint</span>';
+    const bfa   = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
+    const bjref = p.journal_ref
+        ? '<span class="bdg b-ref">Published</span>'
+        : '<span class="bdg" style="background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.2)">Preprint</span>';
     const pills = ['arXiv:' + p.arxiv_id];
     if (p.doi) pills.push('DOI');
     if (p.primary_category) pills.push(p.primary_category);
@@ -843,9 +847,9 @@ function fmtAuth(a) {
 
 function setSpin(msg) {
     const el = document.getElementById('pub-spin');
-    el.innerHTML = msg ? '<span style="color:var(--muted);font-size:.75rem">' + msg + '</span>' : '';
+    el.innerHTML = msg ? msg : '';
 }
-</script>
+
 
 <script>
 // Parallax scroll
