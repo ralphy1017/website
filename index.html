@@ -667,6 +667,11 @@ function go(name) {
     document.getElementById('page-' + name).classList.add('on');
     document.getElementById('nb-' + name).classList.add('on');
     if (name === 'publications' && !window._pubLoaded) loadPubs();
+
+    // Show JWST background only on Publications tab
+    const show = name === 'publications';
+    document.getElementById('parallax-bg').style.display      = show ? 'block' : 'none';
+    document.getElementById('parallax-overlay').style.display = show ? 'block' : 'none';
 }
 go('home');
 
