@@ -112,10 +112,21 @@ def doc_to_paper(d: dict) -> dict:
 def build_output(docs: list[dict]) -> dict:
     papers = [doc_to_paper(d) for d in docs]
 
-    all_cites          = [p["citations"] for p in papers]
+    all_cites = [p["citations"] for p in papers]
     first_author_cites = [p["citations"] for p in papers if p["first_author"]]
-    refereed           = [p for p in papers if p["refereed"]]
-    first_author       = [p for p in papers if p["first_author"]]
+    refereed = [p for p in papers if p["refereed"]]
+    first_author = [p for p in papers if p["first_author"]]
+
+    # i10-index: papers with >= 10 citations
+    i10 = sum(1 for c in all_cites if c >= 10)
+
+    # Total unique co-authors (excluding yourself)
+    all_authors = set()
+    for p in papers:
+        for a in p["authors"]:
+            if "ortiz" not in a.lower():
+                all_authors.add(a)
+    total_coauthors = len(all_authors)
 
     stats = {
         "total_papers":           len(papers),
@@ -125,7 +136,11 @@ def build_output(docs: list[dict]) -> dict:
         "first_author_citations": sum(first_author_cites),
         "h_index":                compute_hindex(all_cites),
         "h_index_first_author":   compute_hindex(first_author_cites),
+        "i10_index":              i10,
+        "total_coauthors":        total_coauthors,
     }
+    ...
+
 
     return {
         "meta": {
@@ -154,7 +169,9 @@ def main():
     print(f"  First-author       : {s['first_author_papers']}")
     print(f"  Total citations    : {s['total_citations']}")
     print(f"  h-index            : {s['h_index']}")
-    print(f"  h-index (1st auth) : {s['h_index_first_author']}")
+    print(f"  i10-index            : {s['i10_index']}")
+    print(f"  h-index (1st author) : {s['h_index_first_author']}")
+    print(f"  Total co-authors     : {s['total_coauthors']}")
     print(f"\n✅ Written to: {out_path}")
 
 

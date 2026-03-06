@@ -1,7 +1,7 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-03-06T05:34:27.017174+00:00",
+    "updated": "2026-03-06T06:47:14.285562+00:00",
     "source": "NASA ADS"
   },
   "stats": {
@@ -11,7 +11,9 @@
     "total_citations": 431,
     "first_author_citations": 3,
     "h_index": 11,
-    "h_index_first_author": 1
+    "h_index_first_author": 1,
+    "i10_index": 12,
+    "total_coauthors": 264
   },
   "papers": [
     {
