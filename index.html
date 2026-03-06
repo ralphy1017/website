@@ -675,6 +675,14 @@ function go(name) {
     document.getElementById('nb-' + name).classList.add('on');
     if (name === 'publications' && !window._pubLoaded) loadPubs();
 
+    if (name === 'publications') {
+        if (!window._pubLoaded) {
+            loadPubs();
+        } else {
+            render(); // re-render on return visits
+        }
+    }
+
     // Static background on Publications, parallax on all other tabs
     const bg = document.getElementById('parallax-bg');
     if (name === 'publications') {
@@ -734,7 +742,6 @@ function setStats(s, m) {
     document.getElementById('s-c').textContent  = s.total_citations        ?? '—';
     document.getElementById('s-fc').textContent = s.first_author_citations ?? '—';
     document.getElementById('s-h').textContent  = s.h_index               ?? '—';
-    document.getElementById('s-h').textContent      = s.h_index               ?? '—';
     document.getElementById('s-i10').textContent    = s.i10_index             ?? '—';
     document.getElementById('s-hfa').textContent    = s.h_index_first_author  ?? '—';
     document.getElementById('s-coauth').textContent = s.total_coauthors       ?? '—';
@@ -746,11 +753,7 @@ function setStats(s, m) {
     }
 }
 
-function setArxivStats(s) {
-    if (!s) return;
-    document.getElementById('s-ax').textContent   = s.total_preprints        ?? '—';
-    document.getElementById('s-axfa').textContent = s.first_author_preprints ?? '—';
-}
+
 
 function filt(f, btn) {
     curFilter = f;
