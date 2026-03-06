@@ -540,7 +540,10 @@
             <div class="stat"><div class="stat-n" id="s-c">—</div><div class="stat-l">Citations</div></div>
             <div class="stat"><div class="stat-n" id="s-fc">—</div><div class="stat-l">1st-Author Cites</div></div>
             <div class="stat"><div class="stat-n" id="s-h">—</div><div class="stat-l">h-index</div></div>
+            <div class="stat"><div class="stat-n" id="s-ax">—</div><div class="stat-l">arXiv Preprints</div></div>
+            <!-- <div class="stat"><div class="stat-n" id="s-axfa">—</div><div class="stat-l">arXiv 1st Author</div></div> -->
         </div>
+
 
 
         <div class="pub-bar">
@@ -548,6 +551,7 @@
                 <button class="fbtn on" onclick="filt('all',this)">All</button>
                 <button class="fbtn"    onclick="filt('fa',this)">First Author</button>
                 <button class="fbtn"    onclick="filt('ref',this)">Refereed</button>
+                <button class="fbtn"    onclick="filt('arxiv',this)">arXiv Preprints</button>
             </div>
             <div class="pub-spin" id="pub-spin">
                 <span class="spin"></span><span>Loading…</span>
@@ -668,35 +672,50 @@ function go(name) {
     document.getElementById('nb-' + name).classList.add('on');
     if (name === 'publications' && !window._pubLoaded) loadPubs();
 
-    // Show JWST background only on Publications tab
-    const show = name === 'publications';
-    document.getElementById('parallax-bg').style.display      = show ? 'block' : 'none';
-    document.getElementById('parallax-overlay').style.display = show ? 'block' : 'none';
+    // Static background on Publications, parallax on all other tabs
+    const bg = document.getElementById('parallax-bg');
+    if (name === 'publications') {
+        bg.style.transform  = 'none';
+        bg.style.transition = 'none';
+        window._parallaxPaused = true;
+    } else {
+        window._parallaxPaused = false;
+    }
 }
+
 go('home');
 
-
-let papers = [], curFilter = 'all';
+let papers = [], arxivPapers = [], curFilter = 'all';
 window._pubLoaded = false;
-
 
 function loadPubs() {
     window._pubLoaded = true;
-    fetch('publications.json?_=' + Date.now())
-        .then(r => { if (!r.ok) throw r.status; return r.json(); })
-        .then(data => {
-            papers = data.papers || [];
-            setStats(data.stats, data.meta);
-            render();
-            setSpin('');
-        })
-        .catch(() => {
-            setSpin('⚠️ publications.json not found — run fetch script first.');
-            document.getElementById('pub-list').innerHTML =
-                '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">Run <code>python scripts/fetch_publications.py</code> locally then push.</div>';
-        });
-}
 
+    // Load both JSON files in parallel
+    Promise.allSettled([
+        fetch('publications.json?_=' + Date.now()).then(r => { if (!r.ok) throw r.status; return r.json(); }),
+        fetch('arxiv_preprints.json?_=' + Date.now()).then(r => { if (!r.ok) throw r.status; return r.json(); })
+    ]).then(([pubResult, arxivResult]) => {
+
+        // Handle publications.json
+        if (pubResult.status === 'fulfilled') {
+            papers = pubResult.value.papers || [];
+            setStats(pubResult.value.stats, pubResult.value.meta);
+        } else {
+            setSpin('⚠️ publications.json not found — run fetch_publications.py first.');
+        }
+
+        // Handle arxiv_preprints.json
+        if (arxivResult.status === 'fulfilled') {
+            arxivPapers = arxivResult.value.papers || [];
+            setArxivStats(arxivResult.value.stats);
+        }
+        // arXiv is optional — silently skip if missing
+
+        render();
+        if (pubResult.status === 'fulfilled') setSpin('');
+    });
+}
 
 function setStats(s, m) {
     if (!s) return;
@@ -713,6 +732,11 @@ function setStats(s, m) {
     }
 }
 
+function setArxivStats(s) {
+    if (!s) return;
+    document.getElementById('s-ax').textContent   = s.total_preprints        ?? '—';
+    document.getElementById('s-axfa').textContent = s.first_author_preprints ?? '—';
+}
 
 function filt(f, btn) {
     curFilter = f;
@@ -721,19 +745,28 @@ function filt(f, btn) {
     render();
 }
 
-
 function render() {
+    const el = document.getElementById('pub-list');
+
+    // arXiv tab renders its own card type
+    if (curFilter === 'arxiv') {
+        if (!arxivPapers.length) {
+            el.innerHTML = '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No arXiv preprints loaded — run <code>python scripts/fetch_arxiv.py</code> then push.</div>';
+            return;
+        }
+        el.innerHTML = arxivPapers.map(p => arxivCard(p)).join('');
+        return;
+    }
+
     let list = papers;
     if (curFilter === 'fa')  list = list.filter(p => p.first_author);
     if (curFilter === 'ref') list = list.filter(p => p.refereed);
-    const el = document.getElementById('pub-list');
     if (!list.length) {
         el.innerHTML = '<div style="color:var(--muted);padding:2rem;text-align:center;font-size:.88rem">No papers match this filter.</div>';
         return;
     }
     el.innerHTML = list.map(p => card(p)).join('');
 }
-
 
 function card(p) {
     const adsUrl = p.bibcode
@@ -759,6 +792,25 @@ function card(p) {
     '</a>';
 }
 
+function arxivCard(p) {
+    const auth = fmtAuth(p.authors);
+    const bfa  = p.first_author ? '<span class="bdg b-fa">First Author</span>' : '';
+    const bjref = p.journal_ref ? '<span class="bdg b-ref">Published</span>' : '<span class="bdg" style="background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.2)">Preprint</span>';
+    const pills = ['arXiv:' + p.arxiv_id];
+    if (p.doi) pills.push('DOI');
+    if (p.primary_category) pills.push(p.primary_category);
+    const pillsHtml = pills.map(t => '<span class="pill">' + t + '</span>').join('');
+    return '<a class="pub-card' + (p.first_author ? ' fa' : '') + '" href="' + p.arxiv_url + '" target="_blank">' +
+        '<div class="pub-title">' + p.title + '</div>' +
+        '<div class="pub-auth">' + auth + '</div>' +
+        '<div class="pub-meta">' +
+            '<span class="pub-jnl">' + (p.journal_ref || 'arXiv preprint') + '</span>' +
+            '<span class="pub-yr">(' + p.year + ')</span>' +
+            bfa + bjref +
+        '</div>' +
+        '<div class="pub-footer">' + pillsHtml + '<span class="ads-hint">Open on arXiv ↗</span></div>' +
+    '</a>';
+}
 
 function fmtAuth(a) {
     if (!a || !a.length) return '';
@@ -772,30 +824,12 @@ function fmtAuth(a) {
         .map(hl).join(', ') + (list.length > 7 ? ', <em>et al.</em>' : '');
 }
 
-
 function setSpin(msg) {
     const el = document.getElementById('pub-spin');
     el.innerHTML = msg ? '<span style="color:var(--muted);font-size:.75rem">' + msg + '</span>' : '';
 }
 </script>
 
-<script>
-// Parallax scroll
-(function() {
-    var lastY = 0, ticking = false;
-    function update(y) {
-        var bg = document.getElementById('parallax-bg');
-        if (bg) bg.style.transform = 'translateY(' + (y * 0.30) + 'px)';
-    }
-    window.addEventListener('scroll', function() {
-        lastY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(function() { update(lastY); ticking = false; });
-            ticking = true;
-        }
-    }, { passive: true });
-})();
-</script>
 
 </body>
 </html>
