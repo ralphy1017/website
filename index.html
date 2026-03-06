@@ -830,6 +830,24 @@ function setSpin(msg) {
 }
 </script>
 
+<script>
+// Parallax scroll
+(function() {
+    var lastY = 0, ticking = false;
+    function update(y) {
+        if (window._parallaxPaused) return;
+        var bg = document.getElementById('parallax-bg');
+        if (bg) bg.style.transform = 'translateY(' + (y * 0.30) + 'px)';
+    }
+    window.addEventListener('scroll', function() {
+        lastY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(function() { update(lastY); ticking = false; });
+            ticking = true;
+        }
+    }, { passive: true });
+})();
+</script>
 
 </body>
 </html>
