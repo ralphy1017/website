@@ -1,14 +1,14 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-03-06T06:58:04.832719+00:00",
+    "updated": "2026-03-07T06:50:21.948272+00:00",
     "source": "NASA ADS"
   },
   "stats": {
     "total_papers": 25,
     "refereed_papers": 25,
     "first_author_papers": 1,
-    "total_citations": 431,
+    "total_citations": 432,
     "first_author_citations": 3,
     "h_index": 11,
     "h_index_first_author": 1,
@@ -681,7 +681,7 @@
       "bibcode": "2025ApJ...983..121W",
       "doi": "10.3847/1538-4357/adb968",
       "arxiv": "2412.14970",
-      "citations": 13,
+      "citations": 14,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
