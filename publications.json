@@ -1,19 +1,19 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-03-16T07:25:54.932800+00:00",
+    "updated": "2026-03-17T07:11:45.381436+00:00",
     "source": "NASA ADS"
   },
   "stats": {
-    "total_papers": 25,
-    "refereed_papers": 25,
+    "total_papers": 26,
+    "refereed_papers": 26,
     "first_author_papers": 1,
-    "total_citations": 438,
+    "total_citations": 441,
     "first_author_citations": 3,
     "h_index": 11,
     "h_index_first_author": 1,
     "i10_index": 12,
-    "total_coauthors": 264
+    "total_coauthors": 273
   },
   "papers": [
     {
@@ -57,7 +57,7 @@
       "bibcode": "2026MNRAS.546ag008D",
       "doi": "10.1093/mnras/stag008",
       "arxiv": "2411.04944",
-      "citations": 20,
+      "citations": 21,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
@@ -70,6 +70,55 @@
         "galaxies: Seyfert",
         "galaxies: star formation",
         "Astrophysics of Galaxies"
+      ]
+    },
+    {
+      "title": "SKYSURF-11: A New Zodiacal Light Model Optimized for Optical Wavelengths",
+      "authors": [
+        "O'Brien, Rosalia",
+        "Arendt, Richard G.",
+        "Windhorst, Rogier A.",
+        "Acharya, Tejovrash",
+        "Calamida, Annalisa",
+        "Carleton, Timothy",
+        "Carter, Delondrae",
+        "Cohen, Seth H.",
+        "Dwek, Eli",
+        "Frye, Brenda L.",
+        "Jansen, Rolf A.",
+        "Kenyon, Scott J.",
+        "Koekemoer, Anton M.",
+        "MacKenty, John",
+        "Miller, Megan",
+        "Ortiz, Rafael, III",
+        "Smith, Peter C. B.",
+        "Tompkins, Scott A."
+      ],
+      "year": 2026,
+      "journal": "The Astrophysical Journal 1000 6",
+      "bibcode": "2026ApJ..1000....6O",
+      "doi": "10.3847/1538-4357/ae4512",
+      "arxiv": null,
+      "citations": 0,
+      "doctype": "article",
+      "refereed": true,
+      "first_author": false,
+      "abstract": "We present an improved zodiacal light model, optimized for optical wavelengths, using archival Hubble Space Telescope (HST) imaging from the SKYSURF program. The T. Kelsall et al. model used infrared imaging from the Diffuse Infrared Background Experiment (DIRBE) on board the Cosmic Background Explorer to create a 3D structure of the interplanetary dust cloud. However, this model cannot accurately",
+      "keywords": [
+        "Observational cosmology",
+        "Diffuse radiation",
+        "Optical astronomy",
+        "Solar system",
+        "Zodiacal cloud",
+        "Cosmic background radiation",
+        "Hubble Space Telescope",
+        "1146",
+        "383",
+        "1776",
+        "1528",
+        "1845",
+        "317",
+        "761"
       ]
     },
     {
@@ -626,7 +675,7 @@
       "bibcode": "2025MNRAS.540..774D",
       "doi": "10.1093/mnras/staf638",
       "arxiv": "2407.09472",
-      "citations": 73,
+      "citations": 75,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
