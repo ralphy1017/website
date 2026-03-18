@@ -1,14 +1,14 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-03-17T07:11:45.381436+00:00",
+    "updated": "2026-03-18T07:08:54.625061+00:00",
     "source": "NASA ADS"
   },
   "stats": {
     "total_papers": 26,
     "refereed_papers": 26,
     "first_author_papers": 1,
-    "total_citations": 441,
+    "total_citations": 444,
     "first_author_citations": 3,
     "h_index": 11,
     "h_index_first_author": 1,
@@ -98,8 +98,8 @@
       "journal": "The Astrophysical Journal 1000 6",
       "bibcode": "2026ApJ..1000....6O",
       "doi": "10.3847/1538-4357/ae4512",
-      "arxiv": null,
-      "citations": 0,
+      "arxiv": "2510.18231",
+      "citations": 4,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
@@ -118,7 +118,10 @@
         "1528",
         "1845",
         "317",
-        "761"
+        "761",
+        "Cosmology and Nongalactic Astrophysics",
+        "Earth and Planetary Astrophysics",
+        "Astrophysics of Galaxies"
       ]
     },
     {
@@ -675,7 +678,7 @@
       "bibcode": "2025MNRAS.540..774D",
       "doi": "10.1093/mnras/staf638",
       "arxiv": "2407.09472",
-      "citations": 75,
+      "citations": 74,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
