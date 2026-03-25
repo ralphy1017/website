@@ -1,14 +1,14 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-03-24T07:11:38.852846+00:00",
+    "updated": "2026-03-25T07:09:26.017272+00:00",
     "source": "NASA ADS"
   },
   "stats": {
     "total_papers": 26,
     "refereed_papers": 26,
     "first_author_papers": 1,
-    "total_citations": 448,
+    "total_citations": 450,
     "first_author_citations": 3,
     "h_index": 12,
     "h_index_first_author": 1,
@@ -57,7 +57,7 @@
       "bibcode": "2026MNRAS.546ag008D",
       "doi": "10.1093/mnras/stag008",
       "arxiv": "2411.04944",
-      "citations": 20,
+      "citations": 21,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
@@ -637,7 +637,7 @@
       ]
     },
     {
-      "title": "Galaxy mergers in the epoch of reionization – I. A JWST study of pair fractions, merger rates, and stellar mass accretion rates at z = 4.5–11.5",
+      "title": "Galaxy mergers in the epoch of reionization ─ I. A JWST study of pair fractions, merger rates, and stellar mass accretion rates at z = 4.5─11.5",
       "authors": [
         "Duan, Qiao",
         "Conselice, Christopher J.",
@@ -678,7 +678,7 @@
       "bibcode": "2025MNRAS.540..774D",
       "doi": "10.1093/mnras/staf638",
       "arxiv": "2407.09472",
-      "citations": 76,
+      "citations": 77,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
@@ -779,7 +779,7 @@
       ]
     },
     {
-      "title": "JWST View of Four Infant Galaxies at z = 8.31–8.49 in the MACS J0416.1‑2403 Field and Implications for Reionization",
+      "title": "JWST View of Four Infant Galaxies at z = 8.31─8.49 in the MACS J0416.1−2403 Field and Implications for Reionization",
       "authors": [
         "Ma, Zhiyuan",
         "Sun, Bangzheng",
@@ -829,7 +829,7 @@
       "doctype": "article",
       "refereed": true,
       "first_author": false,
-      "abstract": "New JWST/NIRCam wide-field slitless spectroscopy provides redshifts for four z &gt; 8 galaxies located behind the lensing cluster MACS J0416.1‑2403. Two of them, \"Y1\" and \"JD,\" have previously reported spectroscopic redshifts based on Atacama Large Millimeter/submillimeter Array measurements of [O III] 88 μm and/or [C II] 157.7 μm lines. Y1 is a merging system of three components, and the existing",
+      "abstract": "New JWST/NIRCam wide-field slitless spectroscopy provides redshifts for four z &gt; 8 galaxies located behind the lensing cluster MACS J0416.1−2403. Two of them, \"Y1\" and \"JD,\" have previously reported spectroscopic redshifts based on Atacama Large Millimeter/submillimeter Array measurements of [O III] 88 μm and/or [C II] 157.7 μm lines. Y1 is a merging system of three components, and the existing",
       "keywords": [
         "Reionization",
         "Early universe",
@@ -896,7 +896,7 @@
       "doctype": "article",
       "refereed": true,
       "first_author": true,
-      "abstract": "The first public 0.9–4.4 μm NIRCam images of the North Ecliptic Pole Time Domain Field uncovered galaxies displaying point-source features in their cores as seen in the longer-wavelength filters. We visually identified a sample of 66 galaxies (∼1 galaxy arcmin<SUP>–2</SUP>) with pointlike cores and have modeled their two-dimensional light profiles with GalFit, identifying 16 galactic nuclei with m",
+      "abstract": "The first public 0.9─4.4 μm NIRCam images of the North Ecliptic Pole Time Domain Field uncovered galaxies displaying point-source features in their cores as seen in the longer-wavelength filters. We visually identified a sample of 66 galaxies (∼1 galaxy arcmin<SUP>─2</SUP>) with pointlike cores and have modeled their two-dimensional light profiles with GalFit, identifying 16 galactic nuclei with m",
       "keywords": [
         "Active galactic nuclei",
         "16",
@@ -1293,7 +1293,7 @@
       "doctype": "article",
       "refereed": true,
       "first_author": false,
-      "abstract": "A wealth of observations have long suggested that the vast majority of isolated classical dwarf galaxies (M <SUB>*</SUB> = 10<SUP>7</SUP>–10<SUP>9</SUP> M <SUB>⊙</SUB>) are currently star forming. However, recent observations of the large abundance of \"ultra-diffuse galaxies\" beyond the reach of previous large spectroscopic surveys suggest that our understanding of the dwarf galaxy population may ",
+      "abstract": "A wealth of observations have long suggested that the vast majority of isolated classical dwarf galaxies (M <SUB>*</SUB> = 10<SUP>7</SUP>─10<SUP>9</SUP> M <SUB>☉</SUB>) are currently star forming. However, recent observations of the large abundance of \"ultra-diffuse galaxies\" beyond the reach of previous large spectroscopic surveys suggest that our understanding of the dwarf galaxy population may ",
       "keywords": [
         "Low surface brightness galaxies",
         "James Webb Space Telescope",
@@ -1362,7 +1362,7 @@
       "doctype": "article",
       "refereed": true,
       "first_author": false,
-      "abstract": "A Type Ia supernova (SN) at z = 1.78 was discovered in James Webb Space Telescope Near Infrared Camera imaging of the galaxy cluster PLCK G165.7+67.0 (G165; z = 0.35). The SN is situated 1.5–2 kpc from the host-galaxy nucleus and appears in three different locations as a result of gravitational lensing by G165. These data can yield a value for Hubble's constant using time delays from this multiply",
+      "abstract": "A Type Ia supernova (SN) at z = 1.78 was discovered in James Webb Space Telescope Near Infrared Camera imaging of the galaxy cluster PLCK G165.7+67.0 (G165; z = 0.35). The SN is situated 1.5─2 kpc from the host-galaxy nucleus and appears in three different locations as a result of gravitational lensing by G165. These data can yield a value for Hubble's constant using time delays from this multiply",
       "keywords": [
         "Strong gravitational lensing",
         "Rich galaxy clusters",
