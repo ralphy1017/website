@@ -1,21 +1,69 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-04-14T07:55:36.598266+00:00",
+    "updated": "2026-04-15T07:56:19.735334+00:00",
     "source": "NASA ADS"
   },
   "stats": {
-    "total_papers": 26,
-    "refereed_papers": 26,
+    "total_papers": 27,
+    "refereed_papers": 27,
     "first_author_papers": 1,
-    "total_citations": 456,
+    "total_citations": 458,
     "first_author_citations": 3,
     "h_index": 12,
     "h_index_first_author": 1,
     "i10_index": 12,
-    "total_coauthors": 273
+    "total_coauthors": 277
   },
   "papers": [
+    {
+      "title": "Hidden in Plain Sight: Searching for Globular Clusters within JWST Observations of the PLCK G165.7+67.0 Galaxy Cluster",
+      "authors": [
+        "Hinrichs, Tyler R.",
+        "Kamieneski, Patrick S.",
+        "Windhorst, Rogier A.",
+        "Cohen, Seth H.",
+        "Frye, Brenda L.",
+        "Carleton, Timothy",
+        "Pascale, Massimo",
+        "Diego, Jose M.",
+        "Jansen, Rolf A.",
+        "Berkheimer, Jessica",
+        "Adams, Nathan J.",
+        "Conselice, Christopher J.",
+        "Driver, Simon P.",
+        "Foo, Nicholas",
+        "Garuda, Nikhil",
+        "Hathi, Nimish P.",
+        "Honor, Rachel",
+        "Koekemoer, Anton M.",
+        "Ortiz, Rafael, III",
+        "Reina-Campos, Marta",
+        "Robotham, Aaron S. G.",
+        "Summers, Jake S.",
+        "Yan, Haojing",
+        "Harris, William E."
+      ],
+      "year": 2026,
+      "journal": "The Astrophysical Journal 1001 91",
+      "bibcode": "2026ApJ..1001...91H",
+      "doi": "10.3847/1538-4357/ae50ee",
+      "arxiv": "2603.14480",
+      "citations": 0,
+      "doctype": "article",
+      "refereed": true,
+      "first_author": false,
+      "abstract": "Although the James Webb Space Telescope has received much attention for its ability to search deeper into the cosmos than ever before, it also enhances our capability to study objects closer to us in the Universe. We apply a methodology of subtracting intracluster light from the PLCK G165.7+67.0 (G165; z = 0.35) cluster, revealing a population of unresolved pointlike sources including globular clu",
+      "keywords": [
+        "Galaxy clusters",
+        "Globular star clusters",
+        "James Webb Space Telescope",
+        "584",
+        "656",
+        "2291",
+        "Astrophysics of Galaxies"
+      ]
+    },
     {
       "title": "Galaxy mergers in the epoch of reionization ─ II. Merger-triggered star formation and AGN activities at z = 4.5−8.5",
       "authors": [
@@ -57,7 +105,7 @@
       "bibcode": "2026MNRAS.546ag008D",
       "doi": "10.1093/mnras/stag008",
       "arxiv": "2411.04944",
-      "citations": 20,
+      "citations": 21,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
@@ -678,7 +726,7 @@
       "bibcode": "2025MNRAS.540..774D",
       "doi": "10.1093/mnras/staf638",
       "arxiv": "2407.09472",
-      "citations": 78,
+      "citations": 79,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
