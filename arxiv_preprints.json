@@ -3,13 +3,13 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-04-28T08:32:07.222653+00:00",
+    "updated": "2026-04-29T08:25:56.836985+00:00",
     "source": "arXiv API"
   },
   "stats": {
     "total_preprints": 30,
     "first_author_preprints": 1,
-    "published_preprints": 10,
+    "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
@@ -391,7 +391,7 @@
       "pdf_url": "https://arxiv.org/pdf/2510.24858v1"
     },
     {
-      "arxiv_id": "2510.18231v1",
+      "arxiv_id": "2510.18231v2",
       "title": "SKYSURF-11: A New Zodiacal Light Model Optimized for Optical Wavelengths",
       "authors": [
         "Rosalia O'Brien",
@@ -415,8 +415,8 @@
       ],
       "year": 2025,
       "published": "2025-10-21T02:30:48Z",
-      "updated": "2025-10-21T02:30:48Z",
-      "abstract": "We present an improved zodiacal light model, optimized for optical wavelengths, using archival Hubble Space Telescope (HST) imaging from the SKYSURF program. The Kelsall et. al. 1998 model used infrared imaging from the Diffuse Infrared Background Experiment (DIRBE) on board the Cosmic Background Explorer to create a 3D structure of the interplanetary dust cloud. However, this model cannot accurat",
+      "updated": "2026-04-28T15:50:46Z",
+      "abstract": "We present an improved zodiacal light model, optimized for optical wavelengths, using archival Hubble Space Telescope (HST) imaging from the SKYSURF program. The Kelsall et al. 1998 model used infrared imaging from the Diffuse Infrared Background Experiment (DIRBE) on board the Cosmic Background Explorer to create a 3D structure of the interplanetary dust cloud. However, this model cannot accurate",
       "categories": [
         "astro-ph.CO",
         "astro-ph.EP",
@@ -424,12 +424,12 @@
       ],
       "primary_category": "astro-ph.CO",
       "is_crosslist": false,
-      "doi": null,
-      "journal_ref": null,
-      "comment": "27 pages, 18 figures, Submitted to ApJ on Oct 20th, 2025",
+      "doi": "10.3847/1538-4357/ae4512",
+      "journal_ref": "The Astrophysical Journal, Volume 1000, Issue 1, id.6, 24 pp. March 2026",
+      "comment": "32 pages, 18 figures, 4 tables; Submitted to ApJ on Oct 20th, 2025; Accepted to ApJ on February 10, 2026",
       "first_author": false,
-      "arxiv_url": "https://arxiv.org/abs/2510.18231v1",
-      "pdf_url": "https://arxiv.org/pdf/2510.18231v1"
+      "arxiv_url": "https://arxiv.org/abs/2510.18231v2",
+      "pdf_url": "https://arxiv.org/pdf/2510.18231v2"
     },
     {
       "arxiv_id": "2510.08801v1",
