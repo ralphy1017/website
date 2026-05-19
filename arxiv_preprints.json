@@ -3,16 +3,58 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-05-16T08:09:44.804314+00:00",
+    "updated": "2026-05-19T09:55:02.285190+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 31,
+    "total_preprints": 32,
     "first_author_preprints": 1,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2605.17040v1",
+      "title": "PEARLS: JWST Counterparts of Micro-Jy Radio Sources in the NEP Time Domain Field. II. All Four Spokes",
+      "authors": [
+        "S. P. Willner",
+        "Hansung B. Gim",
+        "Maria del Carmen Polletta",
+        "Gibson B. Bowling",
+        "Seth H. Cohen",
+        "Vicente Estrada-Carpenter",
+        "Anton M. Koekemoer",
+        "Rosalia O'Brien",
+        "Alex Pigarelli",
+        "Christopher N. A. Willmer",
+        "Rogier A. Windhorst",
+        "Rolf A. Jansen",
+        "Rafael Ortiz",
+        "Jake Summers",
+        "William Cotton",
+        "Francesca Civano",
+        "Norman A. Grogin",
+        "W. P. Maksym",
+        "Payaswini Saikia",
+        "Ross M. Silver",
+        "Xiurui Zhao"
+      ],
+      "year": 2026,
+      "published": "2026-05-16T15:21:05Z",
+      "updated": "2026-05-16T15:21:05Z",
+      "abstract": "JWST/NIRCam observations in the North Ecliptic Pole Time Domain Field (TDF) identify 4.4 micron counterparts for 206 of 211 radio sources with S(3 GHz) \\gapprox 5 micro-Jy in a 65arcmin^2 field. One of the remaining radio sources is likely to be a radio lobe of a nearby Seyfert galaxy, and the four radio sources without counterparts could be spurious. All but five counterparts are brighter than ma",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "Latest revision submitted to ApJ",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2605.17040v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.17040v1"
+    },
     {
       "arxiv_id": "2605.00822v1",
       "title": "PEARLS: Two Distinct Populations of AGN Hosts Moving Between Star Formation and Quiescence",
