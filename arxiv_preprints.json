@@ -3,11 +3,11 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-05-25T10:18:28.800409+00:00",
+    "updated": "2026-05-30T08:32:52.938639+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 32,
+    "total_preprints": 33,
     "first_author_preprints": 1,
     "published_preprints": 11,
     "crosslist_preprints": 0
@@ -1044,6 +1044,47 @@
       "first_author": false,
       "arxiv_url": "https://arxiv.org/abs/2411.04944v2",
       "pdf_url": "https://arxiv.org/pdf/2411.04944v2"
+    },
+    {
+      "arxiv_id": "2410.01187v3",
+      "title": "We Must Preserve Hubble given its Unique Complementarity to Webb, Roman, and Euclid",
+      "authors": [
+        "Rogier A. Windhorst",
+        "Gibson B. Bowling",
+        "Kevin S. Croker",
+        "Brenda Frye",
+        "Timothy Carleton",
+        "Seth H. Cohen",
+        "Rolf A. Jansen",
+        "Brent M. Smith",
+        "Jake Summers",
+        "Jessica M. Berkheimer",
+        "Delondrae D. Carter",
+        "Rachel Honor",
+        "Rosalia O'Brien",
+        "Rafael Ortiz",
+        "Christopher J. Conselice",
+        "Jose M. Diego",
+        "Simon P. Driver",
+        "Benne W. Holwerda",
+        "Scott A. Tompkins",
+        "Haojing Yan"
+      ],
+      "year": 2024,
+      "published": "2024-10-02T02:40:28Z",
+      "updated": "2026-05-26T20:34:14Z",
+      "abstract": "We present compelling arguments -- focusing on galaxy science -- for preserving the main imagers and operational modes of the Hubble Space Telescope (HST) for as long as is technically feasible, to assure maximum complementarity to the James Webb Space Telescope (JWST), Roman, and Euclid. HST was designed to work well over the 0.1-1.6 $μ$m wavelength range, and its unique UV-optical performance ha",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "This is an updated 5-page summary of the 2024 HST Senior Review white paper published in 2025, J. BAAS 57, 1, requested by NASA/STScI in response to the call for white papers \"Building a Roadmap for Hubble Science into the 2030s\"",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2410.01187v3",
+      "pdf_url": "https://arxiv.org/pdf/2410.01187v3"
     },
     {
       "arxiv_id": "2407.09472v3",
