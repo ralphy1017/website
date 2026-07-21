@@ -3,7 +3,7 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-07-20T09:22:35.638032+00:00",
+    "updated": "2026-07-21T08:35:26.573787+00:00",
     "source": "arXiv API"
   },
   "stats": {
@@ -66,7 +66,7 @@
       "pdf_url": "https://arxiv.org/pdf/2606.15365v1"
     },
     {
-      "arxiv_id": "2605.17040v1",
+      "arxiv_id": "2605.17040v2",
       "title": "PEARLS: JWST Counterparts of Micro-Jy Radio Sources in the NEP Time Domain Field. II. All Four Spokes",
       "authors": [
         "S. P. Willner",
@@ -93,7 +93,7 @@
       ],
       "year": 2026,
       "published": "2026-05-16T15:21:05Z",
-      "updated": "2026-05-16T15:21:05Z",
+      "updated": "2026-07-20T15:48:43Z",
       "abstract": "JWST/NIRCam observations in the North Ecliptic Pole Time Domain Field (TDF) identify 4.4 micron counterparts for 206 of 211 radio sources with S(3 GHz) \\gapprox 5 micro-Jy in a 65arcmin^2 field. One of the remaining radio sources is likely to be a radio lobe of a nearby Seyfert galaxy, and the four radio sources without counterparts could be spurious. All but five counterparts are brighter than ma",
       "categories": [
         "astro-ph.GA"
@@ -102,10 +102,10 @@
       "is_crosslist": false,
       "doi": null,
       "journal_ref": null,
-      "comment": "Latest revision submitted to ApJ",
+      "comment": "Accepted by ApJ. This preprint contains typeset Tables 1, 3, and 4, and the corresponding MRTs are in the source directory",
       "first_author": false,
-      "arxiv_url": "https://arxiv.org/abs/2605.17040v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.17040v1"
+      "arxiv_url": "https://arxiv.org/abs/2605.17040v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.17040v2"
     },
     {
       "arxiv_id": "2605.00822v1",
