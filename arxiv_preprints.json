@@ -3,7 +3,7 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-07-22T08:34:52.618413+00:00",
+    "updated": "2026-07-23T08:36:27.852349+00:00",
     "source": "arXiv API"
   },
   "stats": {
@@ -355,7 +355,7 @@
       "pdf_url": "https://arxiv.org/pdf/2512.05180v1"
     },
     {
-      "arxiv_id": "2511.14483v2",
+      "arxiv_id": "2511.14483v3",
       "title": "VENUS: A Strongly Lensed Clumpy Galaxy at $z\\sim11-12$ behind the Galaxy Cluster MACS J0257.1-2325",
       "authors": [
         "Minami Nakane",
@@ -397,6 +397,7 @@
         "Miroslava Dessauges-Zavadsky",
         "Jose M. Diego",
         "Andreas L. Faisst",
+        "Gavin Farley",
         "Qinyue Fei",
         "Brenda L. Frye",
         "Yoshinobu Fudamoto",
@@ -438,7 +439,7 @@
       ],
       "year": 2025,
       "published": "2025-11-18T13:27:12Z",
-      "updated": "2026-02-06T05:49:25Z",
+      "updated": "2026-07-22T08:06:31Z",
       "abstract": "We present the discovery of a strongly lensed galaxy at $z\\sim11-12$, dubbed the ``Misty Moons'', identified in the JWST Treasury Survey, Vast Exploration for Nascent, Unexplored Sources (VENUS). The Misty Moons is gravitationally lensed by the galaxy cluster MACS J0257.1-2325 at $z=0.505$, and has five multiple images suggested by two independent lensing models. Two of the five images, ID1 and ID",
       "categories": [
         "astro-ph.GA"
@@ -447,10 +448,10 @@
       "is_crosslist": false,
       "doi": null,
       "journal_ref": null,
-      "comment": "21 pages, 9 figures, submitted to ApJ, revised version",
+      "comment": "25 pages, 12 figures, accepted for publication in ApJ",
       "first_author": false,
-      "arxiv_url": "https://arxiv.org/abs/2511.14483v2",
-      "pdf_url": "https://arxiv.org/pdf/2511.14483v2"
+      "arxiv_url": "https://arxiv.org/abs/2511.14483v3",
+      "pdf_url": "https://arxiv.org/pdf/2511.14483v3"
     },
     {
       "arxiv_id": "2510.26554v1",
