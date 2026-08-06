@@ -1,7 +1,7 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-08-05T08:41:59.842157+00:00",
+    "updated": "2026-08-06T08:43:39.360265+00:00",
     "source": "NASA ADS"
   },
   "stats": {
@@ -45,7 +45,7 @@
       "journal": "The Astrophysical Journal 1006 219",
       "bibcode": "2026ApJ..1006..219W",
       "doi": "10.3847/1538-4357/ae796c",
-      "arxiv": null,
+      "arxiv": "2605.17040",
       "citations": 0,
       "doctype": "article",
       "refereed": true,
@@ -59,7 +59,8 @@
         "508",
         "1671",
         "790",
-        "2291"
+        "2291",
+        "Astrophysics of Galaxies"
       ]
     },
     {
