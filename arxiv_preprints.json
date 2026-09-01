@@ -3,16 +3,46 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-08-31T13:11:21.061932+00:00",
+    "updated": "2026-09-01T11:23:25.180836+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 35,
+    "total_preprints": 36,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2608.28745v1",
+      "title": "Super-Eddington Little Blue Dots May Reionize Helium Too Early",
+      "authors": [
+        "Christopher Cain",
+        "Brent Smith",
+        "Gibson B. Bowling",
+        "Yongda Zhu",
+        "Lily Whitler",
+        "Rafael Ortiz",
+        "Anson D'Aloisio",
+        "Rogier Windhorst"
+      ],
+      "year": 2026,
+      "published": "2026-08-28T18:00:01Z",
+      "updated": "2026-08-28T18:00:01Z",
+      "abstract": "The James Webb Space Telescope (JWST) has identified an abundant population of faint Active Galactic Nuclei (AGN) at $z \\gtrsim 4$ which display broad emission lines, compact morphologies, and blue ultraviolet--optical continua. These ``Little Blue Dots' (LBDs) have been suggested to belong to the same family of objects as the more controversial ``Little Red Dots' (LRDs), with differences between ",
+      "categories": [
+        "astro-ph.GA",
+        "astro-ph.CO"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "9+1 pages, 4+1 figures, submitted to ApJL. Comments welcome",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2608.28745v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28745v1"
+    },
     {
       "arxiv_id": "2608.15997v1",
       "title": "The Koi Pond: A Strongly Lensed Protocluster Core hosting a Diverse Population of DSFGs",
