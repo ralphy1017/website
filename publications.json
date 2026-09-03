@@ -1,14 +1,14 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-09-02T10:57:05.971175+00:00",
+    "updated": "2026-09-03T10:56:16.289430+00:00",
     "source": "NASA ADS"
   },
   "stats": {
     "total_papers": 29,
     "refereed_papers": 29,
     "first_author_papers": 1,
-    "total_citations": 514,
+    "total_citations": 515,
     "first_author_citations": 5,
     "h_index": 12,
     "h_index_first_author": 1,
@@ -824,7 +824,7 @@
       "bibcode": "2025MNRAS.540..774D",
       "doi": "10.1093/mnras/staf638",
       "arxiv": "2407.09472",
-      "citations": 89,
+      "citations": 90,
       "doctype": "article",
       "refereed": true,
       "first_author": false,
