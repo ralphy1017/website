@@ -3,16 +3,58 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-09-17T11:19:34.819321+00:00",
+    "updated": "2026-09-18T10:53:35.154833+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 37,
+    "total_preprints": 38,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2609.19757v1",
+      "title": "Constraints on the Pop III Sky Surface Brightness from High-Redshift Caustic Transients in MACS0416",
+      "authors": [
+        "Jakob P. Perivolotis",
+        "Pietro Bergamini",
+        "Rogier A. Windhorst",
+        "Erik Zackrisson",
+        "Timothy Carleton",
+        "Seth H. Cohen",
+        "Jordan C. J. D'Silva",
+        "Rachel Honor",
+        "Rolf A. Jansen",
+        "Anton M. Koekemoer",
+        "Rafael Ortiz",
+        "Jake Summers",
+        "Dan Coe",
+        "Christopher J. Conselice",
+        "Jose M. Diego",
+        "Brenda Frye",
+        "Massimo Ricotti",
+        "Gibson B. Bowling",
+        "Brent Smith",
+        "Christopher N. A. Willmer",
+        "Haojing Yan"
+      ],
+      "year": 2026,
+      "published": "2026-09-17T06:27:09Z",
+      "updated": "2026-09-17T06:27:09Z",
+      "abstract": "Population III (Pop III) stars are hypothetical zero-metallicity stellar structures formed from primordial hydrogen and helium. They are theorized to span a wide mass range, extending to several 100 solar masses, and may have played important roles in nucleosynthesis and reionization. Their expected fluxes are far below JWST NIRCam detection limits, making direct observation unlikely. However, ext",
+      "categories": [
+        "astro-ph.CO"
+      ],
+      "primary_category": "astro-ph.CO",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": null,
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2609.19757v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.19757v1"
+    },
     {
       "arxiv_id": "2609.08145v1",
       "title": "The Roman eXtreme Deep Field (RXDF)",
