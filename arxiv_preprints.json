@@ -3,16 +3,45 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-09-28T13:23:14.448610+00:00",
+    "updated": "2026-09-29T12:27:47.581495+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 40,
+    "total_preprints": 41,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2609.33925v1",
+      "title": "Constraining the Light Curves of Magnified Stellar Events at z ~ 0.725",
+      "authors": [
+        "Carter Meyerhoff",
+        "Hayley Williams",
+        "Rafael Ortiz",
+        "Gibson B. Bowling",
+        "Rogier A. Windhorst",
+        "Zach Borowiak",
+        "Hunter Sparks",
+        "Charles L. Steinhardt"
+      ],
+      "year": 2026,
+      "published": "2026-09-27T21:09:59Z",
+      "updated": "2026-09-27T21:09:59Z",
+      "abstract": "Extreme magnification by lensing galaxy clusters allows the detection of high-luminosity stars during cluster caustic transient events at cosmological distances. The Dragon Arc at z=0.725 is a frontier target for identifying transient events due to its high frequency of microlensing events, and so far >100 of these events have been detected. The high frequency of events and high cadence of observa",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "17 pages, 11 figures, 4 tables",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2609.33925v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.33925v1"
+    },
     {
       "arxiv_id": "2609.24987v1",
       "title": "EPOCHS-DR2 I: Expanded data release and properties of $6.5<z<16.5$ photometrically selected galaxies across NIRCam deep fields covering $\\sim700\\,\\rm arcmin^2$ with the galfind software",
