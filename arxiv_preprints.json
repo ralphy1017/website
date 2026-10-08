@@ -3,16 +3,53 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-10-07T12:58:45.884971+00:00",
+    "updated": "2026-10-08T13:06:41.788572+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 41,
+    "total_preprints": 42,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2610.08920v1",
+      "title": "PEARLS: NuSTAR and XMM-Newton Extragalactic Survey of the JWST North Ecliptic Pole Time-Domain Field V: Unraveling X-ray Spectral Variability",
+      "authors": [
+        "Samantha Creech",
+        "Francesca Civano",
+        "Daniel Wik",
+        "Núria Torres-Alba",
+        "Ross Silver",
+        "Xiurui Zhao",
+        "Tonima Ananna",
+        "Gibson Bowling",
+        "Norman A. Grogin",
+        "Anton M. Koekemoer",
+        "Peter Maksym",
+        "Sylvia Mesicek",
+        "Rafael Ortiz",
+        "Payaswini Saikia",
+        "Steven Willner",
+        "Rogier Windhorst"
+      ],
+      "year": 2026,
+      "published": "2026-10-06T18:00:06Z",
+      "updated": "2026-10-06T18:00:06Z",
+      "abstract": "As one of the first deep time-domain surveys in the hard X-ray band, the NuSTAR campaign in the JWST North Ecliptic Pole Time Domain Field (NEP-TDF) offers a prime opportunity to measure variability in a faint population of Active Galactic Nuclei (AGN) in the medium-to-high redshift universe. In the X-ray band, AGN variability is generally caused by changes in the brightness of the corona ($F_{int",
+      "categories": [
+        "astro-ph.HE"
+      ],
+      "primary_category": "astro-ph.HE",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "36 pages, 13 figures",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2610.08920v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.08920v1"
+    },
     {
       "arxiv_id": "2609.33925v1",
       "title": "Constraining the Light Curves of Magnified Stellar Events at z ~ 0.725",
