@@ -3,7 +3,7 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-10-08T13:06:41.788572+00:00",
+    "updated": "2026-10-09T12:53:13.450779+00:00",
     "source": "arXiv API"
   },
   "stats": {
@@ -14,7 +14,7 @@
   },
   "papers": [
     {
-      "arxiv_id": "2610.08920v1",
+      "arxiv_id": "2610.08920v2",
       "title": "PEARLS: NuSTAR and XMM-Newton Extragalactic Survey of the JWST North Ecliptic Pole Time-Domain Field V: Unraveling X-ray Spectral Variability",
       "authors": [
         "Samantha Creech",
@@ -36,7 +36,7 @@
       ],
       "year": 2026,
       "published": "2026-10-06T18:00:06Z",
-      "updated": "2026-10-06T18:00:06Z",
+      "updated": "2026-10-08T16:39:53Z",
       "abstract": "As one of the first deep time-domain surveys in the hard X-ray band, the NuSTAR campaign in the JWST North Ecliptic Pole Time Domain Field (NEP-TDF) offers a prime opportunity to measure variability in a faint population of Active Galactic Nuclei (AGN) in the medium-to-high redshift universe. In the X-ray band, AGN variability is generally caused by changes in the brightness of the corona ($F_{int",
       "categories": [
         "astro-ph.HE"
@@ -45,10 +45,10 @@
       "is_crosslist": false,
       "doi": null,
       "journal_ref": null,
-      "comment": "36 pages, 13 figures",
+      "comment": "36 pages, 13 figures; accepted by ApJ",
       "first_author": false,
-      "arxiv_url": "https://arxiv.org/abs/2610.08920v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.08920v1"
+      "arxiv_url": "https://arxiv.org/abs/2610.08920v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.08920v2"
     },
     {
       "arxiv_id": "2609.33925v1",
