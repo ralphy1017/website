@@ -1,7 +1,7 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-10-15T11:07:35.338746+00:00",
+    "updated": "2026-10-17T10:23:13.726217+00:00",
     "source": "NASA ADS"
   },
   "stats": {
@@ -56,10 +56,6 @@
         "Surveys",
         "Infrared galaxies",
         "James Webb Space Telescope",
-        "508",
-        "1671",
-        "790",
-        "2291",
         "Astrophysics of Galaxies"
       ]
     },
@@ -107,10 +103,6 @@
         "High-redshift galaxies",
         "Ring galaxies",
         "Strong gravitational lensing",
-        "594",
-        "734",
-        "1400",
-        "1643",
         "Astrophysics of Galaxies"
       ]
     },
@@ -156,9 +148,6 @@
         "Galaxy clusters",
         "Globular star clusters",
         "James Webb Space Telescope",
-        "584",
-        "656",
-        "2291",
         "Astrophysics of Galaxies"
       ]
     },
@@ -258,13 +247,6 @@
         "Zodiacal cloud",
         "Cosmic background radiation",
         "Hubble Space Telescope",
-        "1146",
-        "383",
-        "1776",
-        "1528",
-        "1845",
-        "317",
-        "761",
         "Cosmology and Nongalactic Astrophysics",
         "Earth and Planetary Astrophysics",
         "Astrophysics of Galaxies"
@@ -322,12 +304,6 @@
         "Time domain astronomy",
         "Extragalactic astronomy",
         "Hardness ratio",
-        "16",
-        "1824",
-        "2291",
-        "2109",
-        "506",
-        "700",
         "High Energy Astrophysical Phenomena",
         "Astrophysics of Galaxies"
       ]
@@ -393,10 +369,6 @@
         "Transient sources",
         "Supernovae",
         "Galaxy evolution",
-        "1957",
-        "1851",
-        "1668",
-        "594",
         "Astrophysics of Galaxies"
       ]
     },
@@ -450,11 +422,6 @@
         "Galaxy evolution",
         "Star formation",
         "Galaxies",
-        "2040",
-        "584",
-        "594",
-        "1569",
-        "573",
         "Astrophysics of Galaxies"
       ]
     },
@@ -489,10 +456,6 @@
         "Active galactic nuclei",
         "X-ray surveys",
         "Surveys",
-        "2035",
-        "16",
-        "1824",
-        "1671",
         "High Energy Astrophysical Phenomena"
       ]
     },
@@ -541,10 +504,6 @@
         "Reionization",
         "Active galaxies",
         "James Webb Space Telescope",
-        "594",
-        "1383",
-        "17",
-        "2291",
         "Astrophysics of Galaxies",
         "Cosmology and Nongalactic Astrophysics"
       ]
@@ -605,10 +564,6 @@
         "Dust formation",
         "Ultraviolet astronomy",
         "Infrared telescopes",
-        "734",
-        "2269",
-        "1736",
-        "794",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -660,11 +615,6 @@
         "James Webb Space Telescope",
         "Galaxy formation",
         "Galaxy evolution",
-        "16",
-        "1569",
-        "2291",
-        "595",
-        "594",
         "Astrophysics of Galaxies"
       ]
     },
@@ -718,11 +668,6 @@
         "High energy astrophysics",
         "Radio galaxies",
         "Radio sources",
-        "16",
-        "17",
-        "739",
-        "1343",
-        "1358",
         "High Energy Astrophysical Phenomena",
         "Astrophysics of Galaxies"
       ]
@@ -771,14 +716,6 @@
         "Astronomical simulations",
         "Hierarchical models",
         "Cosmological models",
-        "595",
-        "588",
-        "594",
-        "1146",
-        "2291",
-        "1857",
-        "1925",
-        "337",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -888,9 +825,6 @@
         "High-redshift galaxies",
         "Galaxies",
         "Galaxy structure",
-        "734",
-        "573",
-        "622",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -982,11 +916,6 @@
         "High-redshift galaxies",
         "Galaxy ages",
         "Galaxy spectroscopy",
-        "1383",
-        "435",
-        "734",
-        "576",
-        "2171",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1045,7 +974,6 @@
       "abstract": "The first public 0.9─4.4 μm NIRCam images of the North Ecliptic Pole Time Domain Field uncovered galaxies displaying point-source features in their cores as seen in the longer-wavelength filters. We visually identified a sample of 66 galaxies (∼1 galaxy arcmin<SUP>─2</SUP>) with pointlike cores and have modeled their two-dimensional light profiles with GalFit, identifying 16 galactic nuclei with m",
       "keywords": [
         "Active galactic nuclei",
-        "16",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1108,9 +1036,6 @@
         "Strong gravitational lensing",
         "Starburst galaxies",
         "James Webb Space Telescope",
-        "1643",
-        "1570",
-        "2291",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1251,11 +1176,6 @@
         "Supernovae",
         "AGN host galaxies",
         "HST photometry",
-        "2109",
-        "1851",
-        "1668",
-        "2017",
-        "756",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1341,10 +1261,6 @@
         "Type Ia supernovae",
         "Gravitational lensing",
         "Galaxy clusters",
-        "343",
-        "1728",
-        "670",
-        "584",
         "Astrophysics - Cosmology and Nongalactic Astrophysics"
       ]
     },
@@ -1392,9 +1308,6 @@
         "Flux calibration",
         "Astronomy data reduction",
         "Space telescopes",
-        "544",
-        "1861",
-        "1547",
         "Astrophysics - Instrumentation and Methods for Astrophysics"
       ]
     },
@@ -1446,11 +1359,6 @@
         "Dwarf galaxies",
         "Stellar populations",
         "Galaxy evolution",
-        "940",
-        "2291",
-        "416",
-        "1622",
-        "594",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1515,11 +1423,6 @@
         "High-redshift galaxy clusters",
         "Galaxy cluster counts",
         "Galaxy spectroscopy",
-        "1643",
-        "2005",
-        "2007",
-        "583",
-        "2171",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1573,11 +1476,6 @@
         "Gravitational lensing",
         "Supernovae",
         "Surveys",
-        "1851",
-        "793",
-        "670",
-        "1668",
-        "1671",
         "Astrophysics - Astrophysics of Galaxies",
         "High Energy Physics - Experiment"
       ]
@@ -1642,10 +1540,6 @@
         "Extragalactic radio sources",
         "High-redshift galaxies",
         "Radio galaxies",
-        "2017",
-        "508",
-        "734",
-        "1343",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     },
@@ -1693,9 +1587,6 @@
         "Galactic archaeology",
         "Stellar spectral types",
         "James Webb Space Telescope",
-        "2178",
-        "2051",
-        "2291",
         "Astrophysics - Astrophysics of Galaxies"
       ]
     }
