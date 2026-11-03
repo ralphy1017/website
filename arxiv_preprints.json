@@ -3,16 +3,56 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-11-02T15:13:21.829602+00:00",
+    "updated": "2026-11-03T13:53:18.876301+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 43,
+    "total_preprints": 44,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2611.01595v1",
+      "title": "Physically Motivated Stellar Populations for Galaxies at Cosmic Dawn with a Temperature-Dependent IMF",
+      "authors": [
+        "Gibson B. Bowling",
+        "Charles L. Steinhardt",
+        "Lachlan J. Hobart",
+        "Carter Meyerhoff",
+        "Jackson Headon",
+        "Christopher Cain",
+        "Timothy Carleton",
+        "Kevin S. Croker",
+        "Hunter D. Sparks",
+        "Maria J. Sanchez Rincon",
+        "Maksymilian T. Malinski",
+        "Zachary Borowiak",
+        "Caleb S. Watson",
+        "Rafael Ortiz",
+        "Rogier A. Windhorst",
+        "Rolf A. Jansen",
+        "Seth H. Cohen",
+        "Tanish Parida"
+      ],
+      "year": 2026,
+      "published": "2026-11-01T05:22:58Z",
+      "updated": "2026-11-01T05:22:58Z",
+      "abstract": "The first few years of James Webb Space Telescope observations have identified previously undetected galaxies at $z>12$ and provided new constraints on galaxies at $z>8$. Many of these objects have stellar masses that are difficult to reconcile with $Λ$CDM, inferred from models not calibrated for the high-redshift Universe. This necessitates new, more astrophysically plausible stellar population m",
+      "categories": [
+        "astro-ph.GA",
+        "astro-ph.CO"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "22 pages, 7 figures, 5 tables. Submitted to ApJ. Version 1 of SSPT is available on https://github.com/gbbowling/SSPT",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2611.01595v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.01595v1"
+    },
     {
       "arxiv_id": "2610.33161v1",
       "title": "SN Ares: A Strongly Lensed Type IIb Supernova at $\\mathbf{z=1.276}$ with a Predicted 70-Year Time Delay",
