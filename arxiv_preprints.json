@@ -3,16 +3,43 @@
     "author_query": "Ortiz, Rafael",
     "category": "astro-ph",
     "cross_list": true,
-    "updated": "2026-11-16T15:18:09.605653+00:00",
+    "updated": "2026-11-17T15:43:39.105625+00:00",
     "source": "arXiv API"
   },
   "stats": {
-    "total_preprints": 44,
+    "total_preprints": 45,
     "first_author_preprints": 2,
     "published_preprints": 11,
     "crosslist_preprints": 0
   },
   "papers": [
+    {
+      "arxiv_id": "2611.20358v1",
+      "title": "Tracing the Luminosity Evolution of Globular Cluster Systems with JWST: MACS J1149.5+2223 at z=0.544",
+      "authors": [
+        "Jessica M. Berkheimer",
+        "Rogier A. Windhorst",
+        "William E. Harris",
+        "Timothy Carleton",
+        "Rafael Ortiz",
+        "S. P. Willner"
+      ],
+      "year": 2026,
+      "published": "2026-11-16T00:37:21Z",
+      "updated": "2026-11-16T00:37:21Z",
+      "abstract": "We present a study of the compact-source population associated with the massive galaxy cluster MACS J1149.5+2223 at z=0.544 using deep JWST/NIRCam imaging in F115W, F150W, and F200W. After photometric and morphological selection, we identify 1,202 unresolved compact-source candidates. The observed luminosity distribution samples only the bright side of the expected globular-cluster luminosity func",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "primary_category": "astro-ph.GA",
+      "is_crosslist": false,
+      "doi": null,
+      "journal_ref": null,
+      "comment": "Submitted to The Astronomical Journal",
+      "first_author": false,
+      "arxiv_url": "https://arxiv.org/abs/2611.20358v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.20358v1"
+    },
     {
       "arxiv_id": "2611.01595v1",
       "title": "Physically Motivated Stellar Populations for Galaxies at Cosmic Dawn with a Temperature-Dependent IMF",
