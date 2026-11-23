@@ -1,21 +1,114 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-11-22T14:20:40.098210+00:00",
+    "updated": "2026-11-23T17:44:20.257232+00:00",
     "source": "NASA ADS"
   },
   "stats": {
-    "total_papers": 30,
-    "refereed_papers": 30,
+    "total_papers": 32,
+    "refereed_papers": 32,
     "first_author_papers": 1,
     "total_citations": 648,
     "first_author_citations": 9,
     "h_index": 13,
     "h_index_first_author": 1,
     "i10_index": 14,
-    "total_coauthors": 351
+    "total_coauthors": 355
   },
   "papers": [
+    {
+      "title": "PEARLS: NuSTAR and XMM-Newton Extragalactic Survey of the JWST North Ecliptic Pole Time Domain Field IV: X-Ray Variability Analysis",
+      "authors": [
+        "Silver, Ross",
+        "Civano, Francesca",
+        "Zhao, Xiurui",
+        "Creech, Samantha",
+        "Willner, S. P.",
+        "Willmer, Christopher N. A.",
+        "Windhorst, Rogier A.",
+        "Yan, Haojing",
+        "Koekemoer, Anton M.",
+        "O'Brien, Rosalia",
+        "Ortiz, Rafael, III",
+        "Jansen, Rolf A.",
+        "Bowling, Gibson B.",
+        "Saikia, Payaswini",
+        "Maksym, W. Peter",
+        "Cappelluti, Nico",
+        "Fornasini, Francesca",
+        "Ricotti, Massimo",
+        "Carleton, Timothy",
+        "Cohen, Seth H.",
+        "Honor, Rachel",
+        "Summers, Jake",
+        "Silva, Jordan C. J. D'",
+        "Laha, Sibasish",
+        "Coe, Dan",
+        "Conselice, Christopher J.",
+        "Diego, Jose M.",
+        "Driver, Simon P.",
+        "Frye, Brenda",
+        "Grogin, Norman A.",
+        "Marshall, Madeline A.",
+        "Pirzkal, Nor",
+        "Robotham, Aaron",
+        "Ryan, Russell E., Jr."
+      ],
+      "year": 2026,
+      "journal": "The Astrophysical Journal 1012 165",
+      "bibcode": "2026ApJ..1012..165S",
+      "doi": "10.3847/1538-4357/aeaee2",
+      "arxiv": null,
+      "citations": 0,
+      "doctype": "article",
+      "refereed": true,
+      "first_author": false,
+      "abstract": "Nuclear Spectroscopic Telescope Array (NuSTAR) and XMM-Newton have observed the James Webb Space Telescope (JWST) North Ecliptic Pole (NEP) Time Domain Field (TDF) for almost five contiguous years starting in 2019. In that time, the NEP X-ray survey has accumulated 3.5 Ms and 228 ks of quasi-simultaneous NuSTAR and XMM-Newton observations, respectively. This paper presents variability results for ",
+      "keywords": [
+        "X-ray active galactic nuclei",
+        "X-ray surveys",
+        "Time domain astronomy",
+        "James Webb Space Telescope",
+        "Hubble Space Telescope"
+      ]
+    },
+    {
+      "title": "PEARLS: NuSTAR and XMM-Newton Extragalactic Survey of the JWST North Ecliptic Pole Time-domain Field V: Unraveling X-Ray Spectral Variability",
+      "authors": [
+        "Creech, Samantha",
+        "Civano, Francesca",
+        "Wik, Daniel R.",
+        "Torres-Alba, Núria",
+        "Silver, Ross",
+        "Zhao, Xiurui",
+        "Ananna, Tonima",
+        "Bowling, Gibson",
+        "Grogin, Norman A.",
+        "Koekemoer, Anton M.",
+        "Maksym, W. Peter",
+        "Mesicek, Sylvia",
+        "Ortiz, Rafael, III",
+        "Saikia, Payaswini",
+        "Willner, S. P.",
+        "Windhorst, Rogier A."
+      ],
+      "year": 2026,
+      "journal": "The Astrophysical Journal 1012 89",
+      "bibcode": "2026ApJ..1012...89C",
+      "doi": "10.3847/1538-4357/aeb121",
+      "arxiv": null,
+      "citations": 0,
+      "doctype": "article",
+      "refereed": true,
+      "first_author": false,
+      "abstract": "As one of the first deep time-domain surveys in the hard X-ray band, the NuSTAR campaign in the JWST North Ecliptic Pole Time Domain Field (NEP-TDF) offers a prime opportunity to measure variability in a faint population of active galactic nuclei (AGN) in the medium- to high-redshift Universe. In the X-ray band, AGN variability is generally caused by changes in the brightness of the corona (F<SUB>",
+      "keywords": [
+        "Active galactic nuclei",
+        "Time domain astronomy",
+        "X-ray active galactic nuclei",
+        "X-ray astronomy"
+      ]
+    },
     {
       "title": "VENUS: A Strongly Lensed Clumpy Galaxy at z ~ 11-12 Behind the Galaxy Cluster MACS J0257.1-2325",
       "authors": [
@@ -942,7 +1035,7 @@
         "Carleton, Timothy",
         "Cohen, Seth H.",
         "Jansen, Rolf A.",
-        "Ortiz, Rafael"
+        "Ortiz, Rafael, III"
       ],
       "year": 2025,
       "journal": "Research Notes of the American Astronomical Society 9 54",
@@ -956,9 +1049,7 @@
       "abstract": "Project SKYSURF constrains Extragalactic Background Light and diffuse light using over 200,000 images in the Hubble Space Telescope (HST) archive. However, it is possible that the faint wings of the point-spread function (PSF), which characterizes the distribution of light in individual stars and galaxies in an image, could contaminate or skew measurements of the sky surface brightness (sky-SB). U",
       "keywords": [
         "Cosmic background radiation",
-        "Hubble Space Telescope",
-        "317",
-        "761"
+        "Hubble Space Telescope"
       ]
     },
     {
@@ -1143,7 +1234,7 @@
       ]
     },
     {
-      "title": "New Spectroscopic Redshift Places PEARLSDG in a Group at ∼124 Mpc",
+      "title": "New Spectroscopic Redshift Places PEARLSDG in a Group at ~124 Mpc",
       "authors": [
         "Carleton, Timothy",
         "Willner, Steven P.",
@@ -1168,8 +1259,8 @@
         "Nonino, Mario",
         "Pirzkal, Nor",
         "Robotham, Aaron",
-        "Ryan, Russell E.",
-        "Ortiz, Rafael",
+        "Ryan, Russell E., Jr.",
+        "Ortiz, Rafael, III",
         "Tompkins, Scott",
         "Willmer, Christopher N. A.",
         "Yan, Haojing",
@@ -1184,20 +1275,14 @@
       "doctype": "article",
       "refereed": true,
       "first_author": false,
-      "abstract": "PEARLSDG was previously reported as an isolated dwarf galaxy with a TRGB distance of 30 Mpc. New data show this to not be the case. We report a new spectroscopic redshift of 0.02809, which argues for an association with a group of galaxies at ∼124 Mpc.",
+      "abstract": "PEARLSDG was previously reported as an isolated dwarf galaxy with a TRGB distance of 30 Mpc. New data show this to not be the case. We report a new spectroscopic redshift of 0.02809, which argues for an association with a group of galaxies at ~124 Mpc.",
       "keywords": [
         "Low surface brightness galaxies",
         "James Webb Space Telescope",
         "Dwarf galaxies",
         "Galaxy stellar content",
         "Stellar populations",
-        "Galaxy evolution",
-        "940",
-        "2291",
-        "416",
-        "621",
-        "1622",
-        "594"
+        "Galaxy evolution"
       ]
     },
     {
