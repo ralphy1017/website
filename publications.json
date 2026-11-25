@@ -1,7 +1,7 @@
 {
   "meta": {
     "orcid": "0000-0002-6150-833X",
-    "updated": "2026-11-24T17:16:43.574941+00:00",
+    "updated": "2026-11-25T16:58:19.259143+00:00",
     "source": "NASA ADS"
   },
   "stats": {
@@ -58,7 +58,7 @@
       "journal": "The Astrophysical Journal 1012 165",
       "bibcode": "2026ApJ..1012..165S",
       "doi": "10.3847/1538-4357/aeaee2",
-      "arxiv": null,
+      "arxiv": "2609.24963",
       "citations": 0,
       "doctype": "article",
       "refereed": true,
@@ -69,7 +69,8 @@
         "X-ray surveys",
         "Time domain astronomy",
         "James Webb Space Telescope",
-        "Hubble Space Telescope"
+        "Hubble Space Telescope",
+        "High Energy Astrophysical Phenomena"
       ]
     },
     {
@@ -96,7 +97,7 @@
       "journal": "The Astrophysical Journal 1012 89",
       "bibcode": "2026ApJ..1012...89C",
       "doi": "10.3847/1538-4357/aeb121",
-      "arxiv": null,
+      "arxiv": "2610.08920",
       "citations": 0,
       "doctype": "article",
       "refereed": true,
@@ -106,7 +107,8 @@
         "Active galactic nuclei",
         "Time domain astronomy",
         "X-ray active galactic nuclei",
-        "X-ray astronomy"
+        "X-ray astronomy",
+        "High Energy Astrophysical Phenomena"
       ]
     },
     {
